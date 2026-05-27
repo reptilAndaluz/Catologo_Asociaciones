@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pyjwt
+pydantic
+python-multipart
+pyexcel-ods
+cryptography

@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+cert.pem
+key.pem
+.vscode/
+error_logos.log

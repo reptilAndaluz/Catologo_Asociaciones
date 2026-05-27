@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_Form.css?v=2.0">
+    <title>Detalle de Asociación</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/HORIZONTAL BLANCO transparente (1).png" alt="Hospital Universitario Clínico San Cecilio" class="logo-header">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Asociaciones</a></li>
+                <li><a href="contacto.html">Solicitar Inclusión</a></li>
+                <li class="req-admin" style="display: none;"><a href="crearEntrada.html">Entradas</a></li>
+                <li class="req-admin" style="display: none;"><button id="btn-logout">Cerrar Sesión</button></li>
+                <li class="req-publico"><a href="login.html" style="color: #ffffff; text-decoration: underline;">Acceso Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="grupo-espaciado-abajo">
+            <a href="index.html" class="enlace-volver-husc">
+                &larr; Volver al Directorio
+            </a>
+        </div>
+
+        <div class="cabecera-detalle-ficha">
+            <img id="detalle-logo" src="" alt="Logo" class="logo-detalle-ficha">
+            <div>
+                <h2 id="detalle-nombre" class="titulo-detalle-ficha"></h2>
+                <h4 id="detalle-siglas" class="siglas-detalle-ficha"></h4>
+                <p class="metadata-detalle-ficha">
+                    <strong>Categoría:</strong> <span id="detalle-categoria"></span> | 
+                    <strong>Etiquetas:</strong> <span id="detalle-etiquetas"></span>
+                </p>
+                <p id="detalle-ubicacion" class="ubicacion-detalle-ficha" style="display:none;"></p>
+            </div>
+        </div>
+
+        <div class="grupo-espaciado-abajo">
+            <h3 style="color: var(--color-titulos); margin-bottom: 0.5rem;">Descripción de Actividades</h3>
+            <p id="detalle-desc" style="line-height: 1.6; color: var(--color-texto);"></p>
+        </div>
+
+        <div class="grupo-espaciado-abajo">
+            <h3 style="color: var(--color-titulos); margin-bottom: 0.5rem;">Información de Contacto</h3>
+            <div id="detalle-contactos-container"></div>
+        </div>
+
+        <div class="grupo-espaciado-abajo">
+            <h3 style="color: var(--color-titulos); margin-bottom: 0.5rem;">Cartera de Servicios</h3>
+            <div id="detalle-servicios" class="caja-texto"></div>
+        </div>
+
+        <div id="detalle-galeria-videos" class="grupo-espaciado-abajo" style="display:none;">
+            <h3 style="color: var(--color-titulos); margin-bottom: 1rem;">Galería Multimedia</h3>
+            <div id="detalle-videos-grid" class="galeria-videos-grid"></div>
+        </div>
+
+        <div id="contenedor-borrado" class="panel-acciones-detalle" style="display: none;">
+            <button id="btn-modificar-entrada" class="btn-accion-detalle modificar">Modificar Asociación</button>
+            <button id="btn-eliminar-entrada" class="btn-accion-detalle eliminar">Eliminar Asociación</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-seccion">
+                <img src="img/HORIZONTAL BLANCO transparente (1).png" alt="Logo HUSC" class="logo-footer">
+                <p><strong>Hospital Universitario Clínico San Cecilio</strong><br>
+                    Av. de la Investigación, s/n<br>
+                    18016 Granada, Andalucía</p>
+            </div>
+            <div class="footer-seccion">
+                <h4>Enlaces de Interés</h4>
+                <ul>
+                    <li><a href="#">Guía Corporativa</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Accesibilidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-seccion">
+                <h4>Contacto del Directorio</h4>
+                <p>Teléfono: 958 224 874<br> Email: info@husc.es</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hospital Universitario Clínico San Cecilio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/Web/detalle.js"></script>
+</body>
+
+</html>

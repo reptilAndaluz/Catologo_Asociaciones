@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a3d2e" />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <title>Nametree - Premium Brandable Domains</title>
+    <meta name="description" content="Your brand name changes everything. Short, punchy names ready for your next venture. Browse featured names or explore our full collection.">
+    <meta name="keywords" content="brandable domains, premium domains, domain names, startup names, brand names">
+    <link rel="canonical" href="https://nametree.com" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nametree.com" />
+    <meta property="og:title" content="Nametree - Premium Brandable Domains">
+    <meta property="og:description" content="Your brand name changes everything. Short, punchy names ready for your next venture. Browse featured names or explore our full collection.">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nametree - Premium Brandable Domains">
+    <meta name="twitter:description" content="Your brand name changes everything. Short, punchy names ready for your next venture. Browse featured names or explore our full collection.">
+    <script type="module" crossorigin src="/assets/index-D0jobD_k.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DxycN8C4.css">
+  <script defer src="/~flock.js" data-proxy-url="/~api/analytics"></script><meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3108ce01-9d27-4780-9110-0c2ad4967671/id-preview-93527244--82d0070e-26cd-4478-be6e-e3e0a33998f2.lovable.app-1777483889133.png"><meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3108ce01-9d27-4780-9110-0c2ad4967671/id-preview-93527244--82d0070e-26cd-4478-be6e-e3e0a33998f2.lovable.app-1777483889133.png"></head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

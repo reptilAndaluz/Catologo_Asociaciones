@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1779692129257,
+        "nombre_asociacion": "Asociación Española Contra el Parkinson",
+        "siglas": "AECP",
+        "logo": "/html/img/logos/2b61c34f9b36496bbbf285f77ece6eda.webp",
+        "descripcion": "aaaaaaaaaaaaaaaaaaaa",
+        "categoria": "cat_1779692128930",
+        "etiquetas": [
+            "eti_1779692129254_0",
+            "eti_1779261936032"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "test@test.com"
+            }
+        ],
+        "cartera_servicios": "aaaaaaaaaaaaaaaaaaa",
+        "videos": [
+            "https://youtu.be/IZ50S1e49m8",
+            "https://www.youtube.com/watch?v=WDFKORgEQGo"
+        ],
+        "ubicacion": {
+            "pais": "España",
+            "comunidad": "Andalucía",
+            "provincia": "Granada",
+            "municipio": "Granada"
+        }
+    },
+    {
+        "id": 1779701502812,
+        "nombre_asociacion": "Asociación Española Contra el Cáncer",
+        "siglas": "AECC",
+        "logo": "https://imgs.search.brave.com/pT82bDtsZpSEtDlZDpmfG6ZrPceEtlIUQCGMM4R9CDM/rs:fit:860:0:0:0/g:ce/aHR0cDovL3d3dy50/ZW1wb2JveC5lcy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/MS9BRUNDLTMwMHg5/NC5wbmc",
+        "descripcion": "Ayuda y apoyo a enfermos de cáncer",
+        "categoria": "cat_1779701502810_2",
+        "etiquetas": [
+            "eti_1779701502810_4",
+            "eti_1779701502810_5",
+            "eti_1779701502810_6"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "info@aecc.es"
+            },
+            {
+                "tipo": "web",
+                "valor": "https://aecc.es"
+            },
+            {
+                "tipo": "facebook",
+                "valor": "https://facebook.com/aecc"
+            }
+        ],
+        "cartera_servicios": "Apoyo psicológico y social a enfermos y familiares",
+        "videos": [],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_c9a7ad8d",
+        "nombre_asociacion": "Médicos Sin Fronteras",
+        "siglas": "MSF",
+        "logo": "https://imgs.search.brave.com/rlvHSQV2pVdZgBx1bNebcTYecb0wDZAb8y5by4mFE7k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92ZWN0/b3JzZWVrLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMy8w/OS9NZWRpY29zLVNp/bi1Gcm9udGVyYXMt/TG9nby1WZWN0b3Iu/c3ZnLS5wbmc",
+        "descripcion": "Atención médica humanitaria en conflictos.",
+        "categoria": "cat_1779794517361_2",
+        "etiquetas": [
+            "eti_1779794517361_14",
+            "eti_1779794517361_15"
+        ],
+        "contactos": [
+            {
+                "tipo": "web",
+                "valor": "https://www.msf.org"
+            }
+        ],
+        "cartera_servicios": "Cirugía, atención primaria, vacunación",
+        "videos": [],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    }
+]

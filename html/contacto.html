@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="¿Representas una asociación médica o de pacientes? Solicita tu inclusión en el Directorio de Asociaciones del Hospital Universitario Clínico San Cecilio de Granada.">
+    <link rel="stylesheet" href="css/style_Form.css?v=2.0">
+    <title>Solicitar Inclusión en el Directorio — HUSC</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/HORIZONTAL BLANCO transparente (1).png" alt="Hospital Universitario Clínico San Cecilio" class="logo-header">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Asociaciones</a></li>
+                <li><a href="contacto.html">Solicitar Inclusión</a></li>
+                <li class="req-admin" style="display: none;"><a href="crearEntrada.html">Entradas</a></li>
+                <li class="req-admin" style="display: none;"><button id="btn-logout">Cerrar Sesión</button></li>
+                <li class="req-publico"><a href="login.html" style="color: #ffffff; text-decoration: underline;">Acceso Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-contacto">
+        <!-- Hero de presentación -->
+        <div class="contacto-hero">
+            <div class="contacto-hero-icono">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <h1 class="contacto-hero-titulo">Solicita la Inclusión de tu Asociación</h1>
+            <p class="contacto-hero-subtitulo">
+                Si representas una asociación médica, de pacientes o relacionada con la salud y deseas aparecer en
+                nuestro directorio, completa el formulario. El equipo del HUSC revisará tu solicitud y se pondrá en
+                contacto contigo.
+            </p>
+        </div>
+
+        <!-- Indicadores de pasos -->
+        <div class="pasos-container">
+            <div class="paso activo" id="paso-ind-1">
+                <div class="paso-numero">1</div>
+                <span>Tu asociación</span>
+            </div>
+            <div class="paso-linea"></div>
+            <div class="paso" id="paso-ind-2">
+                <div class="paso-numero">2</div>
+                <span>Contacto</span>
+            </div>
+            <div class="paso-linea"></div>
+            <div class="paso" id="paso-ind-3">
+                <div class="paso-numero">3</div>
+                <span>Confirmación</span>
+            </div>
+        </div>
+
+        <!-- Formulario principal -->
+        <form id="form-solicitud" novalidate>
+
+            <!-- PASO 1 — Datos de la asociación -->
+            <div class="paso-formulario" id="paso-form-1">
+                <h2 class="paso-titulo">
+                    <span class="paso-num-titulo">1</span> Datos de la Asociación
+                </h2>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="sol_nombre">Nombre completo de la asociación <span
+                                class="req-asterisco">*</span></label>
+                        <input type="text" id="sol_nombre" name="sol_nombre" placeholder="Ej: Asociación Granadina de Fibromialgia" required maxlength="200">
+                    </div>
+                    <div class="form-group flex-0-4">
+                        <label for="sol_siglas">Siglas <span class="req-asterisco">*</span></label>
+                        <input type="text" id="sol_siglas" name="sol_siglas" placeholder="Ej: AGAF" required maxlength="20">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sol_descripcion">Descripción de actividades <span
+                            class="req-asterisco">*</span></label>
+                    <textarea id="sol_descripcion" name="sol_descripcion" rows="4"
+                        placeholder="Describe brevemente la misión, actividades y a quién va dirigida tu asociación..."
+                        required maxlength="2000"></textarea>
+                    <div class="contador-caracteres" id="contador-desc">0 / 2000</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sol_categoria">Categoría principal</label>
+                    <select id="sol_categoria" name="sol_categoria">
+                        <option value="">Selecciona la categoría más adecuada...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sol_web">Sitio web o redes sociales (Opcional)</label>
+                    <input type="text" id="sol_web" name="sol_web" placeholder="Ej: https://www.miasociacion.es" maxlength="300">
+                </div>
+
+                <!-- Ubicación -->
+                <div class="form-group">
+                    <label>Ubicación geográfica <span class="req-asterisco">*</span></label>
+                    <div class="grid-ubicacion">
+                        <div>
+                            <label for="sol_pais" class="label-sub">País</label>
+                            <input type="text" id="sol_pais" name="sol_pais" placeholder="Ej: España" value="España" list="lista-paises-sol">
+                            <datalist id="lista-paises-sol">
+                                <option value="España"></option>
+                                <option value="Portugal"></option>
+                                <option value="Francia"></option>
+                                <option value="México"></option>
+                                <option value="Argentina"></option>
+                            </datalist>
+                        </div>
+                        <div>
+                            <label for="sol_comunidad" class="label-sub">Comunidad Autónoma / Región</label>
+                            <input type="text" id="sol_comunidad" name="sol_comunidad" placeholder="Ej: Andalucía" list="lista-ccaa-sol">
+                            <datalist id="lista-ccaa-sol">
+                                <option value="Andalucía"></option>
+                                <option value="Aragón"></option>
+                                <option value="Asturias"></option>
+                                <option value="Baleares"></option>
+                                <option value="Canarias"></option>
+                                <option value="Cantabria"></option>
+                                <option value="Castilla y León"></option>
+                                <option value="Castilla-La Mancha"></option>
+                                <option value="Cataluña"></option>
+                                <option value="Extremadura"></option>
+                                <option value="Galicia"></option>
+                                <option value="La Rioja"></option>
+                                <option value="Madrid"></option>
+                                <option value="Murcia"></option>
+                                <option value="Navarra"></option>
+                                <option value="País Vasco"></option>
+                                <option value="Valencia"></option>
+                            </datalist>
+                        </div>
+                        <div>
+                            <label for="sol_provincia" class="label-sub">Provincia <span class="req-asterisco">*</span></label>
+                            <input type="text" id="sol_provincia" name="sol_provincia" placeholder="Ej: Granada" required>
+                        </div>
+                        <div>
+                            <label for="sol_municipio" class="label-sub">Municipio / Ciudad</label>
+                            <input type="text" id="sol_municipio" name="sol_municipio" placeholder="Ej: Granada">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sol_mensaje">Información adicional o motivación (Opcional)</label>
+                    <textarea id="sol_mensaje" name="sol_mensaje" rows="3"
+                        placeholder="¿Hay algo más que quieras que sepamos sobre tu asociación?"
+                        maxlength="1000"></textarea>
+                </div>
+
+                <div class="navegacion-pasos">
+                    <div></div>
+                    <button type="button" id="btn-paso-2" class="btn-siguiente">
+                        Siguiente: Datos de Contacto
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;margin-left:6px;vertical-align:middle;">
+                            <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PASO 2 — Datos de contacto del representante -->
+            <div class="paso-formulario oculto" id="paso-form-2">
+                <h2 class="paso-titulo">
+                    <span class="paso-num-titulo">2</span> Datos del Representante
+                </h2>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="sol_nombre_contacto">Nombre y apellidos <span class="req-asterisco">*</span></label>
+                        <input type="text" id="sol_nombre_contacto" name="sol_nombre_contacto" placeholder="Ej: María García López" required maxlength="150">
+                    </div>
+                    <div class="form-group">
+                        <label for="sol_cargo">Cargo en la asociación <span class="req-asterisco">*</span></label>
+                        <input type="text" id="sol_cargo" name="sol_cargo" placeholder="Ej: Presidenta, Secretaria..." required maxlength="100">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label for="sol_email">Correo electrónico <span class="req-asterisco">*</span></label>
+                        <input type="email" id="sol_email" name="sol_email" placeholder="representante@asociacion.es" required maxlength="200">
+                    </div>
+                    <div class="form-group">
+                        <label for="sol_telefono">Teléfono de contacto (Opcional)</label>
+                        <input type="tel" id="sol_telefono" name="sol_telefono" placeholder="Ej: +34 600 000 000" maxlength="30">
+                    </div>
+                </div>
+
+                <!-- Aviso legal y protección de datos -->
+                <div class="aviso-legal-box">
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px;flex-shrink:0;color:var(--color-primario);margin-top:2px;">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
+                    </svg>
+                    <p>
+                        <strong>Protección de datos.</strong> Los datos facilitados serán tratados por el Hospital
+                        Universitario Clínico San Cecilio con la finalidad de gestionar tu solicitud de inclusión en el
+                        directorio de asociaciones. No serán cedidos a terceros. Puedes ejercer tus derechos de acceso,
+                        rectificación y supresión en <a href="mailto:info@husc.es">info@husc.es</a>.
+                    </p>
+                </div>
+
+                <div class="form-group" style="margin-top:1.5rem;">
+                    <label class="checkbox-label" for="sol_acepta_lopd">
+                        <input type="checkbox" id="sol_acepta_lopd" name="sol_acepta_lopd" required>
+                        <span>He leído y acepto la información sobre protección de datos. <span class="req-asterisco">*</span></span>
+                    </label>
+                </div>
+
+                <!-- Campo honeypot anti-spam (oculto) -->
+                <input type="text" name="website_url" id="honeypot" tabindex="-1" autocomplete="off" style="display:none; visibility:hidden; position:absolute; left:-9999px;">
+
+                <div class="navegacion-pasos">
+                    <button type="button" id="btn-volver-1" class="btn-volver">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;margin-right:6px;vertical-align:middle;">
+                            <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Volver
+                    </button>
+                    <button type="submit" id="btn-enviar-solicitud">
+                        Enviar Solicitud
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:16px;height:16px;margin-left:6px;vertical-align:middle;">
+                            <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+
+        <!-- PASO 3 — Confirmación de envío -->
+        <div class="confirmacion-envio oculto" id="confirmacion-envio">
+            <div class="confirmacion-icono">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+            </div>
+            <h2 class="confirmacion-titulo">¡Solicitud enviada con éxito!</h2>
+            <p class="confirmacion-texto">
+                Hemos recibido tu solicitud correctamente. Nuestro equipo la revisará y se pondrá en contacto contigo
+                en un plazo de <strong>5-10 días hábiles</strong> a través del correo electrónico facilitado.
+            </p>
+            <p class="confirmacion-referencia" id="confirmacion-ref"></p>
+            <a href="index.html" class="btn-volver-directorio">← Volver al Directorio</a>
+        </div>
+
+    </main>
+
+    <!-- Aside informativo -->
+    <aside class="aside-info-contacto">
+        <div class="aside-contenido">
+            <h3>¿Qué necesitas para aparecer?</h3>
+            <ul class="requisitos-lista">
+                <li>
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;color:var(--color-primario);flex-shrink:0;">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    Ser una asociación médica, de pacientes o relacionada con la salud
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;color:var(--color-primario);flex-shrink:0;">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    Tener vinculación con el área de influencia del HUSC
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;color:var(--color-primario);flex-shrink:0;">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    Facilitar un correo de contacto verificable
+                </li>
+                <li>
+                    <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;color:var(--color-primario);flex-shrink:0;">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                    </svg>
+                    Cumplir con la normativa de protección de datos
+                </li>
+            </ul>
+
+            <div class="aside-separador"></div>
+
+            <h3>¿Tienes dudas?</h3>
+            <p>Puedes contactarnos directamente en:</p>
+            <p class="aside-email">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width:15px;height:15px;vertical-align:middle;margin-right:5px;">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <a href="mailto:info@husc.es">info@husc.es</a>
+            </p>
+            <p class="aside-telefono">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width:15px;height:15px;vertical-align:middle;margin-right:5px;">
+                    <path d="M6.62 10.79c1.44 2.82 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                958 224 874
+            </p>
+
+            <div class="aside-separador"></div>
+
+            <div class="aside-badge-seguridad">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                </svg>
+                <span>Formulario seguro · Datos protegidos bajo RGPD</span>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-seccion">
+                <img src="img/HORIZONTAL BLANCO transparente (1).png" alt="Logo HUSC" class="logo-footer">
+                <p><strong>Hospital Universitario Clínico San Cecilio</strong><br>
+                    Av. de la Investigación, s/n<br>
+                    18016 Granada, Andalucía</p>
+            </div>
+            <div class="footer-seccion">
+                <h4>Enlaces de Interés</h4>
+                <ul>
+                    <li><a href="#">Guía Corporativa</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Accesibilidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-seccion">
+                <h4>Contacto del Directorio</h4>
+                <p>Teléfono: 958 224 874<br> Email: info@husc.es</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hospital Universitario Clínico San Cecilio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/Web/contacto.js"></script>
+</body>
+
+</html>

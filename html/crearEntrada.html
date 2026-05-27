@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style_Form.css?v=2.0">
+    <title>Crear Entrada</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/HORIZONTAL BLANCO transparente (1).png" alt="Hospital Universitario Clínico San Cecilio" class="logo-header">
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Asociaciones</a></li>
+                <li><a href="contacto.html">Solicitar Inclusión</a></li>
+                <li class="req-admin" style="display: none;"><a href="crearEntrada.html">Entradas</a></li>
+                <li class="req-admin" style="display: none;"><button id="btn-logout">Cerrar Sesión</button></li>
+                <li class="req-publico"><a href="login.html" style="color: #ffffff; text-decoration: underline;">Acceso Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 id="titulo-pagina">Crear Nueva Entrada</h2>
+        <form id="form-entrada">
+            <div class="row">
+                <div class="form-group">
+                    <label for="nombre_asociacion">Nombre de la asociación:</label>
+                    <input type="text" id="nombre_asociacion" name="nombre_asociacion" required>
+                </div>
+                <div class="form-group flex-0-4">
+                    <label for="siglas">Siglas:</label>
+                    <input type="text" id="siglas" name="siglas" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Logo de la Asociación (Opcional):</label>
+                <!-- Selector de modo de logo -->
+                <div class="logo-tabs" id="logo-tabs">
+                    <button type="button" class="logo-tab activo" data-tab="url" id="logo-tab-url">URL externa</button>
+                    <button type="button" class="logo-tab" data-tab="upload" id="logo-tab-upload">Subir imagen</button>
+                </div>
+                <!-- Panel URL -->
+                <div class="logo-panel" id="logo-panel-url">
+                    <input type="text" id="logo" name="logo" placeholder="Ej: https://midominio.com/logo.png">
+                </div>
+                <!-- Panel Subir Imagen -->
+                <div class="logo-panel" id="logo-panel-upload" style="display:none;">
+                    <div class="upload-logo-area" id="upload-logo-area">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            style="width:36px;height:36px;color:var(--color-primario);">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p><strong>Arrastra una imagen aquí</strong></p>
+                        <p style="font-size:0.82rem;color:#888;">o <span class="destacado">selecciona un archivo</span>
+                            (JPG, PNG, WEBP, SVG · máx. 5 MB)</p>
+                        <input type="file" id="input-logo-file" accept=".jpg,.jpeg,.png,.gif,.webp,.svg"
+                            style="display:none;">
+                    </div>
+                    <div id="logo-upload-preview" style="display:none; margin-top:1rem; align-items:center; gap:1rem;">
+                        <img id="logo-preview-img" src="" alt="Vista previa"
+                            style="height:80px; width:auto; border-radius:8px; border:1.5px solid var(--color-borde); object-fit:contain; padding:4px; background:#fff;">
+                        <div>
+                            <p id="logo-preview-nombre"
+                                style="font-weight:600; font-size:0.9rem; color:var(--color-titulos);"></p>
+                            <button type="button" id="btn-quitar-logo-img"
+                                style="margin-top:4px; background:none; border:none; color:var(--color-peligro); cursor:pointer; font-size:0.85rem; padding:0;">✕
+                                Quitar imagen</button>
+                        </div>
+                    </div>
+                    <div id="logo-upload-status" style="display:none; margin-top:0.5rem; font-size:0.85rem;"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción de actividades:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="categoria">Categoría:</label>
+                    <div class="flex-inline">
+                        <select id="categoria" name="categoria" class="flex-grow-1" required>
+                            <option value="">Seleccione una categoría...</option>
+                            <option value="nueva_categoria">+ Crear nueva categoría...</option>
+                        </select>
+                        <input type="text" id="nueva_categoria_input" placeholder="Nombre de categoría"
+                            class="flex-grow-1" style="display: none;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="etiqueta">Etiquetas (separadas por comas):</label>
+                    <input type="text" id="etiqueta" name="etiqueta" list="lista-etiquetas"
+                        placeholder="Ej: #Cáncer, #Ayuda, #Granada" required>
+                    <datalist id="lista-etiquetas"></datalist>
+                </div>
+            </div>
+
+            <!-- BLOQUE DE UBICACIÓN GEO -->
+            <div class="form-group">
+                <label>Ubicación Geográfica (Opcional):</label>
+                <div class="grid-ubicacion">
+                    <div>
+                        <label for="ubi_pais" class="label-sub">País</label>
+                        <input type="text" id="ubi_pais" name="ubi_pais" placeholder="Ej: España" list="lista-paises">
+                        <datalist id="lista-paises">
+                            <option value="España"></option>
+                            <option value="Portugal"></option>
+                            <option value="Francia"></option>
+                            <option value="Italia"></option>
+                            <option value="Alemania"></option>
+                            <option value="México"></option>
+                            <option value="Argentina"></option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="ubi_comunidad" class="label-sub">Comunidad Autónoma / Región</label>
+                        <input type="text" id="ubi_comunidad" name="ubi_comunidad" placeholder="Ej: Andalucía" list="lista-comunidades">
+                        <datalist id="lista-comunidades">
+                            <option value="Andalucía"></option>
+                            <option value="Aragón"></option>
+                            <option value="Asturias"></option>
+                            <option value="Baleares"></option>
+                            <option value="Canarias"></option>
+                            <option value="Cantabria"></option>
+                            <option value="Castilla y León"></option>
+                            <option value="Castilla-La Mancha"></option>
+                            <option value="Cataluña"></option>
+                            <option value="Extremadura"></option>
+                            <option value="Galicia"></option>
+                            <option value="La Rioja"></option>
+                            <option value="Madrid"></option>
+                            <option value="Murcia"></option>
+                            <option value="Navarra"></option>
+                            <option value="País Vasco"></option>
+                            <option value="Valencia"></option>
+                        </datalist>
+                    </div>
+                    <div>
+                        <label for="ubi_provincia" class="label-sub">Provincia</label>
+                        <input type="text" id="ubi_provincia" name="ubi_provincia" placeholder="Ej: Granada">
+                    </div>
+                    <div>
+                        <label for="ubi_municipio" class="label-sub">Municipio / Ciudad</label>
+                        <input type="text" id="ubi_municipio" name="ubi_municipio" placeholder="Ej: Granada">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Información de Contacto:</label>
+                <div id="contactos-container">
+                    <div class="row contacto-item">
+                        <select name="tipo_contacto[]" style="flex: 0.3;" required>
+                            <option value="x">X (Twitter)</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="otro">Otro...</option>
+                        </select>
+                        <input type="text" name="otro_tipo_contacto[]" style="flex: 0.2; display: none;"
+                            placeholder="Nombre red/medio">
+                        <input type="text" name="valor_contacto[]" style="flex: 0.4;" required
+                            placeholder="Valor/Enlace">
+                        <button type="button" class="btn-eliminar-contacto" style="flex: 0.1;">X</button>
+                    </div>
+                </div>
+                <button type="button" id="btn-add-contacto">+ Añadir Contacto</button>
+            </div>
+
+            <div class="form-group">
+                <label for="cartera_servicios">Cartera de servicios:</label>
+                <textarea id="cartera_servicios" name="cartera_servicios" rows="5" required></textarea>
+            </div>
+
+            <div class="form-group" id="seccion-videos-youtube">
+                <label>Galería Multimedia — Vídeos de YouTube (Opcional):</label>
+                <p style="font-size:0.85rem; color:#888; margin-bottom:0.75rem; line-height:1.5;">
+                    Añade vídeos de YouTube pegando su URL o el ID del vídeo. Se mostrarán como galería interactiva en
+                    la ficha de la asociación.
+                </p>
+                <div id="videos-container"></div>
+                <button type="button" id="btn-add-video"
+                    style="margin-top:0.75rem; width:auto; padding:0.6rem 1.5rem; font-size:0.88rem; background:transparent; border:2px solid var(--color-primario); color:var(--color-primario); border-radius:var(--radio-botones); cursor:pointer; transition:var(--transicion);">
+                    + Añadir Vídeo de YouTube
+                </button>
+            </div>
+
+            <button type="submit">Guardar Registro</button>
+        </form>
+    </main>
+
+    <!-- Sección de administración para solicitudes de inclusión -->
+    <section class="seccion-admin-tarjeta" id="contenedor-solicitudes">
+        <div class="admin-header-flex">
+            <div>
+                <h2 style="margin-bottom:0.4rem;">Solicitudes de Inclusión</h2>
+                <p style="color: var(--color-texto); font-size:0.92rem;">Asociaciones que han solicitado aparecer en el directorio a través del formulario público.</p>
+            </div>
+            <div class="admin-actions-flex">
+                <span id="badge-solicitudes-pendientes" class="badge-pendientes" style="display:none;"></span>
+                <button id="btn-recargar-solicitudes" style="width:auto; padding:0.6rem 1.4rem; font-size:0.88rem; background:transparent; border:2px solid var(--color-primario); color:var(--color-primario); border-radius:var(--radio-botones);">↺ Actualizar</button>
+            </div>
+        </div>
+
+        <!-- Filtro de estado -->
+        <div class="estado-filtros-flex">
+            <button class="filtro-estado-btn activo" data-estado="">Todas</button>
+            <button class="filtro-estado-btn" data-estado="pendiente">Pendientes</button>
+            <button class="filtro-estado-btn" data-estado="revisada">Revisadas</button>
+            <button class="filtro-estado-btn" data-estado="aprobada">Aprobadas</button>
+            <button class="filtro-estado-btn" data-estado="rechazada">Rechazadas</button>
+        </div>
+
+        <div id="lista-solicitudes">
+            <!-- Cargado dinámicamente mediante JavaScript -->
+            <p style="color:#888; text-align:center; padding:2rem 0;">Cargando solicitudes...</p>
+        </div>
+    </section>
+
+    <!-- Sección de administración para la gestión de fondo global -->
+    <section class="seccion-admin-tarjeta" id="contenedor-gestion-fondo">
+        <h2>Gestión del Fondo del Sitio Web</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--color-texto);">
+            Selecciona una imagen de la galería para establecerla como fondo de todas las páginas del portal.
+            Al hacer clic en una miniatura, verás una vista previa inmediata. Haz clic en "Guardar Imagen de Fondo" para
+            aplicar el cambio permanentemente.
+        </p>
+
+        <div id="galeria-fondos" class="galeria-grid-fondos">
+            <!-- Cargado dinámicamente mediante javascript -->
+        </div>
+
+        <div class="flex-end-container">
+            <button id="btn-guardar-fondo" style="width: auto; padding: 0.9rem 2.5rem;">Guardar Imagen de Fondo</button>
+        </div>
+    </section>
+
+    <!-- Sección de administración para la importación masiva -->
+    <section class="seccion-admin-tarjeta" id="contenedor-importacion-masiva">
+        <h2>Importación y Exportación Masiva</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--color-texto);">
+            Puedes registrar múltiples asociaciones médicas a la vez cargando un archivo en formato <strong>CSV</strong> o <strong>ODS</strong>.
+            También puedes descargar una copia de seguridad (Backup) de los datos.
+        </p>
+
+        <div class="import-export-box">
+            <div class="import-export-col">
+                <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--color-titulos);">Copia de Seguridad</h3>
+                <p style="font-size: 0.85rem; color: #888; margin-bottom: 1rem;">Exporta el catálogo completo a tu equipo.</p>
+                <div class="btn-flex-gap">
+                    <button id="btn-exportar-csv" style="width: auto; padding: 0.6rem 1.5rem; font-size: 0.9rem;">⬇ Exportar CSV</button>
+                    <button id="btn-exportar-ods" style="width: auto; padding: 0.6rem 1.5rem; font-size: 0.9rem;">⬇ Exportar ODS</button>
+                </div>
+            </div>
+            <div class="import-export-col">
+                <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--color-titulos);">Plantilla Importación</h3>
+                <p style="font-size: 0.85rem; color: #888; margin-bottom: 1rem;">Plantilla base para rellenar tus datos.</p>
+                <button id="btn-descargar-plantilla" style="width: auto; background-color: transparent; border: 2px solid var(--color-primario); color: var(--color-primario); padding: 0.6rem 1.5rem; border-radius: var(--radio-botones); font-size: 0.9rem;">Descargar Plantilla CSV</button>
+            </div>
+        </div>
+        <div class="import-options-box">
+            <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 1rem; color: var(--color-titulos);">Opciones de Importación</h3>
+            
+            <div class="flex-column-gap">
+                <div class="flex-wrap-gap-large">
+                    <label class="flex-label-checkbox">
+                        <input type="radio" name="modo_importacion" value="añadir" checked>
+                        <span><strong>Modo Añadir:</strong> Inserta nuevas asociaciones y omite duplicados.</span>
+                    </label>
+                    <label class="flex-label-checkbox">
+                        <input type="radio" name="modo_importacion" value="actualizar">
+                        <span><strong>Modo Actualizar:</strong> Si ya existe, actualiza sus datos; si no, la añade.</span>
+                    </label>
+                    <label class="flex-label-checkbox" style="color: var(--color-peligro);">
+                        <input type="radio" name="modo_importacion" value="restaurar">
+                        <span><strong>Restaurar Copia:</strong> Reemplaza TODA la base de datos con el archivo.</span>
+                    </label>
+                </div>
+
+                <div class="border-top-box">
+                    <label class="flex-label-checkbox">
+                        <input type="checkbox" id="chk_descargar_logos">
+                        <span style="font-size: 0.95rem;"><strong>Descargar Logos Automáticamente:</strong> El servidor intentará descargar las imágenes de las URLs (columna Logo_URL) y guardarlas en el almacenamiento local. <em>(Esto puede hacer que la importación tarde un poco más)</em>.</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="drag-drop-area" class="zona-drag-drop">
+            <svg style="width:48px;height:48px;" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <p><strong>Arrastra y suelta tu archivo CSV o ODS aquí</strong></p>
+            <p>o si lo prefieres, <span class="destacado">selecciona un archivo desde tu equipo</span></p>
+            <input type="file" id="input-archivo-csv" accept=".csv,.ods" style="display: none;">
+        </div>
+
+        <div id="resultado-importacion" class="contenedor-resultado-importacion"></div>
+    </section>
+
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-seccion">
+                <img src="img/HORIZONTAL BLANCO transparente (1).png" alt="Logo HUSC" class="logo-footer">
+                <p><strong>Hospital Universitario Clínico San Cecilio</strong><br>
+                    Av. de la Investigación, s/n<br>
+                    18016 Granada, Andalucía</p>
+            </div>
+            <div class="footer-seccion">
+                <h4>Enlaces de Interés</h4>
+                <ul>
+                    <li><a href="#">Guía Corporativa</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Accesibilidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-seccion">
+                <h4>Contacto del Directorio</h4>
+                <p>Teléfono: 958 224 874<br> Email: info@husc.es</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hospital Universitario Clínico San Cecilio. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/Administracion/auth.js"></script>
+    <script src="js/Administracion/crearEntrada.js?v=1"></script>
+</body>
+
+</html>
