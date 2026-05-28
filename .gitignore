@@ -5,3 +5,7 @@ cert.pem
 key.pem
 .vscode/
 error_logos.log
+
+# Imágenes y recursos dinámicos cargados/descargados por la app
+html/img/logos/
+html/img/fondos/

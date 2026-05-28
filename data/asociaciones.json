@@ -3,7 +3,7 @@
         "id": 1779692129257,
         "nombre_asociacion": "Asociación Española Contra el Parkinson",
         "siglas": "AECP",
-        "logo": "/html/img/logos/2b61c34f9b36496bbbf285f77ece6eda.webp",
+        "logo": "/html/img/logos/3e49962853924264a70a5ea8c6793d2e.jpg",
         "descripcion": "aaaaaaaaaaaaaaaaaaaa",
         "categoria": "cat_1779692128930",
         "etiquetas": [
@@ -22,17 +22,17 @@
             "https://www.youtube.com/watch?v=WDFKORgEQGo"
         ],
         "ubicacion": {
-            "pais": "España",
-            "comunidad": "Andalucía",
-            "provincia": "Granada",
-            "municipio": "Granada"
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
         }
     },
     {
         "id": 1779701502812,
         "nombre_asociacion": "Asociación Española Contra el Cáncer",
         "siglas": "AECC",
-        "logo": "https://imgs.search.brave.com/pT82bDtsZpSEtDlZDpmfG6ZrPceEtlIUQCGMM4R9CDM/rs:fit:860:0:0:0/g:ce/aHR0cDovL3d3dy50/ZW1wb2JveC5lcy93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8w/MS9BRUNDLTMwMHg5/NC5wbmc",
+        "logo": "/html/img/logos/82edc5fd7af5486fa74e0d2b3b5fc54b.jpg",
         "descripcion": "Ayuda y apoyo a enfermos de cáncer",
         "categoria": "cat_1779701502810_2",
         "etiquetas": [
@@ -55,19 +55,21 @@
             }
         ],
         "cartera_servicios": "Apoyo psicológico y social a enfermos y familiares",
-        "videos": [],
+        "videos": [
+            "https://www.youtube.com/watch?v=Ejemplo1"
+        ],
         "ubicacion": {
-            "pais": "",
-            "comunidad": "",
-            "provincia": "",
-            "municipio": ""
+            "pais": "España",
+            "comunidad": "Andalucía",
+            "provincia": "Granada",
+            "municipio": "Granada"
         }
     },
     {
         "id": "aso_c9a7ad8d",
         "nombre_asociacion": "Médicos Sin Fronteras",
         "siglas": "MSF",
-        "logo": "https://imgs.search.brave.com/rlvHSQV2pVdZgBx1bNebcTYecb0wDZAb8y5by4mFE7k/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly92ZWN0/b3JzZWVrLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMy8w/OS9NZWRpY29zLVNp/bi1Gcm9udGVyYXMt/TG9nby1WZWN0b3Iu/c3ZnLS5wbmc",
+        "logo": "/html/img/logos/7997bf26d31d45aca3d80402016575f2.jpg",
         "descripcion": "Atención médica humanitaria en conflictos.",
         "categoria": "cat_1779794517361_2",
         "etiquetas": [
@@ -82,6 +84,484 @@
         ],
         "cartera_servicios": "Cirugía, atención primaria, vacunación",
         "videos": [],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_440c6d4d",
+        "nombre_asociacion": "Arte y Cultura para Todos",
+        "siglas": "ACT",
+        "logo": "/html/img/logos/504ccec8d42f4e67808cd6098993dbb3.jpg",
+        "descripcion": "Acceso a la cultura para barrios marginados.",
+        "categoria": "cat_1779883815679_2",
+        "etiquetas": [
+            "eti_1779883815679_7",
+            "eti_1779883815679_8"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "info@act.es"
+            },
+            {
+                "tipo": "web",
+                "valor": "https://act.es"
+            }
+        ],
+        "cartera_servicios": "Clases de pintura, teatro, música",
+        "videos": [
+            "https://www.youtube.com/watch?v=vXocqzxey-E"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_8a118009",
+        "nombre_asociacion": "Asociación Granadina de Fibromialgia",
+        "siglas": "AGAF",
+        "logo": "/html/img/logos/62663042cd5c489e8a6f2e6d5a814a2e.jpg",
+        "descripcion": "Apoyo a personas con fibromialgia en Granada",
+        "categoria": "cat_1779701502810_2",
+        "etiquetas": [
+            "eti_1779883817643_9",
+            "eti_1779701502810_5"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "agaf@gmail.com"
+            },
+            {
+                "tipo": "telefono",
+                "valor": "958123456"
+            }
+        ],
+        "cartera_servicios": "Talleres de fisioterapia y apoyo emocional",
+        "videos": [],
+        "ubicacion": {
+            "pais": "España",
+            "comunidad": "Andalucía",
+            "provincia": "Granada",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_29df55af",
+        "nombre_asociacion": "Asociación de Reforestación Urbana",
+        "siglas": "ARU",
+        "logo": "/html/img/logos/6cc0acc9436841179a789aed5f381338.jpg",
+        "descripcion": "Promoción de zonas verdes en ciudades.",
+        "categoria": "cat_1779883817862_6",
+        "etiquetas": [
+            "eti_1779883817862_10",
+            "eti_1779883817862_11"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "contacto@aru.es"
+            },
+            {
+                "tipo": "web",
+                "valor": "https://aru.es"
+            }
+        ],
+        "cartera_servicios": "Plantación de árboles, talleres ecológicos",
+        "videos": [
+            "https://www.youtube.com/watch?v=p1r7KkbUBkI"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_753c8dbc",
+        "nombre_asociacion": "Banco de Alimentos Solidario",
+        "siglas": "BAS",
+        "logo": "/html/img/logos/4dad9685f0db4e9685e96f7eda52aa4d.jpg",
+        "descripcion": "Distribución de alimentos a personas vulnerables.",
+        "categoria": "cat_1779883818137_7",
+        "etiquetas": [
+            "eti_1779883818137_12",
+            "eti_1779883818137_13"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "info@bas.org"
+            },
+            {
+                "tipo": "web",
+                "valor": "https://bas.org"
+            }
+        ],
+        "cartera_servicios": "Recogida de alimentos, comedores sociales",
+        "videos": [
+            "https://www.youtube.com/watch?v=DD0vP3-v2aU"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_a5bdddd0",
+        "nombre_asociacion": "Centro de Integración Tecnológica",
+        "siglas": "CIT",
+        "logo": "/html/img/logos/fb0c2ccf7d794c78b6673685c48fda32.jpg",
+        "descripcion": "Alfabetización digital para adultos.",
+        "categoria": "cat_1779883818338_8",
+        "etiquetas": [
+            "eti_1779883818338_14",
+            "eti_1779883818338_15"
+        ],
+        "contactos": [
+            {
+                "tipo": "web",
+                "valor": "https://cit.es"
+            }
+        ],
+        "cartera_servicios": "Cursos de informática, préstamo de equipos",
+        "videos": [
+            "https://www.youtube.com/watch?v=bKVISocC_H4"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_1c4398b7",
+        "nombre_asociacion": "Cuidadores de Personas Dependientes",
+        "siglas": "CPD",
+        "logo": "/html/img/logos/51a58b089b244545bdf8e1c7b87bd49b.jpg",
+        "descripcion": "Asesoramiento y respiro para cuidadores familiares.",
+        "categoria": "cat_1779883818137_7",
+        "etiquetas": [
+            "eti_1779883818563_16",
+            "eti_1779883818563_17"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "info@cpd.es"
+            },
+            {
+                "tipo": "web",
+                "valor": "https://cpd.es"
+            }
+        ],
+        "cartera_servicios": "Apoyo legal, talleres de cuidado, grupos de ayuda",
+        "videos": [
+            "https://www.youtube.com/watch?v=eDx7PHVtmME"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_54281944",
+        "nombre_asociacion": "Defensa del Litoral",
+        "siglas": "DDL",
+        "logo": "/html/img/logos/8ebc68b6ec674960b09765f3e726c954.jpg",
+        "descripcion": "Limpieza y protección de las costas.",
+        "categoria": "cat_1779883817862_6",
+        "etiquetas": [
+            "eti_1779883818783_18",
+            "eti_1779883817862_10"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "costas@ddl.org"
+            }
+        ],
+        "cartera_servicios": "Recogida de plásticos, concienciación",
+        "videos": [
+            "https://www.youtube.com/watch?v=p1r7KkbUBkI"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_18bbef9e",
+        "nombre_asociacion": "Deportes para la Integración",
+        "siglas": "DPI",
+        "logo": "/html/img/logos/d0566fd43cae4116a4342b4f8a70386e.jpg",
+        "descripcion": "Equipos deportivos mixtos para personas en riesgo de exclusión.",
+        "categoria": "cat_1779883819005_11",
+        "etiquetas": [
+            "eti_1779883819005_19",
+            "eti_1779883819005_20"
+        ],
+        "contactos": [
+            {
+                "tipo": "web",
+                "valor": "https://dpi.es"
+            }
+        ],
+        "cartera_servicios": "Ligas de fútbol, baloncesto, material deportivo",
+        "videos": [
+            "https://www.youtube.com/watch?v=ExnxIR_Hmgg"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_bbf5c35d",
+        "nombre_asociacion": "Educación Inclusiva Ya",
+        "siglas": "EIY",
+        "logo": "/html/img/logos/31ed10920e5e4158bcbebd179d19d3da.jpg",
+        "descripcion": "Apoyo educativo a niños con necesidades especiales.",
+        "categoria": "cat_1779883819209_12",
+        "etiquetas": [
+            "eti_1779883819209_21",
+            "eti_1779883818338_15"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "contacto@eiy.org"
+            }
+        ],
+        "cartera_servicios": "Apoyo escolar, logopedia, fisioterapia",
+        "videos": [
+            "https://www.youtube.com/watch?v=ExnxIR_Hmgg"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_9d0063fd",
+        "nombre_asociacion": "Fundación Salud Mental Ahora",
+        "siglas": "FSMA",
+        "logo": "/html/img/logos/107a6f5e512246b0a7d150d70ef4b60a.jpg",
+        "descripcion": "Prevención y tratamiento de problemas de salud mental.",
+        "categoria": "cat_1779883819423_13",
+        "etiquetas": [
+            "eti_1779883819423_22",
+            "eti_1779883819423_23"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "apoyo@fsma.org"
+            }
+        ],
+        "cartera_servicios": "Terapia psicológica, grupos de apoyo",
+        "videos": [
+            "https://www.youtube.com/watch?v=bKVISocC_H4"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_97ab43f4",
+        "nombre_asociacion": "Iniciativa de Reciclaje Vecinal",
+        "siglas": "IRV",
+        "logo": "/html/img/logos/2ea608eaa3e743b3914143b426a4f889.jpg",
+        "descripcion": "Gestión de residuos y compostaje comunitario.",
+        "categoria": "cat_1779883817862_6",
+        "etiquetas": [
+            "eti_1779883819657_24",
+            "eti_1779883819657_25"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "vecinos@irv.org"
+            }
+        ],
+        "cartera_servicios": "Talleres de reciclaje, puntos limpios móviles",
+        "videos": [
+            "https://www.youtube.com/watch?v=DD0vP3-v2aU"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_d226783b",
+        "nombre_asociacion": "Jóvenes por la Ciencia",
+        "siglas": "JPC",
+        "logo": "/html/img/logos/f1ff8968367b468682043731aa46ff00.jpg",
+        "descripcion": "Fomento de vocaciones científicas en adolescentes.",
+        "categoria": "cat_1779883819209_12",
+        "etiquetas": [
+            "eti_1779883819897_26",
+            "eti_1779883819209_21"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "hola@jpc.es"
+            }
+        ],
+        "cartera_servicios": "Talleres STEM, ferias de ciencias",
+        "videos": [
+            "https://www.youtube.com/watch?v=VWHtbakSFZk"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_48521393",
+        "nombre_asociacion": "Movilidad Sostenible",
+        "siglas": "MMS",
+        "logo": "/html/img/logos/5497e313634240f0a63f61ce4becf1b4.jpg",
+        "descripcion": "Promoción del uso de bicicleta y transporte público.",
+        "categoria": "cat_1779883820097_16",
+        "etiquetas": [
+            "eti_1779883820097_27",
+            "eti_1779883820097_28"
+        ],
+        "contactos": [
+            {
+                "tipo": "web",
+                "valor": "https://mms.es"
+            },
+            {
+                "tipo": "facebook",
+                "valor": "https://facebook.com/mms"
+            }
+        ],
+        "cartera_servicios": "Rutas ciclistas, talleres de reparación",
+        "videos": [
+            "https://www.youtube.com/watch?v=N20Yj9fxouc"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_398cec0f",
+        "nombre_asociacion": "Protección del Patrimonio Histórico",
+        "siglas": "PPH",
+        "logo": "/html/img/logos/6ad7eb00f6eb4c0fab9310353294d17a.jpg",
+        "descripcion": "Restauración y catalogación de edificios antiguos.",
+        "categoria": "cat_1779883815679_2",
+        "etiquetas": [
+            "eti_1779883820508_29",
+            "eti_1779883820508_30"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "historia@pph.es"
+            },
+            {
+                "tipo": "web",
+                "valor": "https://pph.es"
+            }
+        ],
+        "cartera_servicios": "Rutas guiadas, restauración de fachadas",
+        "videos": [
+            "https://www.youtube.com/watch?v=vXocqzxey-E"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_52124cab",
+        "nombre_asociacion": "Red de Apoyo a Mayores",
+        "siglas": "RAM",
+        "logo": "/html/img/logos/b7e63f9075b94b52bd754b00e1c54f6e.jpg",
+        "descripcion": "Acompañamiento a personas de la tercera edad.",
+        "categoria": "cat_1779883820711_19",
+        "etiquetas": [
+            "eti_1779883820711_31",
+            "eti_1779883820711_32"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "ayuda@ram.org"
+            },
+            {
+                "tipo": "tel",
+                "valor": "900112233"
+            }
+        ],
+        "cartera_servicios": "Acompañamiento telefónico, actividades de ocio",
+        "videos": [
+            "https://www.youtube.com/watch?v=uqKokiwU7No"
+        ],
+        "ubicacion": {
+            "pais": "",
+            "comunidad": "",
+            "provincia": "",
+            "municipio": ""
+        }
+    },
+    {
+        "id": "aso_02e8ecb5",
+        "nombre_asociacion": "Red de Huertos Comunitarios",
+        "siglas": "RHC",
+        "logo": "/html/img/logos/66be681c2bf2468c86666fd65f75bd36.jpg",
+        "descripcion": "Gestión de terrenos urbanos para cultivo.",
+        "categoria": "cat_1779883817862_6",
+        "etiquetas": [
+            "eti_1779883820922_33",
+            "eti_1779883817862_11"
+        ],
+        "contactos": [
+            {
+                "tipo": "email",
+                "valor": "huertos@rhc.org"
+            }
+        ],
+        "cartera_servicios": "Cesión de parcelas, formación agrícola",
+        "videos": [
+            "https://www.youtube.com/watch?v=p1r7KkbUBkI"
+        ],
         "ubicacion": {
             "pais": "",
             "comunidad": "",
