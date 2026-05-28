@@ -1,15 +1,78 @@
+# ==========================================
+# PLANTILLA DE GITIGNORE PROFESIONAL
+# Proyecto: Catálogo de Asociaciones
+# ==========================================
+
+# --- 1. ENTORNOS VIRTUALES Y PYTHON ---
+# Entornos virtuales locales (dependencias instaladas)
 venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Caché de Python (Byte-compiled / optimized / DLL files)
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# --- 2. SISTEMAS DE ARCHIVOS E IDEs ---
+# Archivos específicos de sistemas operativos
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Configuraciones de editores e IDEs (Visual Studio Code, PyCharm, etc.)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# --- 3. SEGURIDAD, CREDENCIALES Y SECRETOS ---
+# Certificados SSL locales
 cert.pem
 key.pem
-.vscode/
+*.crt
+*.key
+*.csr
+
+# Variables de entorno y secretos (¡NUNCA subir a GitHub!)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.passwd
+*.token
+
+# --- 4. BASE DE DATOS Y LOGS LOCALES ---
+# Logs de la aplicación y del servidor
+*.log
 error_logos.log
 
-# Base de datos y configuraciones locales
+# Base de datos local (JSONs de asociaciones, categorías, etc.)
+# Se excluyen para evitar sobrescribir datos de producción o conflictos en GitHub
 data/
 
-# Imágenes y recursos dinámicos cargados/descargados por la app
-html/img/logos/
-html/img/fondos/
-
+# --- 5. RECURSOS DINÁMICOS Y USUARIOS ---
+# Logos y fondos de pantalla subidos de forma dinámica en ejecución
+# (Ignoramos nuevos archivos pero preservamos las carpetas si tuvieran .gitkeep)
+html/img/logos/*
+!html/img/logos/.gitkeep
+html/img/fondos/*
+!html/img/fondos/.gitkeep
