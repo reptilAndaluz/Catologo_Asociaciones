@@ -6,6 +6,10 @@ key.pem
 .vscode/
 error_logos.log
 
+# Base de datos y configuraciones locales
+data/
+
 # Imágenes y recursos dinámicos cargados/descargados por la app
 html/img/logos/
 html/img/fondos/
+
