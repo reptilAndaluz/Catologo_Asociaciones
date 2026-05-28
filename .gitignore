@@ -67,7 +67,9 @@ error_logos.log
 
 # Base de datos local (JSONs de asociaciones, categorías, etc.)
 # Se excluyen para evitar sobrescribir datos de producción o conflictos en GitHub
-data/
+# Se permite subir el .gitkeep para mantener la carpeta vacía en GitHub
+data/*
+!data/.gitkeep
 
 # --- 5. RECURSOS DINÁMICOS Y USUARIOS ---
 # Logos y fondos de pantalla subidos de forma dinámica en ejecución
