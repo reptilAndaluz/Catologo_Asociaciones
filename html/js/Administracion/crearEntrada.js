@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CATEGORÍA INLINE ---
+    // --- CATEGORÍA INLINE Y BORRADO ---
     if (selectCategoria) {
         selectCategoria.addEventListener('change', () => {
             if (selectCategoria.value === 'nueva_categoria') {
@@ -405,6 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Seleccionar Categoría
                 selectCategoria.value = asociacionEditar.categoria;
+                selectCategoria.dispatchEvent(new Event('change'));
 
                 // Cargar vídeos de YouTube existentes
                 if (videosContainer && asociacionEditar.videos && asociacionEditar.videos.length > 0) {
@@ -440,9 +441,103 @@ document.addEventListener('DOMContentLoaded', () => {
                 contactosContainer.appendChild(crearFilaContacto());
             }
 
+            // Cargar y mostrar la cuadrícula de gestión de categorías
+            await renderGestionCategorias();
+
         } catch (error) {
             console.error("Error al cargar dependencias del formulario:", error);
             alert("No se pudieron cargar las categorías o etiquetas del servidor.");
+        }
+    }
+
+    // --- GESTIÓN DE CATEGORÍAS EN LISTADO ERGONÓMICO ---
+    async function renderGestionCategorias() {
+        const listDiv = document.getElementById('lista-categorias-gestion');
+        if (!listDiv) return;
+
+        try {
+            // Obtener asociaciones y categorías
+            const [asocs, catList] = await Promise.all([
+                apiRequest('/api/asociaciones'),
+                apiRequest('/api/categorias')
+            ]);
+
+            categorias = catList || [];
+
+            // Re-poblar el dropdown de categorías en el formulario para sincronizar cambios
+            while (selectCategoria.options.length > 2) {
+                selectCategoria.remove(1);
+            }
+            categorias.forEach(cat => {
+                const opt = document.createElement('option');
+                opt.value = cat.id;
+                opt.textContent = cat.nombre;
+                selectCategoria.insertBefore(opt, selectCategoria.lastElementChild);
+            });
+
+            listDiv.innerHTML = '';
+
+            if (categorias.length === 0) {
+                listDiv.innerHTML = '<p style="color:#888; text-align:center; padding:1.5rem 0; grid-column:1/-1;">No hay categorías registradas.</p>';
+                return;
+            }
+
+            categorias.forEach(cat => {
+                const count = asocs ? asocs.filter(a => String(a.categoria) === String(cat.id)).length : 0;
+
+                const card = document.createElement('div');
+                card.className = 'tarjeta-categoria-gestion';
+
+                const info = document.createElement('div');
+                info.className = 'categoria-info';
+
+                const nombreSpan = document.createElement('span');
+                nombreSpan.className = 'categoria-nombre';
+                nombreSpan.textContent = cat.nombre;
+
+                const contadorSpan = document.createElement('span');
+                contadorSpan.className = 'categoria-contador';
+                contadorSpan.textContent = count === 1 ? '1 asociación vinculada' : `${count} asociaciones vinculadas`;
+
+                info.appendChild(nombreSpan);
+                info.appendChild(contadorSpan);
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.type = 'button';
+                deleteBtn.className = 'btn-eliminar-categoria-list';
+                deleteBtn.innerHTML = '✕';
+
+                if (count > 0) {
+                    deleteBtn.disabled = true;
+                    deleteBtn.title = `No se puede eliminar la categoría porque está asignada a ${count} asociación/es.`;
+                } else {
+                    deleteBtn.title = 'Eliminar categoría permanentemente';
+                    deleteBtn.addEventListener('click', async () => {
+                        if (confirm(`¿Estás seguro de que deseas eliminar la categoría "${cat.nombre}"?`)) {
+                            try {
+                                const response = await apiRequest(`/api/categorias/${cat.id}`, 'DELETE');
+                                if (response && response.status === 'success') {
+                                    alert(`Categoría "${cat.nombre}" eliminada correctamente.`);
+                                    // Volver a renderizar la lista y actualizar el selector
+                                    await renderGestionCategorias();
+                                } else {
+                                    alert('No se pudo eliminar la categoría.');
+                                }
+                            } catch (err) {
+                                console.error('Error al eliminar categoría:', err);
+                                alert(`Error al eliminar categoría: ${err.message}`);
+                            }
+                        }
+                    });
+                }
+
+                card.appendChild(info);
+                card.appendChild(deleteBtn);
+                listDiv.appendChild(card);
+            });
+        } catch (error) {
+            console.error('Error al renderizar categorías:', error);
+            listDiv.innerHTML = '<p style="color:var(--color-peligro); text-align:center; padding:1.5rem 0; grid-column:1/-1;">Error al cargar las categorías.</p>';
         }
     }
 

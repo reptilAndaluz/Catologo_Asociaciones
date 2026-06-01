@@ -104,11 +104,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderizarDetalles() {
         const asoc = asociacionSeleccionada;
 
-        // Cargar logo con fallback
-        detalleLogo.src = safeUrl(asoc.logo) || 'img/Sanidad, presidencia y emergencias (5) (1).jpeg';
+        // Cargar logo con fallback de imagen predeterminada premium
+        const defaultLogoPath = 'img/logos/default_asoc_logo.png';
+        detalleLogo.src = (asoc.logo && asoc.logo.trim() !== '') ? safeUrl(asoc.logo) : defaultLogoPath;
         detalleLogo.alt = `Logo de ${asoc.nombre_asociacion}`;
+        detalleLogo.style.display = 'block';
         detalleLogo.onerror = () => {
-            detalleLogo.src = 'img/Sanidad, presidencia y emergencias (5) (1).jpeg';
+            detalleLogo.src = defaultLogoPath;
         };
 
         // Textos directos seguros

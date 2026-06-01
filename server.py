@@ -25,6 +25,7 @@ except ImportError:
     save_data = None
 
 # Configuración de Seguridad
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SECRET_KEY = os.environ.get("SECRET_KEY", "cambia_esto_por_una_clave_larga_y_secreta_en_produccion")
 ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "1234")
@@ -112,7 +113,7 @@ class SolicitudAsociacion(BaseModel):
 def get_resource_file(recurso: str) -> str:
     if recurso not in ['asociaciones', 'categorias', 'etiquetas']:
         raise HTTPException(status_code=404, detail="Recurso no encontrado")
-    return f"data/{recurso}.json"
+    return os.path.join(BASE_DIR, "data", f"{recurso}.json")
 
 def read_data(recurso: str) -> list:
     filename = get_resource_file(recurso)
@@ -126,7 +127,7 @@ def read_data(recurso: str) -> list:
 
 def write_data(recurso: str, data: list):
     filename = get_resource_file(recurso)
-    os.makedirs('data', exist_ok=True)
+    os.makedirs(os.path.join(BASE_DIR, 'data'), exist_ok=True)
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
@@ -166,7 +167,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 
 @app.get("/api/config")
 async def leer_config():
-    filename = "data/config.json"
+    filename = os.path.join(BASE_DIR, "data", "config.json")
     if os.path.exists(filename):
         try:
             with open(filename, 'r', encoding='utf-8') as f:
@@ -177,15 +178,15 @@ async def leer_config():
 
 @app.post("/api/config")
 async def guardar_config(payload: ConfigWeb, token: dict = Depends(verify_token)):
-    filename = "data/config.json"
-    os.makedirs('data', exist_ok=True)
+    filename = os.path.join(BASE_DIR, "data", "config.json")
+    os.makedirs(os.path.join(BASE_DIR, 'data'), exist_ok=True)
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(payload.dict(), f, ensure_ascii=False, indent=4)
     return {"status": "success"}
 
 # --- ENDPOINTS DE SOLICITUDES DE INCLUSIÓN (PÚBLICO: POST / PRIVADO: GET, DELETE) ---
 
-SOLICITUDES_FILE = "data/solicitudes.json"
+SOLICITUDES_FILE = os.path.join(BASE_DIR, "data", "solicitudes.json")
 
 def read_solicitudes() -> list:
     if os.path.exists(SOLICITUDES_FILE):
@@ -197,7 +198,7 @@ def read_solicitudes() -> list:
     return []
 
 def write_solicitudes(data: list):
-    os.makedirs('data', exist_ok=True)
+    os.makedirs(os.path.join(BASE_DIR, 'data'), exist_ok=True)
     with open(SOLICITUDES_FILE, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
@@ -244,10 +245,10 @@ async def eliminar_solicitud(solicitud_id: str, token: dict = Depends(verify_tok
 
 # Extensiones de imagen permitidas para logos y fondos
 ALLOWED_LOGO_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'}
-LOGO_UPLOAD_DIR = os.path.join('html', 'img', 'logos')
+LOGO_UPLOAD_DIR = os.path.join(BASE_DIR, 'html', 'img', 'logos')
 
 # Configuración y migración de fondos
-FONDO_UPLOAD_DIR = os.path.join('html', 'img', 'fondos')
+FONDO_UPLOAD_DIR = os.path.join(BASE_DIR, 'html', 'img', 'fondos')
 os.makedirs(FONDO_UPLOAD_DIR, exist_ok=True)
 _fondos_migrar = [
     "Sanidad, presidencia y emergencias (2) (1).jpeg",
@@ -257,7 +258,7 @@ _fondos_migrar = [
     "fondo2.png"
 ]
 for _fname in _fondos_migrar:
-    _src = os.path.join('html', 'img', _fname)
+    _src = os.path.join(BASE_DIR, 'html', 'img', _fname)
     _dst = os.path.join(FONDO_UPLOAD_DIR, _fname)
     if os.path.exists(_src) and not os.path.exists(_dst):
         try:
@@ -830,11 +831,22 @@ async def eliminar_registro(recurso: str, id: str, token: dict = Depends(verify_
 
 # --- SERVIDOR DE ARCHIVOS ESTÁTICOS ---
 
-app.mount("/html", StaticFiles(directory="html"), name="html")
+HTML_DIR = os.path.join(BASE_DIR, "html")
+app.mount("/html", StaticFiles(directory=HTML_DIR), name="html")
 
 @app.get("/")
 async def root():
     return RedirectResponse(url="/html/index.html")
 
-# Para ejecutar sin SSL: uvicorn server:app --reload --port 8080
-# Para ejecutar con SSL (HTTPS): uvicorn server:app --reload --port 8080 --ssl-keyfile=key.pem --ssl-certfile=cert.pem
+if __name__ == "__main__":
+    import uvicorn
+    print("\nIniciando el Catálogo de Asociaciones de forma segura...")
+    print("Accede en: https://127.0.0.1:8080\n")
+    uvicorn.run(
+        "server:app",
+        host="127.0.0.1",
+        port=8080,
+        reload=True,
+        ssl_keyfile=os.path.join(BASE_DIR, "key.pem"),
+        ssl_certfile=os.path.join(BASE_DIR, "cert.pem")
+    )

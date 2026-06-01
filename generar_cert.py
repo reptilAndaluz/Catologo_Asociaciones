@@ -43,20 +43,20 @@ if not os.path.exists(cert_file) or not os.path.exists(key_file):
             ))
         with open(cert_file, "wb") as f:
             f.write(cert.public_bytes(serialization.Encoding.PEM))
-        print("✅ Certificados generados correctamente (cert.pem y key.pem).")
+        print("Certificados generados correctamente (cert.pem y key.pem).")
     except ImportError:
-        print("⚠️ El paquete 'cryptography' no está instalado. Intentando usar OpenSSL...")
+        print("El paquete 'cryptography' no está instalado. Intentando usar OpenSSL...")
         try:
             subprocess.run([
                 "openssl", "req", "-x509", "-newkey", "rsa:2048", "-keyout", key_file,
                 "-out", cert_file, "-days", "365", "-nodes", "-subj", "//CN=localhost"
             ], check=True)
-            print("✅ Certificados generados mediante OpenSSL.")
+            print("Certificados generados mediante OpenSSL.")
         except Exception as e:
-            print(f"❌ Error al generar los certificados con OpenSSL. Instala cryptography ('pip install cryptography') o ejecuta OpenSSL manualmente. Error: {e}")
+            print(f"Error al generar los certificados con OpenSSL. Instala cryptography ('pip install cryptography') o ejecuta OpenSSL manualmente. Error: {e}")
             sys.exit(1)
 else:
-    print("✅ Los certificados ya existen.")
+    print("Los certificados ya existen.")
 
 print("\nPara iniciar el servidor con SSL, detén tu proceso actual de uvicorn (Ctrl+C) y ejecuta:")
 print("python -m uvicorn server:app --reload --port 8080 --ssl-keyfile=key.pem --ssl-certfile=cert.pem")

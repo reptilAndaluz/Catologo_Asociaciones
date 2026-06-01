@@ -75,15 +75,13 @@
                     <div id="logo-upload-status" style="display:none; margin-top:0.5rem; font-size:0.85rem;"></div>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="descripcion">Descripción de actividades:</label>
-                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
-            </div>
+
+            <!-- CATEGORÍA / ETIQUETAS -->
             <div class="row">
                 <div class="form-group">
                     <label for="categoria">Categoría:</label>
-                    <div class="flex-inline">
-                        <select id="categoria" name="categoria" class="flex-grow-1" required>
+                    <div class="flex-inline" style="display: flex; gap: 0.5rem; align-items: center;">
+                        <select id="categoria" name="categoria" class="flex-grow-1" required style="flex: 1;">
                             <option value="">Seleccione una categoría...</option>
                             <option value="nueva_categoria">+ Crear nueva categoría...</option>
                         </select>
@@ -99,7 +97,7 @@
                 </div>
             </div>
 
-            <!-- BLOQUE DE UBICACIÓN GEO -->
+            <!-- UBICACIÓN GEOGRÁFICA -->
             <div class="form-group">
                 <label>Ubicación Geográfica (Opcional):</label>
                 <div class="grid-ubicacion">
@@ -150,6 +148,19 @@
                 </div>
             </div>
 
+            <!-- DESCRIPCIÓN -->
+            <div class="form-group">
+                <label for="descripcion">Descripción de actividades:</label>
+                <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+            </div>
+
+            <!-- CARTERA DE SERVICIOS -->
+            <div class="form-group">
+                <label for="cartera_servicios">Cartera de servicios:</label>
+                <textarea id="cartera_servicios" name="cartera_servicios" rows="5" required></textarea>
+            </div>
+
+            <!-- INFORMACIÓN DE CONTACTO -->
             <div class="form-group">
                 <label>Información de Contacto:</label>
                 <div id="contactos-container">
@@ -171,11 +182,7 @@
                 <button type="button" id="btn-add-contacto">+ Añadir Contacto</button>
             </div>
 
-            <div class="form-group">
-                <label for="cartera_servicios">Cartera de servicios:</label>
-                <textarea id="cartera_servicios" name="cartera_servicios" rows="5" required></textarea>
-            </div>
-
+            <!-- YOUTUBE -->
             <div class="form-group" id="seccion-videos-youtube">
                 <label>Galería Multimedia — Vídeos de YouTube (Opcional):</label>
                 <p style="font-size:0.85rem; color:#888; margin-bottom:0.75rem; line-height:1.5;">
@@ -192,6 +199,17 @@
             <button type="submit">Guardar Registro</button>
         </form>
     </main>
+
+    <!-- Sección de administración para la gestión de categorías -->
+    <section class="seccion-admin-tarjeta" id="contenedor-gestion-categorias">
+        <h2>Gestión de Categorías</h2>
+        <p style="margin-bottom: 1.5rem; color: var(--color-texto); font-size: 0.92rem;">
+            Listado completo de las categorías del directorio. Puedes eliminar de forma segura aquellas que no tengan asociaciones activas vinculadas.
+        </p>
+        <div id="lista-categorias-gestion" class="grid-categorias-gestion">
+            <p style="color:#888; text-align:center; padding:2rem 0; grid-column: 1 / -1;">Cargando categorías...</p>
+        </div>
+    </section>
 
     <!-- Sección de administración para solicitudes de inclusión -->
     <section class="seccion-admin-tarjeta" id="contenedor-solicitudes">
@@ -309,16 +327,16 @@
             <div class="footer-seccion">
                 <img src="img/HORIZONTAL BLANCO transparente (1).png" alt="Logo HUSC" class="logo-footer">
                 <p><strong>Hospital Universitario Clínico San Cecilio</strong><br>
-                    Av. de la Investigación, s/n<br>
+                    Avenida del Conocimiento, s/n<br>
                     18016 Granada, Andalucía</p>
             </div>
             <div class="footer-seccion">
                 <h4>Enlaces de Interés</h4>
                 <ul>
-                    <li><a href="#">Guía Corporativa</a></li>
-                    <li><a href="#">Aviso Legal</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                    <li><a href="#">Accesibilidad</a></li>
+                    <li><a href="guia.html">Guía Corporativa</a></li>
+                    <li><a href="aviso.html">Aviso Legal</a></li>
+                    <li><a href="privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="accesibilidad.html">Accesibilidad</a></li>
                 </ul>
             </div>
             <div class="footer-seccion">

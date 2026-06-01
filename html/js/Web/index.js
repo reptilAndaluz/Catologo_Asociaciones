@@ -186,15 +186,24 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'tarjeta';
             card.setAttribute('data-id', asoc.id);
 
+            // Gestión de logo con imagen predeterminada premium
             const img = document.createElement('img');
-            img.src = safeUrl(asoc.logo) || 'img/Sanidad, presidencia y emergencias (5) (1).jpeg';
+            const defaultLogoPath = 'img/logos/default_asoc_logo.png';
+            img.src = (asoc.logo && asoc.logo.trim() !== '') ? safeUrl(asoc.logo) : defaultLogoPath;
             img.alt = `Logo de ${asoc.nombre_asociacion}`;
             img.onerror = () => {
-                img.src = 'img/Sanidad, presidencia y emergencias (5) (1).jpeg';
+                img.src = defaultLogoPath;
             };
+            logoEl = img;
 
             const h3 = document.createElement('h3');
-            h3.textContent = asoc.nombre_asociacion;
+            const MAX_CARACTERES = 55;
+            if (asoc.nombre_asociacion.length > MAX_CARACTERES) {
+                h3.textContent = asoc.nombre_asociacion.substring(0, MAX_CARACTERES) + '...';
+                h3.title = asoc.nombre_asociacion;
+            } else {
+                h3.textContent = asoc.nombre_asociacion;
+            }
 
             const divSiglas = document.createElement('div');
             divSiglas.className = 'insignia-filtro';
@@ -226,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnVer.className = 'btn-ver-detalles-tarjeta';
             btnVer.textContent = 'Ver Detalles';
 
-            card.appendChild(img);
+            card.appendChild(logoEl);
             card.appendChild(h3);
             card.appendChild(divSiglas);
             card.appendChild(tagsDiv);
