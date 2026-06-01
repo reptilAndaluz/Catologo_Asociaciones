@@ -16,6 +16,11 @@ Para el usuario no registrado, se evaluó el renderizado inicial del catálogo. 
 
 Para el usuario administrador, se validó el mecanismo de creación de entradas. Tras rellenar un formulario con todos los datos requeridos y adjuntar una imagen válida, el backend recibe la petición, valida la estructura mediante Pydantic, renombra la imagen con un identificador único, persiste los datos y devuelve un código de éxito que actualiza la interfaz. También se ejecutaron pruebas de manejo de errores, como enviar un formulario omitiendo campos obligatorios; en este caso, FastAPI intercepta la petición inválida, rechaza la escritura y devuelve un error HTTP 422, preservando la integridad del archivo de datos. Por último, se comprobó que las opciones de modificación y borrado operan de forma precisa, actualizando datos descriptivos sin alterar identificadores, o eliminando entidades completas de la base de datos y de la vista en tiempo real.
 
+Adicionalmente, se auditó exhaustivamente el **Módulo de Gestión de Categorías**:
+- **Consistencia de Cuentas:** Se verificó que cada tarjeta reflejase con precisión la cantidad de asociaciones asignadas cruzando los datos devueltos por `/api/asociaciones`.
+- **Integridad Referencial en Borrado:** Al pulsar el botón de eliminación en categorías con vinculaciones activas, se comprobó que el botón estuviera deshabilitado nativamente y que el tooltip visual advirtiera de la imposibilidad de la acción. Para categorías con 0 asociaciones, el borrado se ejecutó correctamente en el servidor mediante `DELETE` tras confirmación.
+- **Sincronización en Caliente:** Al confirmarse la supresión de una categoría vacía, se verificó la desaparición inmediata de su tarjeta y su remoción en el selector dinámico del formulario de entrada de datos sin provocar recargas del navegador.
+
 ---
 
 ## 6.3. Pruebas de Seguridad y Control de Accesos
@@ -33,6 +38,11 @@ Para prevenir la inyección de código (*Cross-Site Scripting*), se insertaron c
 Para garantizar una experiencia de usuario uniforme en múltiples plataformas, se ejecutaron pruebas de renderizado visual.
 
 La adaptabilidad a dispositivos móviles se confirmó redimensionando la ventana del navegador. Las reglas de maquetación fundamentadas en CSS Grid reestructuraron correctamente la cuadrícula principal, pasando de varias columnas a un diseño de columna única en resoluciones correspondientes a teléfonos móviles. El menú de navegación se ocultó adecuadamente, sustituyéndose por elementos desplegables que previenen el desbordamiento horizontal, mientras que los formularios ajustaron su ancho para ocupar la totalidad de la pantalla.
+
+Se realizaron pruebas de robustez visual ante sobrecarga de información:
+- **Prueba de Títulos Extensos:** Se inyectaron nombres de asociaciones de más de 80 caracteres. El script cliente truncó con éxito la denominación a 55 caracteres en la tarjeta pública añadiendo los puntos suspensivos e inyectando el tooltip nativo `title` visible en hover.
+- **Prueba de Saturación de Etiquetas:** Se asignaron más de 12 etiquetas secundarias a un solo registro. Las reglas de maquetación CSS contuvieron las etiquetas en un máximo de dos filas (`max-height: 3.6rem` con envoltura), manteniendo perfectamente alineado el botón de detalles de la tarjeta y el resto de la rejilla.
+- **Páginas Institucionales y Fondo Dinámico:** Se visitaron las nuevas páginas enlazadas del pie de página (`guia.html`, `aviso.html`, `privacidad.html`, `accesibilidad.html`) comprobando que cargaran correctamente el fondo de pantalla personalizado establecido desde el panel de administración HUSC de forma síncrona.
 
 La prueba de compatibilidad cruzada de navegadores consistió en acceder al portal desde las versiones más recientes de Google Chrome, Mozilla Firefox, Microsoft Edge y Safari. Las validaciones arrojaron resultados satisfactorios: las propiedades CSS avanzadas, las transiciones y las tipografías corporativas se renderizaron correctamente y sin discrepancias en todos los motores probados.
 
