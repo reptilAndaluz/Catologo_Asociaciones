@@ -1,22 +1,98 @@
-# 1. INTRODUCCIÓN
+<div align="center" style="margin-top: 120px; margin-bottom: 80px;">
+
+# <a id="portal-web-de-asociaacción"></a>PORTAL WEB DE AsociaAcción
+## <a id="documento-de-especificación-y-documentación-técnica"></a>Documento de Especificación y Documentación Técnica
+
+<br><br>
+
+**Iniciativa:** AsociaAcción  
+**Institución:** Hospital Universitario Clínico San Cecilio de Granada
+
+<br><br><br><br><br><br>
+
+### <a id="diseño-desarrollo-e-implementación-de-arquitectura-cliente-servidor-desacoplada-para-la-centralización-y-gestión-dinámica-de-entidades-de-apoyo-a-la-salud"></a>DISEÑO, DESARROLLO E IMPLEMENTACIÓN DE ARQUITECTURA CLIENTE-SERVIDOR DESACOPLADA PARA LA CENTRALIZACIÓN Y GESTIÓN DINÁMICA DE ENTIDADES DE APOYO A LA SALUD
+
+<br><br><br><br><br><br>
+
+**Autores:** Adrián Burgos Tomé  
+**Fecha de Publicación:** Junio de 2026  
+**Ubicación:** Granada, España
+
+</div>
+
+<div style="page-break-after: always;"></div>
+
+---
+
+# ÍNDICE DE CONTENIDOS
+
+- [1. INTRODUCCIÓN](#1-introduccion)
+  - [1.1. Objetivo y Alcance Previsto](#11-objetivo-y-alcance-previsto)
+  - [1.2. Estado](#12-estado)
+- [2. ESTUDIO DE VIABILIDAD](#2-estudio-de-viabilidad)
+  - [2.1. Introducción al Estudio de Viabilidad](#21-introduccion-al-estudio-de-viabilidad)
+  - [2.2. Objeto del Proyecto](#22-objeto-del-proyecto)
+  - [2.3. Descripción del Sistema](#23-descripción-del-sistema)
+  - [2.4. Análisis de Recursos](#24-análisis-de-recursos)
+  - [2.5. Planificación del Proyecto](#25-planificación-del-proyecto)
+  - [2.6. Conclusiones de Viabilidad](#26-conclusiones-de-viabilidad)
+- [3. ANÁLISIS DEL PROYECTO](#3-analisis-del-proyecto)
+  - [3.1. Introducción](#31-introduccion)
+  - [3.2. Requerimientos Funcionales](#32-requerimientos-funcionales)
+  - [3.3. Requerimientos No Funcionales](#33-requerimientos-no-funcionales)
+- [4. DISEÑO DE LA APLICACIÓN](#4-diseno-de-la-aplicacion)
+  - [4.1. Selección del Entorno de Desarrollo](#41-seleccion-del-entorno-de-desarrollo)
+  - [4.2. CONFIGURACIÓN DE LA PLATAFORMA](#42-configuracion-de-la-plataforma)
+  - [4.3. CAPAS DE LA APLICACIÓN](#43-capas-de-la-aplicacion)
+  - [4.4. ESTRUCTURA DE LA BASE DE DATOS](#44-estructura-de-la-base-de-datos)
+  - [4.5. ARQUITECTURA DE LA APLICACIÓN](#45-arquitectura-de-la-aplicacion)
+  - [4.6. INTERFAZ (ENTORNOS Y VISTAS)](#46-interfaz-entornos-y-vistas)
+  - [4.7. SEGURIDAD Y CONTROL DE ACCESO](#47-seguridad-y-control-de-acceso)
+- [5. IMPLEMENTACIÓN](#5-implementacion)
+  - [5.1. Introducción](#51-introduccion)
+  - [5.2. Capa de Presentación (Frontend)](#52-capa-de-presentacion-frontend)
+  - [5.3. Capa de Negocio (Backend)](#53-capa-de-negocio-backend)
+  - [5.4. Capa de Datos (Almacenamiento Estructurado)](#54-capa-de-datos-almacenamiento-estructurado)
+  - [5.5. Despliegue y Puesta en Marcha](#55-despliegue-y-puesta-en-marcha)
+  - [5.6. Guía de Migración — De Python a Node.js y Base de Datos](#56-guia-de-migracion-de-python-a-nodejs-y-base-de-datos)
+- [6. PRUEBAS Y VALIDACIÓN](#6-pruebas-y-validacion)
+  - [6.1. Introducción](#61-introduccion)
+  - [6.2. Pruebas Funcionales](#62-pruebas-funcionales)
+  - [6.3. Pruebas de Seguridad y Control de Accesos](#63-pruebas-de-seguridad-y-control-de-accesos)
+  - [6.4. Pruebas de Compatibilidad y Diseño (Frontend)](#64-pruebas-de-compatibilidad-y-diseno-frontend)
+  - [6.5. Conclusión de las Pruebas](#65-conclusion-de-las-pruebas)
+- [7. CONCLUSIÓN Y RESULTADOS](#7-conclusion-y-resultados)
+  - [7.1. Introducción](#71-introduccion)
+  - [7.2. Consecución de los Objetivos](#72-consecucion-de-los-objetivos)
+  - [7.3. Resultados Obtenidos y Beneficios](#73-resultados-obtenidos-y-beneficios)
+  - [7.4. Líneas de Mejora del Proyecto (Trabajo Futuro)](#74-lineas-de-mejora-del-proyecto-trabajo-futuro)
+- [8. BIBLIOGRAFÍA Y REFERENCIAS](#8-bibliografia-y-referencias)
+  - [8.1. Documentación Oficial de Lenguajes y Entornos](#81-documentacion-oficial-de-lenguajes-y-entornos)
+  - [8.2. Librerías y Dependencias del Proyecto](#82-librerias-y-dependencias-del-proyecto)
+  - [8.3. Estándares y Protocolos Web](#83-estandares-y-protocolos-web)
+  - [8.4. Recursos Gráficos y Herramientas](#84-recursos-graficos-y-herramientas)
+
+---
+
+# <a id="1-introduccion"></a>1. INTRODUCCIÓN
 
 Este proyecto consiste en el diseño, desarrollo e implementación de un portal web integral dedicado a la centralización, agrupación y gestión dinámica de un catálogo que alberga información detallada sobre distintas asociaciones médicas, fundaciones y entidades sin ánimo de lucro vinculadas al entorno de la salud y al hospital.
 
 El presente documento técnico (dividido en siete capítulos principales más bibliografía) abarca todo el ciclo de vida del desarrollo del software: desde la viabilidad inicial, pasando por el análisis de requisitos, el diseño de la arquitectura (Frontend y Backend), hasta la implementación técnica, pruebas y conclusiones finales.
 
-## 1.1. Objetivo y Alcance Previsto
+## <a id="11-objetivo-y-alcance-previsto"></a>1.1. Objetivo y Alcance Previsto
 
 La iniciativa surge de la necesidad de digitalizar los canales de colaboración impulsados por la Comisión de Participación Ciudadana del HUSC. Actualmente, el hospital difunde quincenalmente el trabajo de 26 asociaciones mediante campañas audiovisuales, pero carecía de un espacio centralizado interactivo donde pacientes y profesionales pudieran consultar este ecosistema de apoyo.
 
-### 1.1.1. Objetivos Principales
+### <a id="111-objetivos-principales"></a>1.1.1. Objetivos Principales
 El objetivo principal es la centralización del acceso a la información, facilitando al usuario (pacientes, familiares o profesionales sanitarios) el acceso estructurado a los datos de las asociaciones, tales como su misión, servicios, localización y métodos de contacto. Simultáneamente, se busca implementar una gestión autónoma, dotando a la administración del hospital de un panel de control privado para crear, modificar, eliminar y filtrar las asociaciones registradas sin depender de personal técnico. Finalmente, el proyecto se orienta a visibilizar la función que desarrollan estas agrupaciones en el voluntariado, el acompañamiento emocional y la educación comunitaria.
 
-### 1.1.2. Alcance del Proyecto
+### <a id="112-alcance-del-proyecto"></a>1.1.2. Alcance del Proyecto
 El alcance de esta fase abarca la creación de una interfaz de usuario pública responsiva para consultar el directorio mediante filtros cruzados (categorías, etiquetas, ubicación y búsqueda de texto libre). A esto se suma el desarrollo de un panel de administración restringido por autenticación para la gestión del catálogo. En el backend, se implementa una API RESTful en Python para gestionar peticiones asíncronas, procesar imágenes y validar la integridad de los datos. La persistencia de datos se resuelve mediante almacenamiento en formato JSON, permitiendo salvaguardar el estado del catálogo sin requerir un motor de base de datos relacional en esta etapa inicial. El alcance excluye en esta fase la integración con el historial clínico de los pacientes del HUSC y la gestión de citas médicas a través del portal.
 
-## 1.2. Estado del Arte
+## <a id="12-estado"></a>1.2. Estado
 
-El portal web desarrollado es un directorio dinámico avanzado. Existen en la actualidad diversos organismos autonómicos y estatales que ofrecen servicios de catálogos similares en el ámbito de la salud. Para fundamentar el diseño de la solución, se ha realizado un análisis comparativo de portales de referencia:
+El portal web desarrollado es un directorio dinámico. Existen en la actualidad diversos organismos autonómicos y estatales que ofrecen servicios de catálogos similares en el ámbito de la salud. Para fundamentar el diseño de la solución, se ha realizado un análisis comparativo de portales de referencia:
 
 | Portal de Referencia | Descripción General | Características Clave | Mejora en el proyecto |
 | :--- | :--- | :--- | :--- |
@@ -26,9 +102,9 @@ El portal web desarrollado es un directorio dinámico avanzado. Existen en la ac
 
 La solución asimila las prácticas estructurales del estado del arte, incorporando una arquitectura basada en el desacoplamiento entre cliente y servidor.
 
-# 2. ESTUDIO DE VIABILIDAD
+# <a id="2-estudio-de-viabilidad"></a>2. ESTUDIO DE VIABILIDAD
 
-## 2.1. Introducción al Estudio de Viabilidad
+## <a id="21-introduccion-al-estudio-de-viabilidad"></a>2.1. Introducción al Estudio de Viabilidad
 
 En el presente capítulo se realiza un análisis de las condiciones técnicas, operativas y temporales que enmarcan el proyecto para evaluar su viabilidad.
 
@@ -36,19 +112,19 @@ El análisis evalúa la situación actual del entorno hospitalario y formula una
 
 ---
 
-## 2.2. Objeto del Proyecto
+## <a id="22-objeto-del-proyecto"></a>2.2. Objeto del Proyecto
 
-### 2.2.1. Situación Actual
+### <a id="221-situación-actual"></a>2.2.1. Situación Actual
 
-La iniciativa de participación ciudadana está impulsada por la Comisión de Participación Ciudadana del Hospital Universitario Clínico San Cecilio de Granada, la cual consolida la participación de 26 asociaciones y fundaciones. 
+La iniciativa de participación ciudadana está impulsada por AsociaAcción, una iniciativa de la Comisión de Participación Ciudadana del Hospital Universitario Clínico San Cecilio de Granada. 
 
 El flujo de trabajo actual se basa en la difusión quincenal de campañas de concienciación mediante material audiovisual. Sin embargo, no se dispone de un repositorio digital unificado y público donde el ciudadano pueda buscar y filtrar este tejido asociativo de forma autónoma.
 
-### 2.2.2. Propuesta de Mejora
+### <a id="222-propuesta-de-mejora"></a>2.2.2. Propuesta de Mejora
 
 Se propone el desarrollo e implementación de un Portal Web Centralizado. Esta herramienta permitirá a los ciudadanos consultar la información de las asociaciones vinculadas al hospital mediante un entorno filtrable. Asimismo, dotará a los administradores del hospital de un Panel de Control para añadir nuevas asociaciones, modificar datos existentes y revisar peticiones de ingreso, reduciendo la dependencia de soporte técnico externo para la actualización de contenidos.
 
-### 2.2.3. Perfiles de Usuario del Proyecto
+### <a id="223-perfiles-de-usuario-del-proyecto"></a>2.2.3. Perfiles de Usuario del Proyecto
 
 El sistema está diseñado en torno a un modelo de control de accesos basado en dos roles:
 
@@ -57,61 +133,63 @@ El sistema está diseñado en torno a un modelo de control de accesos basado en 
 | **Usuario No Registrado (Visitante)** | Público (Nivel 1) | Acceso al directorio completo. Búsqueda por nombre/siglas. Uso de filtros de categoría, etiquetas y localización. Lectura de las fichas de detalle y envío de formularios de solicitud de alta. |
 | **Gestor de Contenidos (Administrador)** | Privado (Nivel 2) | Acceso protegido mediante login. Capacidad para **Crear, Leer, Actualizar y Eliminar (CRUD)** asociaciones, categorías y etiquetas. Procesamiento de solicitudes de inclusión e importación masiva de datos (CSV). |
 
-### 2.2.4. Objetivos del Estudio
+### <a id="224-objetivos-del-estudio"></a>2.2.4. Objetivos del Estudio
 
 A corto plazo, el objetivo es facilitar el acceso público a los servicios de participación ciudadana. A medio plazo, se busca agilizar el trabajo administrativo mediante la centralización del directorio en formato digital. A largo plazo, se proyecta estructurar una API RESTful escalable que permita migrar el sistema de almacenamiento a un motor de base de datos relacional si fuera necesario.
 
 ---
 
-## 2.3. Descripción del Sistema
+## <a id="23-descripción-del-sistema"></a>2.3. Descripción del Sistema
 
-### 2.3.1. Funcionalidades Troncales
+### <a id="231-funcionalidades-troncales"></a>2.3.1. Funcionalidades Troncales
 
 La aplicación es una plataforma compuesta por una capa de presentación interactiva servida estáticamente, que se comunica con una API dinámica. Sus funcionalidades clave incluyen un motor de búsqueda y filtrado de múltiples variables. Se implementa un panel de control con formularios para la gestión de logotipos y la actualización de registros. Destaca la automatización del etiquetado de asociaciones. La seguridad de las operaciones administrativas se gestiona mediante autenticación por JSON Web Tokens (JWT), garantizando que las comunicaciones con el servidor de datos estén autenticadas.
 
 ---
 
-## 2.4. Análisis de Recursos
+## <a id="24-análisis-de-recursos"></a>2.4. Análisis de Recursos
 
-### 2.4.1. Recursos Humanos
+### <a id="241-recursos-humanos"></a>2.4.1. Recursos Humanos
 El ciclo de vida completo de la primera versión funcional recaerá sobre el alumnado de prácticas. Estos perfiles asumirán de manera coordinada el desarrollo del Frontend y del Backend durante su periodo formativo en la empresa.
 
-### 2.4.2. Recursos Hardware
+### <a id="242-recursos-hardware"></a>2.4.2. Recursos Hardware
 
 | Entorno | Requisitos Mínimos | Justificación |
 | :--- | :--- | :--- |
 | **Máquina Cliente** | PC, Tablet o Smartphone con conexión a Internet (>56 Kbps) | El procesamiento reside en el servidor; el cliente únicamente renderiza la interfaz. |
 | **Servidor Físico / VPS** | CPU de 1-2 núcleos, 1GB RAM, 10GB Almacenamiento HDD/SSD | El uso de JSON y FastAPI (Uvicorn) reduce la huella de memoria necesaria en comparación con stacks tradicionales. |
 
-### 2.4.3. Recursos Software
+### <a id="243-recursos-software"></a>2.4.3. Recursos Software
 
 La pila tecnológica se ha seleccionado priorizando el rendimiento, la escalabilidad y el uso de software de código abierto.
 
 Para el cliente, se requiere soporte en navegadores web modernos (Chromium, Gecko, WebKit). La interfaz se construye utilizando HTML5, CSS3 y Vanilla JavaScript, sin depender de frameworks de interfaz adicionales.
 
-Para el servidor, se recomienda el despliegue sobre un sistema operativo basado en Linux, como Debian Server. El backend se programa en Python 3.9 o superior, ejecutando el framework FastAPI sobre el servidor Uvicorn.
+Para el servidor, aunque se puede desplegar en un servidor con cualquier sistema operativo, se recomienda el despliegue sobre un sistema operativo basado en el kernel de linux, como Debian Server. El backend se programa en Python 3.9 o superior, ejecutando el framework FastAPI sobre el servidor Uvicorn.
 
-El equipo se apoyará en Visual Studio Code como editor principal, Visual Paradigm para el modelado de diagramas UML, y Git para el control de versiones.
-
----
-
-## 2.5. Planificación del Proyecto
-
-### 2.5.1. Temporalización Inicial
-El proyecto se enmarca entre el 15 de mayo y el 2 de junio de 2026, coincidiendo con el periodo de prácticas. Se estima una dedicación de 6 horas diarias en un marco de tiempo flexible adaptado a la operativa administrativa del hospital.
-
-### 2.5.2. Metodología y Modelo de Desarrollo
-Se ha optado por el Modelo Ágil Scrum en lugar de los modelos de desarrollo en cascada, debido a la necesidad de obtener retroalimentación continua por parte de la Comisión de Participación Ciudadana. El enfoque ágil facilita la entrega rápida de prototipos funcionales y la iteración sobre las interfaces conforme se reciben comentarios del equipo médico. La ejecución operativa se segmenta en sprints que abarcan la toma de requisitos, redacción de especificaciones, desarrollo del catálogo público, panel de administración y fase de pruebas.
+El equipo se apoyará en Visual Studio Code como editor principal, aunque se puede usar cualquier otro editor de código, usaremos visual studio code para centralizar mediante plugins todo lo necesario para manejar todos los lenguajes de marcado y de programación en un solo IDE, Visual Paradigm para el modelado de diagramas UML, y Git para el control de versiones.
 
 ---
 
-## 2.6. Conclusiones de Viabilidad
+## <a id="25-planificación-del-proyecto"></a>2.5. Planificación del Proyecto
 
-Tras la evaluación de las dimensiones operativas, económicas y técnicas, se determina que el proyecto es viable. La elección de arquitecturas ligeras, como FastAPI con almacenamiento JSON, permite el cumplimiento de los plazos sin la necesidad de infraestructura de servidores complejos en la fase inicial. El producto final logrará digitalizar procesos previamente manuales y ofrecer una herramienta funcional para los pacientes y el personal hospitalario.
+### <a id="251-temporalización-inicial"></a>2.5.1. Temporalización Inicial
+El proyecto se enmarca entre el 15 de mayo y el 2 de junio de 2026, coincidiendo con el periodo de prácticas. Se estima una dedicación de 6 horas diarias en un marco de tiempo flexible.
 
-# 3. ANÁLISIS DEL PROYECTO
+### <a id="252-metodología-y-modelo-de-desarrollo"></a>2.5.2. Metodología y Modelo de Desarrollo
+Se ha optado por el Modelo Ágil en lugar de los modelos de desarrollo en cascada, debido a la necesidad de obtener retroalimentación continua por parte de la Comisión de Participación Ciudadana. El enfoque ágil facilita la entrega rápida de prototipos funcionales y la iteración sobre las interfaces conforme se reciben comentarios del cliente. La ejecución operativa se segmenta en fases que abarcan la toma de requisitos, redacción de especificaciones, desarrollo del catálogo público, panel de administración y fase de pruebas.
 
-## 3.1. Introducción
+---
+
+## <a id="26-conclusiones-de-viabilidad"></a>2.6. Conclusiones de Viabilidad
+
+Tras la evaluación de las dimensiones operativas, económicas y técnicas, se determina que el proyecto es viable. La elección de arquitecturas ligeras, como FastAPI con almacenamiento JSON, permite el cumplimiento de los plazos sin la necesidad de infraestructura de servidores complejos en la fase inicial. El producto final logrará digitalizar procesos previamente manuales y ofrecer una herramienta funcional para los pacientes y el personal hospitalario. De manera que se deja la puerta abierta a arquitecturas más sólidas en un futuro, como lo puede ser migrar la lógica de python a un gestor de bases de datos relacionales como lo puede ser postgresql junto a nodeJS para manejar la lógica del backend, o migrar el frontend a un framework más robusto como lo puede ser react o vue. Todo esto sin obviar que el resultado final debe ser supervisado por personal experto, de manera que se pueda garantizar la integridad de los datos y la seguridad de la plataforma.
+
+---
+
+# <a id="3-analisis-del-proyecto"></a>3. ANÁLISIS DEL PROYECTO
+
+## <a id="31-introduccion"></a>3.1. Introducción
 
 En este capítulo se detallan los requerimientos funcionales y no funcionales que rigen la lógica de negocio y las restricciones del portal web del Hospital Universitario Clínico San Cecilio.
 
@@ -119,64 +197,64 @@ El análisis funcional define los perfiles de usuario, sus privilegios asociados
 
 ---
 
-## 3.2. Requerimientos Funcionales
+## <a id="32-requerimientos-funcionales"></a>3.2. Requerimientos Funcionales
 
 Los requerimientos funcionales establecen las operaciones que debe realizar el sistema y los servicios ofrecidos a cada actor.
 
-### 3.2.1. Visión General del Negocio
+### <a id="321-visión-general-del-negocio"></a>3.2.1. Visión General del Negocio
 
 El proyecto tiene como núcleo funcional la centralización en un entorno web de todas las asociaciones vinculadas al hospital. El sistema debe permitir a los visitantes consultar un directorio interactivo, y proveer a los administradores de un panel de control para gestionar el catálogo público mediante la lectura y escritura de archivos JSON desde la API.
 
-### 3.2.2. Requisitos Funcionales por Perfil de Usuario
+### <a id="322-requisitos-funcionales-por-perfil-de-usuario"></a>3.2.2. Requisitos Funcionales por Perfil de Usuario
 
 El sistema aplica un control de acceso basado en roles. Para esta fase se definen dos niveles de privilegio activos, y se proyecta un tercero para futuras iteraciones:
 
-#### 3.2.2.1. Nivel 1: Usuario No Registrado (Visitante)
+#### <a id="3221-nivel-1-usuario-no-registrado-visitante"></a>3.2.2.1. Nivel 1: Usuario No Registrado (Visitante)
 Representa al público en general. Sus funciones se limitan a la lectura y envío de solicitudes de contacto. Posee capacidad de búsqueda textual y filtrado por etiquetas, categorías médicas y ubicación geográfica. Tiene acceso a la ficha de detalles de cada asociación (descripción, servicios, redes sociales, vídeos). Asimismo, el visitante puede enviar propuestas de alta de nuevas asociaciones mediante un formulario web público. Finalmente, dispone de acceso al formulario de inicio de sesión para autenticarse si dispone de credenciales.
 
-#### 3.2.2.2. Nivel 2: Usuario Registrado (Gestor de Contenidos)
+#### <a id="3222-nivel-2-usuario-registrado-gestor-de-contenidos"></a>3.2.2.2. Nivel 2: Usuario Registrado (Gestor de Contenidos)
 Representa al personal autorizado del hospital. Este perfil hereda las capacidades del visitante e incorpora privilegios de escritura. Para acceder a sus funciones privadas, debe iniciar sesión mediante credenciales y obtener un token JWT válido. Una vez autenticado, puede crear nuevas asociaciones en el catálogo, editar cualquier campo de asociaciones existentes y gestionar la subida de logotipos e imágenes de fondo globales. También dispone de permisos para eliminar registros permanentemente. El gestor tiene acceso a la bandeja de entrada para revisar y aprobar solicitudes de inclusión ciudadana. Además, puede utilizar una utilidad de importación masiva de datos y descargar copias de seguridad de todo el catálogo en formatos CSV y ODS.
 
-#### 3.2.2.3. Nivel 3: Usuario Administrador (Escalabilidad Futura)
+#### <a id="3223-nivel-3-usuario-administrador-escalabilidad-futura"></a>3.2.2.3. Nivel 3: Usuario Administrador (Escalabilidad Futura)
 Este nivel se proyecta para fases posteriores de desarrollo. Estará encargado de la creación, gestión y auditoría de los usuarios gestores, asignando o revocando credenciales mediante una interfaz gráfica. En la fase actual, las credenciales del Nivel 2 están gestionadas internamente en el backend.
 
 ---
 
-### 3.2.3. Diagramas de Casos de Uso
+### <a id="323-diagramas-de-casos-de-uso"></a>3.2.3. Diagramas de Casos de Uso
 
 A continuación se modela de forma gráfica la relación entre los actores y los casos de uso principales.
 
-#### 3.2.3.1. Actores No Registrados (Visitantes)
+#### <a id="3231-actores-no-registrados-visitantes"></a>3.2.3.1. Actores No Registrados (Visitantes)
 > ![Diagrama de Casos de Uso Usuarios No Registrados](img/diagrama_casos_uso_1.png)
 
-#### 3.2.3.2. Actores Registrados (Gestores)
+#### <a id="3232-actores-registrados-gestores"></a>3.2.3.2. Actores Registrados (Gestores)
 > ![Diagrama de Casos de Uso Usuarios Registrados](img/diagrama_casos_uso_2.png)
 
 ---
 
-### 3.2.4. Diagramas de Secuencia
+### <a id="324-diagramas-de-secuencia"></a>3.2.4. Diagramas de Secuencia
 
 Estos diagramas detallan el flujo de mensajes asíncronos entre el cliente, la API y la capa de almacenamiento de datos.
 
-#### 3.2.4.1. Flujo de Lectura y Autenticación (Visitantes)
+#### <a id="3241-flujo-de-lectura-y-autenticación-visitantes"></a>3.2.4.1. Flujo de Lectura y Autenticación (Visitantes)
 > ![Diagramas de secuencia usuario no registrado](img/diagrama_secuencia_1.png)
 
-#### 3.2.4.2. Flujo de Escritura y Edición (Gestores de Contenido)
+#### <a id="3242-flujo-de-escritura-y-edición-gestores-de-contenido"></a>3.2.4.2. Flujo de Escritura y Edición (Gestores de Contenido)
 > ![Diagramas de secuencias gestor](img/diagrama_secuencia_2.png)
 
 ---
 
-### 3.2.5. Menús de Navegación Condicionales
+### <a id="325-menús-de-navegación-condicionales"></a>3.2.5. Menús de Navegación Condicionales
 
 La interfaz muestra los elementos del menú principal en función de la sesión activa del usuario. Durante la navegación pública, el menú incluye enlaces al inicio, el catálogo y el formulario de contacto. Si se detecta una sesión administrativa válida, la interfaz muestra los enlaces adicionales para la gestión de entidades y transforma el enlace de acceso principal en una opción de cierre de sesión.
 
 ---
 
-## 3.3. Requerimientos No Funcionales
+## <a id="33-requerimientos-no-funcionales"></a>3.3. Requerimientos No Funcionales
 
 Los requerimientos no funcionales definen las restricciones tecnológicas, estándares de rendimiento y normativas de seguridad de la aplicación.
 
-### 3.3.1. Restricciones de Arquitectura y Seguridad
+### <a id="331-restricciones-de-arquitectura-y-seguridad"></a>3.3.1. Restricciones de Arquitectura y Seguridad
 
 La arquitectura del sistema requiere la separación de capas mediante una API RESTful. El frontend no debe realizar operaciones directas sobre el sistema de archivos de datos; toda lectura o escritura debe realizarse exclusivamente mediante peticiones a los endpoints del servidor en Python.
 
@@ -184,7 +262,7 @@ En cuanto al control de accesos, el servidor opera bajo un modelo sin estado (st
 
 Para prevenir la inyección de código (Cross-Site Scripting), el frontend debe utilizar propiedades de renderizado de texto plano (`textContent`) en lugar de insertar HTML dinámicamente cuando renderice datos externos. Además, la API backend implementa validaciones estrictas usando Pydantic, garantizando que el servidor compruebe los tipos y campos obligatorios antes de escribir en disco, con el fin de evitar corrupciones en los archivos JSON.
 
-### 3.3.2. Objetivos de Diseño y Experiencia de Usuario (UX)
+### <a id="332-objetivos-de-diseño-y-experiencia-de-usuario-ux"></a>3.3.2. Objetivos de Diseño y Experiencia de Usuario (UX)
 
 La plataforma debe implementar un diseño visual centralizado basado en variables CSS, permitiendo futuras actualizaciones a la paleta de colores corporativa del hospital.
 
@@ -192,33 +270,33 @@ La interfaz prioriza la claridad y legibilidad, aplicando un diseño minimalista
 
 La accesibilidad y adaptabilidad a dispositivos (Responsive Design) es obligatoria en todas las vistas. El catálogo, las ventanas modales y el panel de administración deben reestructurarse dinámicamente mediante propiedades como CSS Grid y Flexbox, asegurando la usabilidad en monitores de escritorio, tablets y dispositivos móviles sin generar barras de desplazamiento horizontales.
 
-# 4. DISEÑO DE LA APLICACIÓN
+# <a id="4-diseno-de-la-aplicacion"></a>4. DISEÑO DE LA APLICACIÓN
 
 En este capítulo se abordan las decisiones tecnológicas y metodológicas que fundamentan la arquitectura del proyecto. Se detallan los entornos de desarrollo elegidos, la configuración del servidor, la distribución de capas y la estructura de la base de datos, así como las medidas de seguridad implementadas.
 
-## 4.1. Selección del Entorno de Desarrollo
+## <a id="41-seleccion-del-entorno-de-desarrollo"></a>4.1. Selección del Entorno de Desarrollo
 
 Para la construcción del Catálogo de Asociaciones del Hospital Universitario Clínico San Cecilio, se ha optado por un conjunto de herramientas modernas, eficientes y de código abierto, con el objetivo de desarrollar una plataforma robusta y mantenible.
 
-### 4.1.1. Lado del Cliente (Frontend)
+### <a id="411-lado-del-cliente-frontend"></a>4.1.1. Lado del Cliente (Frontend)
 
 El entorno de usuario, encargado de la presentación visual y la interacción, se ha desarrollado utilizando los estándares web nativos. Se ha decidido prescindir del uso de frameworks pesados de JavaScript para reducir el peso global de la aplicación y acelerar los tiempos de carga iniciales.
 
 Para la estructura semántica de la información se emplea HTML5, asegurando la accesibilidad y el posicionamiento orgánico. La presentación y la maquetación visual se controlan a través de hojas de estilo en cascada (CSS3), utilizando módulos de diseño responsivo como Flexbox y CSS Grid. Toda la interactividad del portal, incluyendo el filtrado del catálogo, las peticiones asíncronas al servidor y la manipulación del Document Object Model (DOM), se gestiona mediante Vanilla JavaScript.
 
-### 4.1.2. Lado del Servidor (Backend)
+### <a id="412-lado-del-servidor-backend"></a>4.1.2. Lado del Servidor (Backend)
 
-El motor de la aplicación, responsable de procesar la lógica de negocio y controlar el acceso a los datos, se ha desarrollado en Python. La elección de este lenguaje se basa en su sintaxis clara y su extensa adopción en el desarrollo backend.
+El motor de la aplicación, responsable de procesar la lógica de negocio y controlar el acceso a los datos, se ha desarrollado en Python. La elección de este lenguaje se basa en su sintaxis clara y su extensa adopción en el desarrollo backend, ademas de la necesidad de una solución rápida de implementar, que cuente con una buena documentación y cumpla con los requisitos del proyecto.
 
 En este entorno, se ha integrado el framework web FastAPI, reconocido por su rendimiento, naturaleza asíncrona y vinculación nativa con el sistema de validación Pydantic. Para el despliegue de esta arquitectura, se emplea el servidor ASGI Uvicorn, el cual procesa múltiples peticiones concurrentes de manera eficiente con un bajo consumo de recursos computacionales. Esta combinación proporciona tiempos de respuesta óptimos para las operaciones sobre el directorio de datos.
 
-### 4.1.3. Herramientas de Apoyo al Desarrollo
+### <a id="413-herramientas-de-apoyo-al-desarrollo"></a>4.1.3. Herramientas de Apoyo al Desarrollo
 
-El proceso de desarrollo, depuración y control de versiones se ha realizado utilizando el Entorno de Desarrollo Integrado Visual Studio Code. Esta herramienta ofrece un amplio ecosistema de extensiones y una terminal integrada, facilitando el trabajo unificado entre el cliente y el servidor.
+El proceso de desarrollo, depuración y control de versiones se ha realizado utilizando el Entorno de Desarrollo Integrado Visual Studio Code. Esta herramienta ofrece un amplio ecosistema de extensiones y una terminal integrada, facilitando el trabajo unificado entre el cliente y el servidor. Estas extensiones permiten contar con herramientas de control de versiones, depuración y testing, integradas en un solo entorno. Extensiones como lo son Python de Microsoft, el cual proporciona una serie de herramientas para el desarrollo en Python, Markdown All in One para la visualización y edición de archivos Markdown, Prettier - Code formatter para el formato automático del código, han sido fundamentales para el correcto desarrollo del proyecto.
 
 El diseño preliminar de las interfaces y la concepción analítica de los flujos de interacción previos a la codificación se apoyaron en herramientas gráficas de modelado, asegurando que la arquitectura respondiera a las necesidades funcionales establecidas durante el estudio de viabilidad.
 
-## 4.2. CONFIGURACIÓN DE LA PLATAFORMA
+## <a id="42-configuracion-de-la-plataforma"></a>4.2. CONFIGURACIÓN DE LA PLATAFORMA
 
 Tras analizar los entornos de desarrollo, es necesario concretar la configuración técnica de la plataforma que dará servicio a la aplicación en producción.
 
@@ -228,11 +306,11 @@ El servidor requiere soporte para Python 3.9 o superior y tener instaladas las l
 
 Adicionalmente, el servidor debe disponer de permisos de lectura y escritura sobre el sistema de archivos local. Esto es necesario para operar con los archivos estructurados en formato JSON (`asociaciones.json`, `categorias.json`, `etiquetas.json`, `solicitudes.json` y `config.json`), para el almacenamiento de los archivos de imagen subidos al directorio `html/img/logos/`, y para la lectura en memoria requerida durante la importación masiva de datos estructurados en formato CSV.
 
-## 4.3. CAPAS DE LA APLICACIÓN
+## <a id="43-capas-de-la-aplicacion"></a>4.3. CAPAS DE LA APLICACIÓN
 
 La arquitectura lógica de la aplicación se estructura en tres capas tecnológicas bien diferenciadas, garantizando un código modular, escalable y fácil de mantener.
 
-### 4.3.1. Entorno de usuario
+### <a id="431-entorno-de-usuario"></a>4.3.1. Entorno de usuario
 
 El entorno de usuario, o interfaz cliente, es el área visual de interacción y presentación de datos. Su construcción se basa en la combinación de HTML, CSS y JavaScript, organizando la información de manera semántica y accesible.
 
@@ -312,7 +390,7 @@ FIN BODY
 FIN HTML5
 ```
 
-### 4.3.2. Motor de la aplicación
+### <a id="432-motor-de-la-aplicación"></a>4.3.2. Motor de la aplicación
 
 El motor de la aplicación actúa como intermediario lógico entre el usuario y la capa de datos. Para organizar esta interacción, se ha adaptado el patrón de arquitectura Modelo-Vista-Controlador (MVC) a un entorno web asíncrono y desacoplado.
 
@@ -320,19 +398,19 @@ La capa de la Vista está representada por los archivos estáticos del frontend 
 
 El servidor FastAPI, al ejecutarse sobre el servidor ASGI Uvicorn, procesa altos volúmenes de peticiones concurrentes de manera eficiente. Entre las funcionalidades implementadas en esta capa destacan la manipulación individual de registros mediante operaciones RESTful, la validación estricta de esquemas de datos, la gestión de la subida de recursos multimedia con renombrado seguro (incluyendo fondos de pantalla dinámicos), y un módulo bidireccional para la importación masiva y exportación de copias de seguridad de datos estructurados en formatos CSV y ODS (OpenDocument Spreadsheet). Durante el desarrollo, se utilizaron herramientas auxiliares como la interfaz gráfica autogenerada de Swagger (OpenAPI) para probar los endpoints, así como las herramientas de desarrollo del navegador para monitorizar el tráfico de red y las peticiones asíncronas.
 
-### 4.3.3. Capa de datos
+### <a id="433-capa-de-datos"></a>4.3.3. Capa de datos
 
-La capa de datos constituye el repositorio físico donde se almacena la información del proyecto. La persistencia se basa en un formato de texto estructurado mediante archivos JSON, alojando registros de asociaciones, categorías, etiquetas y configuraciones.
+La capa de datos constituye el repositorio físico donde se almacena la información del proyecto. La persistencia se basa en un formato de texto estructurado mediante archivos JSON, alojando registros de asociaciones, categorías, etiquetas, solicitudes de inclusión ciudadana y configuraciones globales.
 
 Las operaciones de lectura y escritura sobre estos archivos son gestionadas exclusivamente por el backend de FastAPI. Este acceso está centralizado en funciones específicas de entrada/salida que incluyen manejo de excepciones para prevenir corrupciones en caso de errores durante la manipulación de los datos. La información procesada por el servidor se serializa y se guarda en disco manteniendo un formato identado, lo que facilita tanto su legibilidad directa por parte del equipo de desarrollo como su consistencia estructural a lo largo del ciclo de vida de la aplicación.
 
-## 4.4. ESTRUCTURA DE LA BASE DE DATOS
+## <a id="44-estructura-de-la-base-de-datos"></a>4.4. ESTRUCTURA DE LA BASE DE DATOS
 
 La persistencia de datos del catálogo se implementa mediante un sistema de almacenamiento basado en archivos de texto plano en formato JSON. Esta arquitectura elimina la necesidad de motores de bases de datos relacionales externos, proporcionando portabilidad al proyecto y simplificando el proceso de copias de seguridad mediante la duplicación del directorio de datos.
 
-El repositorio de datos se divide lógicamente en cuatro archivos independientes alojados en el directorio de almacenamiento del servidor. Cada archivo actúa como una colección de documentos, relacionándose entre sí mediante identificadores únicos.
+El repositorio de datos se divide lógicamente en cinco archivos independientes alojados en el directorio de almacenamiento del servidor. Cada archivo actúa como una colección de documentos, relacionándose entre sí mediante identificadores únicos.
 
-### 4.4.1. Archivo Principal: asociaciones.json
+### <a id="441-archivo-principal-asociacionesjson"></a>4.4.1. Archivo Principal: asociaciones.json
 
 El archivo `asociaciones.json` contiene la matriz principal del catálogo público. Cada objeto almacenado en este archivo representa una asociación médica y se estructura en bloques descriptivos definidos.
 
@@ -342,7 +420,7 @@ El bloque descriptivo almacena un campo de texto con la descripción detallada d
 
 El bloque de contacto y geolocalización abarca los datos de comunicación directa, estructurados en un arreglo de contactos (incluyendo teléfono, correo electrónico y sitio web). Además, incluye un sub-objeto de ubicación con la dirección postal (país, comunidad, provincia, municipio) y una lista de identificadores de vídeos para la galería multimedia.
 
-### 4.4.2. Taxonomía y Ordenación: categorias.json y etiquetas.json
+### <a id="442-taxonomía-y-ordenación-categoriasjson-y-etiquetasjson"></a>4.4.2. Taxonomía y Ordenación: categorias.json y etiquetas.json
 
 El sistema emplea dos archivos complementarios, `categorias.json` y `etiquetas.json`, para normalizar la clasificación de las asociaciones, evitando redundancias en los textos descriptivos.
 
@@ -350,13 +428,13 @@ El archivo de categorías contiene un arreglo de objetos compuestos por un ident
 
 El archivo de etiquetas sigue la misma estructura, almacenando identificadores numéricos y cadenas de texto para características secundarias o servicios específicos (como Voluntariado o Apoyo Psicológico). Esta separación relacional permite actualizar el nombre de una categoría o etiqueta una sola vez y que el cambio se refleje en todas las asociaciones vinculadas.
 
-### 4.4.3. Bandeja de Entrada Segura: solicitudes.json
+### <a id="443-bandeja-de-entrada-segura-solicitudesjson"></a>4.4.3. Bandeja de Entrada Segura: solicitudes.json
 
 El archivo `solicitudes.json` se encarga de almacenar las peticiones de inclusión enviadas por los ciudadanos mediante el formulario público.
 
 La estructura interna de este archivo combina la información descriptiva de la asociación solicitada con metadatos de auditoría requeridos para su gestión. Cada objeto incluye una marca temporal de creación, un identificador provisional, y un campo de estado que por defecto se define como "pendiente". Esta separación física entre el catálogo oficial y la bandeja de entrada asegura que los datos sin validar no comprometan el archivo principal de asociaciones hasta que no sean revisados y aprobados explícitamente por el administrador.
 
-## 4.5. ARQUITECTURA DE LA APLICACIÓN
+## <a id="45-arquitectura-de-la-aplicacion"></a>4.5. ARQUITECTURA DE LA APLICACIÓN
 
 La arquitectura de la aplicación se fundamenta en la separación de responsabilidades entre el frontend, el backend y el sistema de almacenamiento. El diseño adopta un enfoque inspirado en el patrón Modelo-Vista-Controlador (MVC), adaptado a un entorno asíncrono donde el cliente web y el servidor operan de manera independiente comunicándose mediante una API RESTful.
 
@@ -364,7 +442,7 @@ El flujo general de interacción comienza cuando el usuario realiza una acción 
 
 El servidor FastAPI (Controlador) recibe la petición y, si corresponde a una ruta protegida, verifica la validez de la firma criptográfica y la fecha de expiración del token. Si la autenticación falla, se devuelve un error de acceso no autorizado. A continuación, el servidor valida la estructura y los tipos de los datos recibidos utilizando los esquemas de Pydantic (Modelo). Una vez superada esta validación, se ejecutan las operaciones correspondientes de lectura o escritura en los archivos JSON. Finalmente, el servidor responde al cliente con los datos actualizados, y el JavaScript se encarga de modificar el Modelo de Objetos del Documento (DOM) para reflejar los cambios en la interfaz sin necesidad de recargar la página.
 
-### 4.5.1. Flujos de Acción en la Arquitectura
+### <a id="451-flujos-de-acción-en-la-arquitectura"></a>4.5.1. Flujos de Acción en la Arquitectura
 
 Las interacciones dentro del portal web pueden clasificarse en operaciones pasivas de lectura, operaciones de administración con privilegios y flujos de recolección de solicitudes externas.
 
@@ -374,11 +452,11 @@ Las operaciones de gestión administrativa implican tareas de escritura, actuali
 
 Por último, el flujo de recolección de solicitudes ciudadanas combina elementos de acceso público con gestión privada. Usuarios anónimos pueden enviar propuestas de nuevas asociaciones mediante un formulario web. Este formulario incorpora validaciones en tiempo real y medidas antispam pasivas (como campos ocultos Honeypot) que bloquean envíos automatizados desde el cliente. Las solicitudes legítimas son recibidas por el servidor, validadas y almacenadas en un archivo JSON independiente bajo el estado "pendiente". Estas peticiones permanecen aisladas del catálogo principal hasta que un administrador autenticado revisa el listado desde su panel. Tras evaluar los datos, el administrador puede aprobar la solicitud, lo que transfiere la información al archivo principal de asociaciones, o rechazarla, eliminando el registro de la bandeja de entrada.
 
-## 4.6. INTERFAZ (ENTORNOS Y VISTAS)
+## <a id="46-interfaz-entornos-y-vistas"></a>4.6. INTERFAZ (ENTORNOS Y VISTAS)
 
 La plataforma web desarrollada para el Hospital Universitario se organiza en un conjunto de vistas interactivas, diseñadas para resolver necesidades funcionales específicas según el rol del usuario que accede al sistema.
 
-### 4.6.1. Entorno Público: Catálogo General y Galería
+### <a id="461-entorno-público-catálogo-general-y-galería"></a>4.6.1. Entorno Público: Catálogo General y Galería
 
 La vista pública principal es el catálogo de asociaciones médicas. Este espacio presenta un diseño limpio y minimalista, priorizando la visualización de la información mediante una cuadrícula de tarjetas modulares adaptativas.
 
@@ -390,19 +468,19 @@ Cada tarjeta de la galería muestra el logotipo de la asociación, su denominaci
 
 Al seleccionar una tarjeta, la plataforma abre una ventana modal superpuesta que oscurece el fondo para centrar la atención. Esta vista detallada presenta la descripción completa de la entidad, su cartera de servicios, información de contacto, geolocalización mediante mapas y enlaces a dominios oficiales o redes sociales.
 
-### 4.6.2. La Pasarela del Solicitante Anónimo
+### <a id="462-la-pasarela-del-solicitante-anónimo"></a>4.6.2. La Pasarela del Solicitante Anónimo
 
 El entorno para el solicitante anónimo es un formulario diseñado para gestionar la recepción de nuevas solicitudes de inclusión en el catálogo.
 
 Esta vista adopta una disposición centralizada para facilitar la introducción de datos de forma secuencial. El formulario requiere que la asociación preocupe su información de identidad (nombre, siglas, logotipo), su clasificación mediante el selector de categorías y etiquetas, y sus datos de contacto (teléfono, web, ubicación). El sistema incluye un mecanismo de validación instantánea en el cliente que resalta en color rojo los campos que no cumplen con los formatos requeridos o que han sido omitidos, impidiendo el envío de la solicitud hasta que todos los datos sean válidos. Asimismo, se requiere la aceptación de los términos de protección de datos.
 
-### 4.6.3. Identificación y Control de Acceso
+### <a id="463-identificación-y-control-de-acceso"></a>4.6.3. Identificación y Control de Acceso
 
 El acceso al panel de administración está protegido por una vista de autenticación dedicada.
 
 En este entorno, el sistema solicita al usuario sus credenciales: nombre de usuario y contraseña ofuscada. Los datos introducidos se envían de forma asíncrona al servidor backend, donde se validan contra las variables de entorno seguras. Si la validación falla por credenciales incorrectas, la interfaz muestra un mensaje de error claro, impidiendo el acceso. Si las credenciales son válidas, el servidor devuelve un token JWT y la vista redirige automáticamente al usuario al panel de control administrativo.
 
-### 4.6.4. Panel de Administración
+### <a id="464-panel-de-administración"></a>4.6.4. Panel de Administración
 
 El panel de administración es el entorno privado desde el cual se gestionan los contenidos del catálogo general, las solicitudes pendientes y la taxonomía del portal.
 
@@ -416,23 +494,23 @@ Desde la vista de galería, el administrador cuenta con botones integrados en ca
 5. **Vías de Comunicación:** Campos de contacto del personal y enlaces web.
 6. **Vídeos de YouTube:** Galería de soporte multimedia pegada al final de la interacción.
 
-#### 4.6.4.1. Módulo de Gestión de Categorías
+#### <a id="4641-módulo-de-gestión-de-categorías"></a>4.6.4.1. Módulo de Gestión de Categorías
 Ubicado de forma independiente debajo del formulario principal, este módulo proporciona una cuadrícula interactiva con todas las categorías activas.
 - **Transparencia de Datos:** Cada tarjeta de categoría muestra el número exacto de asociaciones clínicas vinculadas.
-- **Borrado Inteligente:** Las categorías con cero registros pueden ser eliminadas permanentemente tras confirmación (botón `✕`). Las categorías activas muestran el botón deshabilitado e incorporan un tooltip en hover que indica al administrador las asociaciones asignadas que debe liberar previamente, manteniendo la integridad referencial.
+- **Borrado Inteligente:** Las categorías con cero registros pueden ser eliminadas permanentemente tras confirmación (botón ``). Las categorías activas muestran el botón deshabilitado e incorporan un tooltip en hover que indica al administrador las asociaciones asignadas que debe liberar previamente, manteniendo la integridad referencial.
 - **Sincronización en Caliente:** Las acciones sobre este panel actualizan instantáneamente los menús desplegables del formulario sin necesidad de recargar la página.
 
-## 4.7. SEGURIDAD Y CONTROL DE ACCESO
+## <a id="47-seguridad-y-control-de-acceso"></a>4.7. SEGURIDAD Y CONTROL DE ACCESO
 
 Debido a que la aplicación web gestiona información sensible de asociaciones de salud ligadas al hospital y ofrece un panel de administración para manipular los datos, la seguridad es un pilar fundamental en el desarrollo del sistema. A continuación se detallan las medidas de protección implementadas tanto en el servidor como en el cliente para garantizar la confidencialidad, integridad y disponibilidad del portal.
 
 ---
 
-### 4.7.1. Autenticación y Autorización basada en JWT (JSON Web Tokens)
+### <a id="471-autenticación-y-autorización-basada-en-jwt-json-web-tokens"></a>4.7.1. Autenticación y Autorización basada en JWT (JSON Web Tokens)
 
 Para la gestión de sesiones de administración se ha implementado un esquema de autenticación desacoplado y sin estado (*stateless*) utilizando **JSON Web Tokens (JWT)**. Este mecanismo evita la necesidad de almacenar sesiones en el servidor, simplificando la arquitectura y reduciendo la superficie de ataque. A continuación se describe en profundidad cada componente del sistema.
 
-#### 4.7.1.1. Configuración de Seguridad en el Servidor
+#### <a id="4711-configuración-de-seguridad-en-el-servidor"></a>4.7.1.1. Configuración de Seguridad en el Servidor
 
 El módulo `server.py` define tres constantes críticas de seguridad que gobiernan todo el ciclo de vida de la autenticación:
 
@@ -444,7 +522,7 @@ El módulo `server.py` define tres constantes críticas de seguridad que gobiern
 | `ALGORITHM` | Código fuente (constante fija) | `HS256` | Algoritmo de hash simétrico HMAC-SHA256 utilizado para la firma criptográfica del token. |
 
 ```python
-# Configuración de Seguridad (server.py, líneas 20-23)
+# <a id="configuración-de-seguridad-serverpy-líneas-20-23"></a>Configuración de Seguridad (server.py, líneas 20-23)
 SECRET_KEY = os.environ.get("SECRET_KEY", "cambia_esto_por_una_clave_larga_y_secreta_en_produccion")
 ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "1234")
@@ -454,7 +532,7 @@ ALGORITHM = "HS256"
 Adicionalmente, se declara un esquema de autenticación OAuth2 de tipo *Password Bearer* que instruye a FastAPI sobre dónde buscar el token en las peticiones entrantes:
 
 ```python
-# Esquema OAuth2 (server.py, línea 48)
+# <a id="esquema-oauth2-serverpy-línea-48"></a>Esquema OAuth2 (server.py, línea 48)
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 ```
 
@@ -462,7 +540,7 @@ Este esquema espera que el token se transmita en la cabecera HTTP `Authorization
 
 ---
 
-#### 4.7.1.2. Flujo Completo de Autenticación
+#### <a id="4712-flujo-completo-de-autenticación"></a>4.7.1.2. Flujo Completo de Autenticación
 
 El ciclo de autenticación sigue un flujo de 4 fases bien definidas:
 
@@ -488,7 +566,7 @@ const response = await fetch('/token', {
 El endpoint `POST /token` recibe las credenciales a través del objeto `OAuth2PasswordRequestForm` inyectado automáticamente por FastAPI. El servidor compara las credenciales recibidas contra las variables de entorno seguras:
 
 ```python
-# server.py — Endpoint de autenticación (líneas 145-155)
+# <a id="serverpy-endpoint-de-autenticación-líneas-145-155"></a>server.py — Endpoint de autenticación (líneas 145-155)
 @app.post("/token")
 async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     if form_data.username == ADMIN_USERNAME and form_data.password == ADMIN_PASSWORD:
@@ -504,7 +582,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 Si las credenciales son válidas, se invoca la función `create_access_token()`, que construye el *payload* del token con dos campos (*claims*) fundamentales. El primero de ellos es el identificador del sujeto o `sub` (subject), el cual identifica inequívocamente al usuario autenticado, en este caso, el nombre de usuario del administrador. El segundo campo es la expiración o `exp` (expiration), que actúa como una marca temporal UTC definiendo el momento exacto e inamovible en que el token caducará y dejará de ser válido, configurado estrictamente a 30 minutos desde el instante de su creación.
 
 ```python
-# server.py — Generación del token firmado (líneas 127-132)
+# <a id="serverpy-generación-del-token-firmado-líneas-127-132"></a>server.py — Generación del token firmado (líneas 127-132)
 def create_access_token(data: dict):
     to_encode = data.copy()
     expire = datetime.utcnow() + timedelta(minutes=30)
@@ -553,12 +631,12 @@ async function apiRequest(url, method = 'GET', body = null) {
 
 ---
 
-#### 4.7.1.3. Verificación y Validación del Token en el Servidor
+#### <a id="4713-verificación-y-validación-del-token-en-el-servidor"></a>4.7.1.3. Verificación y Validación del Token en el Servidor
 
 Cada endpoint protegido del servidor inyecta como dependencia la función `verify_token()`, que realiza una rigurosa triple validación del token recibido. En primer lugar, ejecuta la verificación de la firma criptográfica mediante `jwt.decode()`, que recalcula la firma HMAC-SHA256 del header y payload recibidos utilizando la `SECRET_KEY` del servidor; si la firma no coincide, indicando manipulación maliciosa del token, lanza la excepción `jwt.InvalidTokenError`. En segundo lugar, procede a la verificación de vigencia temporal, donde la librería comprueba automáticamente el claim `exp`; si el instante actual supera la fecha de expiración, el acceso es denegado lanzando `jwt.ExpiredSignatureError`. Por último, se ejecuta la verificación de la identidad del sujeto, comprobando, una vez decodificado, que el claim `sub` corresponda estricta y únicamente al `ADMIN_USERNAME` autorizado, previniendo de este modo cualquier intento de elevación de privilegios mediante la inyección de tokens forjados en otros sistemas.
 
 ```python
-# server.py — Función de verificación con manejo de errores diferenciado (líneas 134-143)
+# <a id="serverpy-función-de-verificación-con-manejo-de-errores-diferenciado-líneas-134-143"></a>server.py — Función de verificación con manejo de errores diferenciado (líneas 134-143)
 def verify_token(token: str = Depends(oauth2_scheme)):
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
@@ -575,7 +653,7 @@ El manejo diferenciado de excepciones permite al cliente (y a los registros del 
 
 ---
 
-#### 4.7.1.4. Cobertura de Protección: Endpoints Protegidos por JWT
+#### <a id="4714-cobertura-de-protección-endpoints-protegidos-por-jwt"></a>4.7.1.4. Cobertura de Protección: Endpoints Protegidos por JWT
 
 La siguiente tabla enumera exhaustivamente todos los endpoints del servidor que requieren autenticación JWT mediante la dependencia `Depends(verify_token)`:
 
@@ -598,7 +676,7 @@ Los endpoints de **lectura pública** (`GET /api/{recurso}`, `GET /api/config`, 
 
 ---
 
-#### 4.7.1.5. Gestión de Sesión y Control de Acceso en el Cliente
+#### <a id="4715-gestión-de-sesión-y-control-de-acceso-en-el-cliente"></a>4.7.1.5. Gestión de Sesión y Control de Acceso en el Cliente
 
 La capa de cliente implementa mecanismos de control de acceso complementarios. El script `auth.js` verifica la presencia del token en el `localStorage` durante la carga de las páginas de administración. Si el token no existe y la página actual requiere autenticación, el script interrumpe la carga y redirige automáticamente al formulario de login, previniendo el acceso no autorizado a las vistas protegidas.
 
@@ -628,16 +706,16 @@ El cierre de sesión (Logout) se implementa eliminando el token del `localStorag
 
 ---
 
-### 4.7.2. Inyección de Cabeceras de Seguridad (Security Headers Middleware)
+### <a id="472-inyección-de-cabeceras-de-seguridad-security-headers-middleware"></a>4.7.2. Inyección de Cabeceras de Seguridad (Security Headers Middleware)
 
 Para proteger al portal contra ataques comunes a nivel de navegador y red, el servidor FastAPI integra un middleware de interceptación que inyecta automáticamente cabeceras HTTP de seguridad robustas en **cada respuesta** emitida por el servidor, independientemente del endpoint solicitado. A continuación se describe en profundidad la arquitectura del middleware y el papel defensivo de cada cabecera.
 
-#### 4.7.2.1. Arquitectura del Middleware Interceptor
+#### <a id="4721-arquitectura-del-middleware-interceptor"></a>4.7.2.1. Arquitectura del Middleware Interceptor
 
 El middleware se implementa como una clase de Python que hereda de `BaseHTTPMiddleware` de Starlette. Sigue el patrón *chain-of-responsibility*, interceptando la petición HTTP entrante antes de que alcance el endpoint de la API. El middleware procesa la petición y la delega a la aplicación mediante `call_next(request)`. Una vez que el servidor genera la respuesta, el middleware la intercepta antes de enviarla al cliente para añadir las cabeceras de seguridad. Finalmente, la respuesta con las cabeceras inyectadas se devuelve al navegador.
 
 ```python
-# server.py — Middleware de Cabeceras de Seguridad (líneas 28-45)
+# <a id="serverpy-middleware-de-cabeceras-de-seguridad-líneas-28-45"></a>server.py — Middleware de Cabeceras de Seguridad (líneas 28-45)
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.responses import Response
 
@@ -665,7 +743,7 @@ Este enfoque garantiza que **ninguna respuesta del servidor escape sin las cabec
 
 ---
 
-#### 4.7.2.2. Tabla Resumen de Cabeceras Inyectadas
+#### <a id="4722-tabla-resumen-de-cabeceras-inyectadas"></a>4.7.2.2. Tabla Resumen de Cabeceras Inyectadas
 
 | Cabecera HTTP | Valor Configurado | Ataque Mitigado | Estándar/Referencia |
 |---|---|---|---|
@@ -677,7 +755,7 @@ Este enfoque garantiza que **ninguna respuesta del servidor escape sin las cabec
 
 ---
 
-#### 4.7.2.3. Protección contra Clickjacking (`X-Frame-Options: DENY`)
+#### <a id="4723-protección-contra-clickjacking-x-frame-options-deny"></a>4.7.2.3. Protección contra Clickjacking (`X-Frame-Options: DENY`)
 
 **Vector de Ataque Mitigado**: El *clickjacking* (o *UI redressing*) consiste en que un atacante embebe el portal legítimo dentro de un `<iframe>` transparente superpuesto en su propia página maliciosa. El administrador, creyendo interactuar con la página del atacante, en realidad realiza clics sobre los botones de la aplicación real (eliminar registros, modificar configuración, etc.) sin ser consciente de ello.
 
@@ -691,13 +769,13 @@ X-Frame-Options: DENY
 
 ---
 
-#### 4.7.2.4. Política de Seguridad de Contenido (Content-Security-Policy)
+#### <a id="4724-política-de-seguridad-de-contenido-content-security-policy"></a>4.7.2.4. Política de Seguridad de Contenido (Content-Security-Policy)
 
 La cabecera `Content-Security-Policy` (CSP) es la capa de defensa más exhaustiva del middleware. Define una **lista blanca de orígenes autorizados** para cada tipo de recurso que el navegador puede cargar, bloqueando cualquier recurso externo no listado explícitamente. Esto mitiga de raíz los ataques de inyección de código, exfiltración de datos y carga de recursos maliciosos.
 
 La política se compone de **6 directivas** configuradas de forma granular para satisfacer las necesidades funcionales del portal sin relajar la seguridad:
 
-#### Directiva `default-src 'self'`
+#### <a id="directiva-default-src-self"></a>Directiva `default-src 'self'`
 
 ```
 default-src 'self';
@@ -705,7 +783,7 @@ default-src 'self';
 
 Esta directiva establece la política por defecto para todos los recursos no cubiertos explícitamente por otras directivas específicas. Su efecto principal es autorizar la carga de recursos (scripts, estilos, fuentes, conexiones AJAX) procedentes del propio origen del servidor (`'self'`). Como resultado, el navegador bloqueará cualquier intento de incrustar o ejecutar recursos desde un dominio externo que no haya sido autorizado previamente, garantizando la seguridad estructural básica.
 
-#### Directiva `script-src 'self' 'unsafe-inline'`
+#### <a id="directiva-script-src-self-unsafe-inline"></a>Directiva `script-src 'self' 'unsafe-inline'`
 
 ```
 script-src 'self' 'unsafe-inline';
@@ -713,7 +791,7 @@ script-src 'self' 'unsafe-inline';
 
 Esta directiva controla los orígenes desde los cuales el navegador puede descargar y ejecutar código JavaScript. El parámetro `'self'` autoriza la carga de los archivos `.js` servidos desde el propio servidor (por ejemplo, el directorio `/html/js/`). La inclusión del parámetro `'unsafe-inline'` permite la ejecución de scripts definidos directamente en el HTML (`<script>...</script>`). Este permiso es necesario porque la arquitectura en Vanilla JS emplea inicializaciones en línea; no obstante, el riesgo de inyección se mitiga mediante los mecanismos de sanitización contra ataques XSS implementados en el cliente.
 
-#### Directiva `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`
+#### <a id="directiva-style-src-self-unsafe-inline-httpsfontsgoogleapiscom"></a>Directiva `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com`
 
 ```
 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
@@ -726,7 +804,7 @@ Esta directiva controla los orígenes autorizados para la descarga y aplicación
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 ```
 
-#### Directiva `font-src 'self' https://fonts.gstatic.com`
+#### <a id="directiva-font-src-self-httpsfontsgstaticcom"></a>Directiva `font-src 'self' https://fonts.gstatic.com`
 
 ```
 font-src 'self' https://fonts.gstatic.com;
@@ -734,7 +812,7 @@ font-src 'self' https://fonts.gstatic.com;
 
 Complementando la directiva de estilos, esta instrucción controla los orígenes autorizados para descargar archivos binarios de fuentes tipográficas (`.woff2`, `.ttf`). Se habilita el origen `https://fonts.gstatic.com`, que corresponde al CDN de Google encargado de servir los archivos de las fuentes. Mientras que el dominio de Google APIs provee la hoja de estilos CSS, Gstatic transfiere los archivos binarios; ambos son necesarios para renderizar correctamente las tipografías corporativas Montserrat y Outfit.
 
-#### Directiva `img-src 'self' data: http: https:`
+#### <a id="directiva-img-src-self-data-http-https"></a>Directiva `img-src 'self' data: http: https:`
 
 ```
 img-src 'self' data: http: https:;
@@ -742,7 +820,7 @@ img-src 'self' data: http: https:;
 
 La directiva `img-src` restringe los orígenes permitidos para cargar imágenes. El origen `'self'` autoriza las imágenes servidas localmente desde el servidor, como logotipos alojados en `/html/img/logos/`. El esquema `data:` permite cargar imágenes codificadas en Base64 insertadas directamente en el HTML, lo cual es necesario para la previsualización de logotipos en el formulario de creación mediante la API `FileReader`. Por último, se permiten los esquemas `http:` y `https:` para admitir logotipos de asociaciones alojados en servidores web externos.
 
-#### Directiva `frame-src https://www.youtube.com https://youtube.com`
+#### <a id="directiva-frame-src-httpswwwyoutubecom-httpsyoutubecom"></a>Directiva `frame-src https://www.youtube.com https://youtube.com`
 
 ```
 frame-src https://www.youtube.com https://youtube.com;
@@ -764,7 +842,7 @@ La directiva establece que `www.youtube.com` y `youtube.com` son los únicos or�
 
 ---
 
-#### 4.7.2.5. Prevención de MIME Sniffing (`X-Content-Type-Options: nosniff`)
+#### <a id="4725-prevención-de-mime-sniffing-x-content-type-options-nosniff"></a>4.7.2.5. Prevención de MIME Sniffing (`X-Content-Type-Options: nosniff`)
 
 **Vector de Ataque Mitigado**: El *MIME sniffing* es un comportamiento de ciertos navegadores que intentan "adivinar" el tipo real de un recurso ignorando la cabecera `Content-Type` declarada por el servidor. Un atacante podría explotar esto subiendo un archivo con extensión `.jpg` que internamente contenga código JavaScript. Sin esta protección, el navegador podría detectar el contenido como script y ejecutarlo.
 
@@ -778,7 +856,7 @@ X-Content-Type-Options: nosniff
 
 ---
 
-#### 4.7.2.6. Filtro de XSS Reflejado (`X-XSS-Protection: 1; mode=block`)
+#### <a id="4726-filtro-de-xss-reflejado-x-xss-protection-1-modeblock"></a>4.7.2.6. Filtro de XSS Reflejado (`X-XSS-Protection: 1; mode=block`)
 
 **Vector de Ataque Mitigado**: El *XSS reflejado* (Cross-Site Scripting reflejado) ocurre cuando un atacante inyecta código malicioso en los parámetros de una URL (por ejemplo, en un parámetro de búsqueda o un ID) y la aplicación refleja ese código de vuelta en la respuesta HTML sin sanitizarlo. Si la víctima hace clic en la URL manipulada, el código se ejecuta en su navegador.
 
@@ -792,7 +870,7 @@ X-XSS-Protection: 1; mode=block
 
 ---
 
-#### 4.7.2.7. Política de Privacidad de Referencias (`Referrer-Policy: strict-origin-when-cross-origin`)
+#### <a id="4727-política-de-privacidad-de-referencias-referrer-policy-strict-origin-when-cross-origin"></a>4.7.2.7. Política de Privacidad de Referencias (`Referrer-Policy: strict-origin-when-cross-origin`)
 
 **Vector de Ataque Mitigado**: Cuando un usuario navega desde el portal hacia un enlace externo (por ejemplo, al hacer clic en la web oficial de una asociación o en su perfil de red social), el navegador incluye por defecto una cabecera `Referer` que revela la URL completa de la página de origen. Esto podría exponer rutas administrativas internas, IDs de sesión en la URL, o la estructura de navegación del panel de administración.
 
@@ -812,11 +890,11 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 
 
-### 4.7.3. Sanitización y Prevención de Scripts entre Sitios (XSS) en el Cliente
+### <a id="473-sanitización-y-prevención-de-scripts-entre-sitios-xss-en-el-cliente"></a>4.7.3. Sanitización y Prevención de Scripts entre Sitios (XSS) en el Cliente
 
 En el entorno del navegador, se han adoptado políticas y utilidades preventivas estrictas en los scripts de JavaScript para erradicar vulnerabilidades de inyección de código (*Cross-Site Scripting*). Las medidas cubren los tres vectores clásicos de XSS: **almacenado** (datos maliciosos persistidos en el servidor y renderizados a otros usuarios), **reflejado** (código inyectado en parámetros de URL) y **basado en DOM** (manipulación directa del árbol de elementos HTML). A continuación se describe cada técnica implementada.
 
-#### 4.7.3.1. Manipulación Segura del DOM (`textContent` vs `innerHTML`)
+#### <a id="4731-manipulación-segura-del-dom-textcontent-vs-innerhtml"></a>4.7.3.1. Manipulación Segura del DOM (`textContent` vs `innerHTML`)
 
 **Vector de Ataque Prevenido**: Si los datos textuales procedentes de la API (nombres de asociaciones, descripciones, siglas, etiquetas, categorías) se insertan en el DOM usando la propiedad `innerHTML`, un atacante podría almacenar una cadena maliciosa como nombre de asociación (por ejemplo, `<img src=x onerror="alert(document.cookie)">`) que se ejecutaría en el navegador de cada visitante que acceda a la ficha.
 
@@ -856,7 +934,7 @@ tagSpan.textContent = etiObj.nombre;            // Texto plano, no HTML
 
 ---
 
-#### 4.7.3.2. Sanitización de URLs — Función `safeUrl()`
+#### <a id="4732-sanitización-de-urls-función-safeurl"></a>4.7.3.2. Sanitización de URLs — Función `safeUrl()`
 
 **Vector de Ataque Prevenido**: Un atacante podría registrar una asociación con una URL de logo o contacto que use el pseudoprotocolo `javascript:` (por ejemplo, `javascript:alert(document.cookie)`). Cuando el navegador renderice un `<img src="javascript:...">` o un `<a href="javascript:...">`, el código malicioso se ejecutaría en el contexto de la sesión del usuario víctima.
 
@@ -892,7 +970,7 @@ function safeUrl(url) {
 
 ---
 
-#### 4.7.3.3. Escapado de HTML en Atributos — Funciones `escapeHTML()` y `escapeHTMLSol()`
+#### <a id="4733-escapado-de-html-en-atributos-funciones-escapehtml-y-escapehtmlsol"></a>4.7.3.3. Escapado de HTML en Atributos — Funciones `escapeHTML()` y `escapeHTMLSol()`
 
 **Vector de Ataque Prevenido**: En los formularios de administración, cuando se precargan los datos existentes de una asociación para editarla, los valores del servidor se insertan en atributos `value` de inputs HTML mediante *template literals*. Si un dato almacenado contuviera caracteres especiales HTML (por ejemplo, un nombre de contacto como `"><script>alert(1)</script>`), el atacante podría romper el atributo e inyectar código ejecutable.
 
@@ -954,7 +1032,7 @@ La función `escapeHTMLSol()` protege la interfaz administrativa al renderizar l
 
 ---
 
-#### 4.7.3.4. Codificación URI Segura en Direcciones de Correo
+#### <a id="4734-codificación-uri-segura-en-direcciones-de-correo"></a>4.7.3.4. Codificación URI Segura en Direcciones de Correo
 
 **Vector de Ataque Prevenido**: Un atacante podría almacenar una dirección de correo electrónico maliciosa que al renderizarse en un enlace `mailto:` inyecte cabeceras SMTP adicionales o código JavaScript. Por ejemplo, `test@evil.com%0D%0ABcc:spam@attacker.com` podría añadir destinatarios ocultos al correo.
 
@@ -974,7 +1052,7 @@ Simultáneamente, el texto visible del enlace se renderiza con `textContent`, ga
 
 ---
 
-#### 4.7.3.5. Aislamiento de Enlaces Externos (`rel="noopener noreferrer"`)
+#### <a id="4735-aislamiento-de-enlaces-externos-relnoopener-noreferrer"></a>4.7.3.5. Aislamiento de Enlaces Externos (`rel="noopener noreferrer"`)
 
 **Vector de Ataque Prevenido**: Cuando un usuario hace clic en un enlace externo que se abre en una nueva pestaña (`target="_blank"`), la página de destino puede acceder al objeto `window.opener` de la página de origen. Un sitio malicioso podría usar `window.opener.location = 'https://phishing.com'` para redirigir silenciosamente la pestaña original del portal a un sitio de *phishing* que imite el formulario de login del administrador.
 
@@ -997,7 +1075,7 @@ El uso de este atributo cumple dos funciones de seguridad. La propiedad `noopene
 
 ---
 
-#### 4.7.3.6. Tabla Resumen: Cobertura de Protección XSS por Archivo
+#### <a id="4736-tabla-resumen-cobertura-de-protección-xss-por-archivo"></a>4.7.3.6. Tabla Resumen: Cobertura de Protección XSS por Archivo
 
 | Archivo | Técnica Aplicada | Datos Protegidos |
 |---|---|---|
@@ -1014,15 +1092,15 @@ El uso de este atributo cumple dos funciones de seguridad. La propiedad `noopene
 
 
 
-### 4.7.4. Validación de Esquemas en la Frontera (Inmunidad del Almacenamiento)
+### <a id="474-validación-de-esquemas-en-la-frontera-inmunidad-del-almacenamiento"></a>4.7.4. Validación de Esquemas en la Frontera (Inmunidad del Almacenamiento)
 
 Cualquier dato enviado hacia el servidor pasa obligatoriamente por una validación estricta de tipos y campos en la frontera de FastAPI **antes de tocar el almacenamiento físico** JSON en disco. Este principio de *"inmunidad del almacenamiento"* garantiza que los archivos de datos (`asociaciones.json`, `categorias.json`, `etiquetas.json`, `solicitudes.json`, `config.json`) solo contengan datos estructuralmente válidos, impidiendo la corrupción de la base de datos y bloqueando de raíz payloads maliciosos. A continuación se describen todos los mecanismos de validación implementados.
 
-#### 4.7.4.1. Catálogo de Modelos Pydantic
+#### <a id="4741-catálogo-de-modelos-pydantic"></a>4.7.4.1. Catálogo de Modelos Pydantic
 
 El servidor define **8 modelos de datos** con la librería Pydantic que actúan como contratos estrictos de validación. Cada modelo especifica los campos requeridos, sus tipos de datos y sus valores por defecto:
 
-#### Modelo `Contacto` — Método de contacto individual
+#### <a id="modelo-contacto-método-de-contacto-individual"></a>Modelo `Contacto` — Método de contacto individual
 
 ```python
 class Contacto(BaseModel):
@@ -1032,10 +1110,10 @@ class Contacto(BaseModel):
 
 | Campo | Tipo | Obligatorio | Descripción |
 |---|---|---|---|
-| `tipo` | `str` | ✅ Sí | Identificador del tipo de medio de contacto |
-| `valor` | `str` | ✅ Sí | Valor concreto del contacto (URL, email, teléfono) |
+| `tipo` | `str` | Sí | Identificador del tipo de medio de contacto |
+| `valor` | `str` | Sí | Valor concreto del contacto (URL, email, teléfono) |
 
-#### Modelo `Ubicacion` — Localización geográfica
+#### <a id="modelo-ubicacion-localización-geográfica"></a>Modelo `Ubicacion` — Localización geográfica
 
 ```python
 class Ubicacion(BaseModel):
@@ -1047,12 +1125,12 @@ class Ubicacion(BaseModel):
 
 | Campo | Tipo | Obligatorio | Valor por Defecto |
 |---|---|---|---|
-| `pais` | `Optional[str]` | ❌ No | `""` (cadena vacía) |
-| `comunidad` | `Optional[str]` | ❌ No | `""` |
-| `provincia` | `Optional[str]` | ❌ No | `""` |
-| `municipio` | `Optional[str]` | ❌ No | `""` |
+| `pais` | `Optional[str]` | No | `""` (cadena vacía) |
+| `comunidad` | `Optional[str]` | No | `""` |
+| `provincia` | `Optional[str]` | No | `""` |
+| `municipio` | `Optional[str]` | No | `""` |
 
-#### Modelo `Asociacion` — Registro principal del catálogo
+#### <a id="modelo-asociacion-registro-principal-del-catálogo"></a>Modelo `Asociacion` — Registro principal del catálogo
 
 ```python
 class Asociacion(BaseModel):
@@ -1071,19 +1149,19 @@ class Asociacion(BaseModel):
 
 | Campo | Tipo | Obligatorio | Validación Implícita |
 |---|---|---|---|
-| `id` | `Union[int, str]` | ✅ Sí | Acepta enteros (timestamps) o cadenas |
-| `nombre_asociacion` | `str` | ✅ Sí | No puede ser nulo ni omitido |
-| `siglas` | `str` | ✅ Sí | No puede ser nulo ni omitido |
-| `logo` | `Optional[str]` | ❌ No | URL del logo o cadena vacía |
-| `descripcion` | `str` | ✅ Sí | No puede ser nulo ni omitido |
-| `categoria` | `str` | ✅ Sí | ID de categoría (referencia cruzada) |
-| `etiquetas` | `List[str]` | ✅ Sí | Lista de IDs de etiquetas; Pydantic rechaza tipos no-lista |
-| `contactos` | `List[Contacto]` | ✅ Sí | Lista de subobjetos; cada elemento se valida recursivamente contra el modelo `Contacto` |
-| `cartera_servicios` | `str` | ✅ Sí | No puede ser nulo ni omitido |
-| `videos` | `Optional[List[str]]` | ❌ No | Lista de URLs/IDs de YouTube |
-| `ubicacion` | `Optional[Ubicacion]` | ❌ No | Subobjeto validado recursivamente o `None` |
+| `id` | `Union[int, str]` | Sí | Acepta enteros (timestamps) o cadenas |
+| `nombre_asociacion` | `str` | Sí | No puede ser nulo ni omitido |
+| `siglas` | `str` | Sí | No puede ser nulo ni omitido |
+| `logo` | `Optional[str]` | No | URL del logo o cadena vacía |
+| `descripcion` | `str` | Sí | No puede ser nulo ni omitido |
+| `categoria` | `str` | Sí | ID de categoría (referencia cruzada) |
+| `etiquetas` | `List[str]` | Sí | Lista de IDs de etiquetas; Pydantic rechaza tipos no-lista |
+| `contactos` | `List[Contacto]` | Sí | Lista de subobjetos; cada elemento se valida recursivamente contra el modelo `Contacto` |
+| `cartera_servicios` | `str` | Sí | No puede ser nulo ni omitido |
+| `videos` | `Optional[List[str]]` | No | Lista de URLs/IDs de YouTube |
+| `ubicacion` | `Optional[Ubicacion]` | No | Subobjeto validado recursivamente o `None` |
 
-#### Modelos `Categoria` y `Etiqueta` — Taxonomía del directorio
+#### <a id="modelos-categoria-y-etiqueta-taxonomía-del-directorio"></a>Modelos `Categoria` y `Etiqueta` — Taxonomía del directorio
 
 ```python
 class Categoria(BaseModel):
@@ -1097,10 +1175,10 @@ class Etiqueta(BaseModel):
 
 | Campo | Tipo | Obligatorio |
 |---|---|---|
-| `id` | `str` | ✅ Sí |
-| `nombre` | `str` | ✅ Sí |
+| `id` | `str` | Sí |
+| `nombre` | `str` | Sí |
 
-#### Modelo `ConfigWeb` — Configuración visual global
+#### <a id="modelo-configweb-configuración-visual-global"></a>Modelo `ConfigWeb` — Configuración visual global
 
 ```python
 class ConfigWeb(BaseModel):
@@ -1109,9 +1187,9 @@ class ConfigWeb(BaseModel):
 
 | Campo | Tipo | Obligatorio | Valor por Defecto |
 |---|---|---|---|
-| `fondo` | `Optional[str]` | ❌ No | `""` (sin imagen de fondo) |
+| `fondo` | `Optional[str]` | No | `""` (sin imagen de fondo) |
 
-#### Modelos `RepresentanteSolicitud` y `SolicitudAsociacion` — Solicitudes de inclusión
+#### <a id="modelos-representantesolicitud-y-solicitudasociacion-solicitudes-de-inclusión"></a>Modelos `RepresentanteSolicitud` y `SolicitudAsociacion` — Solicitudes de inclusión
 
 ```python
 class RepresentanteSolicitud(BaseModel):
@@ -1133,23 +1211,23 @@ class SolicitudAsociacion(BaseModel):
 
 | Campo (SolicitudAsociacion) | Tipo | Obligatorio | Validación Implícita |
 |---|---|---|---|
-| `nombre_asociacion` | `str` | ✅ Sí | No puede ser nulo ni omitido |
-| `siglas` | `str` | ✅ Sí | No puede ser nulo ni omitido |
-| `descripcion` | `str` | ✅ Sí | No puede ser nulo ni omitido |
-| `categoria_sugerida` | `Optional[str]` | ❌ No | Cadena libre sugerida por el solicitante |
-| `web` | `Optional[str]` | ❌ No | URL de la asociación |
-| `ubicacion` | `Optional[Ubicacion]` | ❌ No | Subobjeto validado recursivamente |
-| `mensaje` | `Optional[str]` | ❌ No | Mensaje adicional del solicitante |
-| `representante` | `RepresentanteSolicitud` | ✅ Sí | Subobjeto obligatorio con campos `nombre`, `cargo` y `email` requeridos |
+| `nombre_asociacion` | `str` | Sí | No puede ser nulo ni omitido |
+| `siglas` | `str` | Sí | No puede ser nulo ni omitido |
+| `descripcion` | `str` | Sí | No puede ser nulo ni omitido |
+| `categoria_sugerida` | `Optional[str]` | No | Cadena libre sugerida por el solicitante |
+| `web` | `Optional[str]` | No | URL de la asociación |
+| `ubicacion` | `Optional[Ubicacion]` | No | Subobjeto validado recursivamente |
+| `mensaje` | `Optional[str]` | No | Mensaje adicional del solicitante |
+| `representante` | `RepresentanteSolicitud` | Sí | Subobjeto obligatorio con campos `nombre`, `cargo` y `email` requeridos |
 
 ---
 
-#### 4.7.4.2. Validación Automática en Firma de Endpoint (FastAPI + Pydantic)
+#### <a id="4742-validación-automática-en-firma-de-endpoint-fastapi-pydantic"></a>4.7.4.2. Validación Automática en Firma de Endpoint (FastAPI + Pydantic)
 
 Para los endpoints que reciben payloads con estructura predecible, FastAPI aplica la validación Pydantic **automáticamente en la firma de la función**, antes de que se ejecute una sola línea de lógica de negocio:
 
 ```python
-# server.py — Validación automática en la firma (líneas 170-176 y 196-206)
+# <a id="serverpy-validación-automática-en-la-firma-líneas-170-176-y-196-206"></a>server.py — Validación automática en la firma (líneas 170-176 y 196-206)
 @app.post("/api/config")
 async def guardar_config(payload: ConfigWeb, token: dict = Depends(verify_token)):
     # Si payload no cumple ConfigWeb → FastAPI devuelve 422 automáticamente
@@ -1181,12 +1259,12 @@ Este mecanismo protege especialmente el endpoint público `POST /api/solicitudes
 
 ---
 
-#### 4.7.4.3. Validación Explícita con Bloque `try/except` (Endpoints Genéricos)
+#### <a id="4743-validación-explícita-con-bloque-tryexcept-endpoints-genéricos"></a>4.7.4.3. Validación Explícita con Bloque `try/except` (Endpoints Genéricos)
 
 Para los endpoints genéricos que manejan múltiples tipos de recurso (`POST /api/{recurso}`, `PUT /api/{recurso}/{id}`), la validación Pydantic se aplica **explícitamente** dentro de un bloque `try/except ValidationError`, ya que el modelo concreto se selecciona dinámicamente en función del recurso solicitado:
 
 ```python
-# server.py — Validación explícita en POST genérico (líneas 459-477)
+# <a id="serverpy-validación-explícita-en-post-genérico-líneas-459-477"></a>server.py — Validación explícita en POST genérico (líneas 459-477)
 if isinstance(payload, dict):
     try:
         if recurso == 'asociaciones':
@@ -1203,7 +1281,7 @@ if isinstance(payload, dict):
 ```
 
 ```python
-# server.py — Validación explícita en PUT genérico (líneas 519-530)
+# <a id="serverpy-validación-explícita-en-put-genérico-líneas-519-530"></a>server.py — Validación explícita en PUT genérico (líneas 519-530)
 try:
     if recurso == 'asociaciones':
         validated_item = Asociacion(**payload)
@@ -1223,7 +1301,7 @@ except ValidationError as e:
 **Caso de sobreescritura en bloque**: Cuando el endpoint recibe una lista completa de registros, **cada elemento individual** se valida contra su modelo correspondiente antes de permitir la escritura. Si un solo elemento de la lista es inválido, toda la operación se aborta:
 
 ```python
-# server.py — Validación elemento a elemento en modo bloque (líneas 483-494)
+# <a id="serverpy-validación-elemento-a-elemento-en-modo-bloque-líneas-483-494"></a>server.py — Validación elemento a elemento en modo bloque (líneas 483-494)
 elif isinstance(payload, list):
     validated_list = []
     try:
@@ -1240,13 +1318,13 @@ elif isinstance(payload, list):
 
 ---
 
-#### 4.7.4.4. Protección de Identidad (Inmutabilidad de IDs)
+#### <a id="4744-protección-de-identidad-inmutabilidad-de-ids"></a>4.7.4.4. Protección de Identidad (Inmutabilidad de IDs)
 
 En el endpoint `PUT /api/{recurso}/{id}`, después de localizar el registro existente, el servidor **sobrescribe el campo `id` del payload con el ID original** almacenado en la base de datos, impidiendo que un cliente malintencionado mute el identificador de un registro durante una actualización:
 
 ```python
-# server.py — Conservación forzada del ID original (líneas 516-517)
-# Conservar el ID original para evitar mutaciones de ID en BD
+# <a id="serverpy-conservación-forzada-del-id-original-líneas-516-517"></a>server.py — Conservación forzada del ID original (líneas 516-517)
+# <a id="conservar-el-id-original-para-evitar-mutaciones-de-id-en-bd"></a>Conservar el ID original para evitar mutaciones de ID en BD
 payload["id"] = existing_data[found_index]["id"]
 ```
 
@@ -1254,12 +1332,12 @@ Sin esta medida, un atacante autenticado podría enviar un payload con un `id` d
 
 ---
 
-#### 4.7.4.5. Restricción de Recursos (Whitelist de Nombres de Recurso)
+#### <a id="4745-restricción-de-recursos-whitelist-de-nombres-de-recurso"></a>4.7.4.5. Restricción de Recursos (Whitelist de Nombres de Recurso)
 
 Antes de ejecutar cualquier operación de lectura o escritura, la función auxiliar `get_resource_file()` valida que el nombre del recurso solicitado pertenezca a una **lista blanca cerrada** de valores aceptados:
 
 ```python
-# server.py — Whitelist de recursos (líneas 104-107)
+# <a id="serverpy-whitelist-de-recursos-líneas-104-107"></a>server.py — Whitelist de recursos (líneas 104-107)
 def get_resource_file(recurso: str) -> str:
     if recurso not in ['asociaciones', 'categorias', 'etiquetas']:
         raise HTTPException(status_code=404, detail="Recurso no encontrado")
@@ -1270,14 +1348,14 @@ def get_resource_file(recurso: str) -> str:
 
 ---
 
-#### 4.7.4.6. Validación de Archivos Subidos (Extensión y Tamaño)
+#### <a id="4746-validación-de-archivos-subidos-extensión-y-tamaño"></a>4.7.4.6. Validación de Archivos Subidos (Extensión y Tamaño)
 
 El endpoint `POST /api/upload-logo` implementa una doble barrera de validación para los archivos de imagen subidos al servidor:
 
 **Barrera 1 — Validación de extensión contra whitelist**:
 
 ```python
-# server.py — Extensiones de imagen permitidas (líneas 237-251)
+# <a id="serverpy-extensiones-de-imagen-permitidas-líneas-237-251"></a>server.py — Extensiones de imagen permitidas (líneas 237-251)
 ALLOWED_LOGO_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'}
 
 ext = os.path.splitext(original_name)[1].lower()
@@ -1301,7 +1379,7 @@ Cualquier extensión no listada (`.exe`, `.php`, `.js`, `.html`, `.bat`, etc.) e
 **Barrera 2 — Límite de tamaño máximo de archivo**:
 
 ```python
-# server.py — Restricción de tamaño (líneas 260-264)
+# <a id="serverpy-restricción-de-tamaño-líneas-260-264"></a>server.py — Restricción de tamaño (líneas 260-264)
 MAX_SIZE = 5 * 1024 * 1024  # 5 MB
 content = await file.read()
 if len(content) > MAX_SIZE:
@@ -1313,7 +1391,7 @@ Este límite de **5 MB** previene ataques de **denegación de servicio (DoS)** p
 **Barrera 3 — Renombrado con UUID aleatorio**:
 
 ```python
-# server.py — Nombre único anti-colisión (línea 254)
+# <a id="serverpy-nombre-único-anti-colisión-línea-254"></a>server.py — Nombre único anti-colisión (línea 254)
 unique_name = f"{uuid.uuid4().hex}{ext}"
 ```
 
@@ -1321,12 +1399,12 @@ El nombre original del archivo subido es descartado y reemplazado por un identif
 
 ---
 
-#### 4.7.4.7. Validación Semántica de Estados (Solicitudes de Inclusión)
+#### <a id="4747-validación-semántica-de-estados-solicitudes-de-inclusión"></a>4.7.4.7. Validación Semántica de Estados (Solicitudes de Inclusión)
 
 El endpoint `PUT /api/solicitudes/{solicitud_id}` implementa una validación semántica adicional que restringe los valores aceptados para el campo `estado` a un conjunto cerrado de valores legítimos:
 
 ```python
-# server.py — Validación de estados válidos (líneas 219-221)
+# <a id="serverpy-validación-de-estados-válidos-líneas-219-221"></a>server.py — Validación de estados válidos (líneas 219-221)
 estado = payload.get("estado", sol["estado"])
 if estado not in ["pendiente", "revisada", "aprobada", "rechazada"]:
     raise HTTPException(status_code=400, detail="Estado no válido")
@@ -1343,7 +1421,7 @@ Cualquier valor fuera de este conjunto (por ejemplo, `eliminada`, `<script>alert
 
 ---
 
-#### 4.7.4.8. Tabla Resumen: Cobertura de Validación por Endpoint
+#### <a id="4748-tabla-resumen-cobertura-de-validación-por-endpoint"></a>4.7.4.8. Tabla Resumen: Cobertura de Validación por Endpoint
 
 | Endpoint | Método | Tipo de Validación | Modelo/Mecanismo | Código de Error |
 |---|---|---|---|---|
@@ -1359,11 +1437,11 @@ Cualquier valor fuera de este conjunto (por ejemplo, `eliminada`, `<script>alert
 
 
 
-### 4.7.5. Protección Antispam (Filtro Honeypot) en Solicitudes Públicas
+### <a id="475-protección-antispam-filtro-honeypot-en-solicitudes-públicas"></a>4.7.5. Protección Antispam (Filtro Honeypot) en Solicitudes Públicas
 
 Para salvaguardar los recursos del servidor y la base de datos de solicitudes (`solicitudes.json`) contra ataques automatizados de bots (inundación de solicitudes de inclusión falsas o *spam*), se ha implementado un mecanismo de defensa pasivo conocido como **Filtro Honeypot** (tarro de miel) en la capa de cliente. Este enfoque proporciona una alta eficacia de filtrado sin imponer fricción alguna (como los engorrosos CAPTCHAs) al usuario humano.
 
-#### 4.7.5.1. Implementación de la Trampa Silenciosa (HTML)
+#### <a id="4751-implementación-de-la-trampa-silenciosa-html"></a>4.7.5.1. Implementación de la Trampa Silenciosa (HTML)
 
 El formulario público de contacto (`contacto.html`) incorpora un campo de entrada camuflado estratégicamente para atraer a los scripts automatizados:
 
@@ -1375,11 +1453,11 @@ El formulario público de contacto (`contacto.html`) incorpora un campo de entra
 
 El campo oculto honeypot se basa en cuatro mecanismos. Primero, utiliza el atributo `name="website_url"` como señuelo para atraer a los scripts automatizados que buscan inyectar enlaces. Segundo, el campo se oculta visualmente mediante reglas CSS (`display:none`, `visibility:hidden`, `position:absolute`, `left:-9999px`), asegurando que no sea visible para los usuarios humanos. Tercero, se aplica el atributo `tabindex="-1"` para evitar que los usuarios accedan accidentalmente al campo al navegar mediante el teclado. Finalmente, se incluye el atributo `autocomplete="off"` para impedir que los gestores de contraseñas o el autocompletado del navegador introduzcan datos inadvertidamente en el campo.
 
-#### 4.7.5.2. Comportamiento de los Bots Automatizados
+#### <a id="4752-comportamiento-de-los-bots-automatizados"></a>4.7.5.2. Comportamiento de los Bots Automatizados
 
 Para los usuarios humanos, este campo es invisible e inaccesible y permanece vacío. En cambio, los bots automatizados y rastreadores procesan el código HTML directamente. Al encontrar la etiqueta de entrada de texto `<input type="text">` con el nombre `website_url`, tienden a rellenarla automáticamente con datos comerciales, activando así el mecanismo de detección.
 
-#### 4.7.5.3. Intercepción y Bloqueo en Cliente (JavaScript)
+#### <a id="4753-intercepción-y-bloqueo-en-cliente-javascript"></a>4.7.5.3. Intercepción y Bloqueo en Cliente (JavaScript)
 
 La validación del honeypot se realiza asíncronamente en el lado del cliente (en el archivo `contacto.js`), exactamente en el momento en que se intenta enviar el formulario, **antes** de realizar ninguna petición de red hacia el backend:
 
@@ -1401,17 +1479,17 @@ form.addEventListener('submit', async (e) => {
 });
 ```
 
-#### 4.7.5.4. Beneficios del Diseño Honeypot
+#### <a id="4754-beneficios-del-diseño-honeypot"></a>4.7.5.4. Beneficios del Diseño Honeypot
 
 La implementación del Honeypot aporta varias ventajas. En primer lugar, mejora la experiencia del usuario, ya que no introduce elementos de fricción como los CAPTCHAs y permite al solicitante enviar los datos de manera transparente. En segundo lugar, al interceptar las peticiones en el cliente con JavaScript, se evitan envíos de red innecesarios, ahorrando ancho de banda. Por último, protege los recursos de procesamiento en el servidor, evitando que FastAPI y el sistema de validación Pydantic consuman ciclos de CPU en el procesamiento y rechazo de solicitudes de spam automatizado.
 
-# 5. IMPLEMENTACIÓN
+# <a id="5-implementacion"></a>5. IMPLEMENTACIÓN
 
-## 5.1. Introducción
+## <a id="51-introduccion"></a>5.1. Introducción
 
 En este capítulo se describe el proceso de implementación del portal web para el Hospital Universitario San Cecilio. El objetivo de esta fase ha sido trasladar las especificaciones funcionales y técnicas del diseño arquitectónico a código fuente operativo. El desarrollo se ha llevado a cabo de manera modular, dividiendo la aplicación en tres capas principales: la capa de presentación (Frontend), la capa de lógica de negocio (Backend) y la capa de almacenamiento de datos. Esta separación garantiza un código más mantenible, escalable y con un bajo nivel de acoplamiento.
 
-## 5.2. Capa de Presentación (Frontend)
+## <a id="52-capa-de-presentacion-frontend"></a>5.2. Capa de Presentación (Frontend)
 
 El entorno de usuario se ha desarrollado con el objetivo de proporcionar una interfaz clara e intuitiva tanto para el usuario público como para el administrador. Se ha optado por un enfoque basado en tecnologías web estándar, evitando el uso de frameworks de JavaScript complejos como React o Angular, con el fin de optimizar el rendimiento, reducir el peso de las descargas iniciales y simplificar el mantenimiento futuro.
 
@@ -1421,7 +1499,7 @@ El diseño visual se gestiona de forma centralizada mediante hojas de estilo CSS
 
 La interactividad de la plataforma recae en scripts desarrollados en Vanilla JavaScript. Esta capa es responsable de capturar los eventos del usuario, gestionar el filtrado dinámico del catálogo, abrir y cerrar ventanas modales, y validar formularios antes de su envío. Para la comunicación con el servidor, JavaScript utiliza la Fetch API de forma asíncrona, lo que permite enviar y recibir datos en formato JSON sin necesidad de recargar la página. Además, desde el cliente se gestiona el token de sesión (JWT), almacenándolo en el `localStorage` e interceptando las respuestas del servidor para detectar expiraciones de sesión de forma proactiva.
 
-## 5.3. Capa de Negocio (Backend)
+## <a id="53-capa-de-negocio-backend"></a>5.3. Capa de Negocio (Backend)
 
 La lógica de negocio reside en un servidor backend desarrollado en Python, diseñado para ofrecer una API RESTful asíncrona de alto rendimiento. Esta capa actúa como intermediario entre el cliente y los archivos de datos, validando las peticiones y garantizando la seguridad del sistema.
 
@@ -1431,7 +1509,7 @@ Un componente crítico en esta capa es la validación de datos mediante la libre
 
 El control de acceso a los endpoints de administración se gestiona mediante tokens JWT (JSON Web Tokens). Al iniciar sesión, el servidor valida las credenciales y emite un token firmado criptográficamente con una vigencia limitada. Este token debe incluirse en la cabecera `Authorization` de todas las peticiones posteriores que requieran privilegios de administrador. El backend descifra y verifica la firma del token en cada solicitud; si el token es inválido o ha expirado, la operación se aborta devolviendo un error HTTP 401.
 
-## 5.4. Capa de Datos (Almacenamiento Estructurado)
+## <a id="54-capa-de-datos-almacenamiento-estructurado"></a>5.4. Capa de Datos (Almacenamiento Estructurado)
 
 La capa de datos se ha implementado mediante un sistema de almacenamiento basado en archivos de texto plano en formato JSON, descartando el uso de bases de datos relacionales tradicionales para mantener la simplicidad y portabilidad del proyecto.
 
@@ -1439,16 +1517,16 @@ El acceso y manipulación de estos archivos se realiza mediante los módulos est
 
 Además de los archivos de texto, la capa de datos gestiona el almacenamiento físico de imágenes. Cuando se recibe un logotipo a través del formulario de administración, el servidor valida el peso y la extensión del archivo. Para prevenir colisiones y problemas de seguridad (como ataques de path traversal), el archivo se renombra utilizando un UUID aleatorio antes de ser guardado definitivamente en el directorio de imágenes.
 
-## 5.5. Despliegue y Puesta en Marcha
+## <a id="55-despliegue-y-puesta-en-marcha"></a>5.5. Despliegue y Puesta en Marcha
 
-### Guía de Despliegue en Servidor — Catálogo de Asociaciones
+### <a id="guía-de-despliegue-en-servidor-catálogo-de-asociaciones"></a>Guía de Despliegue en Servidor — Catálogo de Asociaciones
 
 > **AsociAcción** — Directorio de Asociaciones del Hospital Universitario Clínico San Cecilio
 
 Guía paso a paso para desplegar la plataforma en un **servidor**, accesible desde internet.
 ---
 
-#### Índice
+#### <a id="índice"></a>Índice
 
 - 5.5.1. [Resumen de la arquitectura](#1-resumen-de-la-arquitectura)
 - 5.5.2. [Requisitos del servidor](#2-requisitos-del-servidor)
@@ -1468,7 +1546,7 @@ Guía paso a paso para desplegar la plataforma en un **servidor**, accesible des
 
 ---
 
-### 5.5.1. Resumen de la arquitectura
+### <a id="551-resumen-de-la-arquitectura"></a>5.5.1. Resumen de la arquitectura
 
 Así funciona la aplicación una vez desplegada en un servidor:
 
@@ -1503,7 +1581,7 @@ Así funciona la aplicación una vez desplegada en un servidor:
 
 ---
 
-### 5.5.2. Requisitos del servidor
+### <a id="552-requisitos-del-servidor"></a>5.5.2. Requisitos del servidor
 
 | Requisito | Mínimo recomendado |
 |---|---|
@@ -1519,9 +1597,9 @@ Así funciona la aplicación una vez desplegada en un servidor:
 
 ---
 
-### 5.5.3. Preparar el servidor
+### <a id="553-preparar-el-servidor"></a>5.5.3. Preparar el servidor
 
-#### 5.5.3.1. Conectarse al servidor por SSH
+#### <a id="5531-conectarse-al-servidor-por-ssh"></a>5.5.3.1. Conectarse al servidor por SSH
 
 Desde tu ordenador Windows, abre **PowerShell** y conéctate:
 
@@ -1533,13 +1611,13 @@ ssh usuario@IP_DEL_SERVIDOR
 >
 > Si prefieres una interfaz gráfica, puedes usar [PuTTY](https://www.putty.org/): descárgalo, introduce la IP en "Host Name", puerto 22, y pulsa "Open".
 
-#### 5.5.3.2. Actualizar el sistema
+#### <a id="5532-actualizar-el-sistema"></a>5.5.3.2. Actualizar el sistema
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-#### 5.5.3.3. Instalar el software necesario
+#### <a id="5533-instalar-el-software-necesario"></a>5.5.3.3. Instalar el software necesario
 
 ```bash
 sudo apt install -y python3 python3-pip python3-venv nginx unzip ufw certbot python3-certbot-nginx
@@ -1553,7 +1631,7 @@ sudo apt install -y python3 python3-pip python3-venv nginx unzip ufw certbot pyt
 | `ufw` | Firewall sencillo para proteger el servidor |
 | `certbot` + `python3-certbot-nginx` | Obtener certificados SSL gratuitos (Let's Encrypt) |
 
-#### 5.5.3.4. Crear un usuario dedicado para la aplicación (buena práctica)
+#### <a id="5534-crear-un-usuario-dedicado-para-la-aplicación-buena-práctica"></a>5.5.3.4. Crear un usuario dedicado para la aplicación (buena práctica)
 
 ```bash
 sudo useradd -m -s /bin/bash catalogo
@@ -1564,11 +1642,11 @@ sudo passwd catalogo
 
 ---
 
-### 5.5.4. Subir el proyecto al servidor
+### <a id="554-subir-el-proyecto-al-servidor"></a>5.5.4. Subir el proyecto al servidor
 
 El proyecto se entrega como un archivo comprimido (`.zip`). Hay varias formas de subirlo al servidor desde Windows.
 
-#### 5.5.4.1. Opción A: Subir mediante WinSCP o FileZilla (recomendado)
+#### <a id="5541-opción-a-subir-mediante-winscp-o-filezilla-recomendado"></a>5.5.4.1. Opción A: Subir mediante WinSCP o FileZilla (recomendado)
 
 Esta es la forma más sencilla desde Windows, ya que utiliza una interfaz gráfica:
 
@@ -1583,15 +1661,15 @@ Esta es la forma más sencilla desde Windows, ya que utiliza una interfaz gráfi
 5. En el panel izquierdo (tu PC), busca la carpeta del proyecto.
 6. Arrastra la carpeta del proyecto al panel derecho y renómbrala a `app`.
 
-#### 5.5.4.2. Opción B: Subir con SCP desde PowerShell
+#### <a id="5542-opción-b-subir-con-scp-desde-powershell"></a>5.5.4.2. Opción B: Subir con SCP desde PowerShell
 
 Abre **PowerShell** en Windows y ejecuta:
 
 ```
-# Si el proyecto está en un archivo ZIP:
+# <a id="si-el-proyecto-está-en-un-archivo-zip"></a>Si el proyecto está en un archivo ZIP:
 scp C:\Ruta\al\Catalogo_Asociaciones.zip usuario@IP_DEL_SERVIDOR:/home/catalogo/
 
-# Si es una carpeta descomprimida:
+# <a id="si-es-una-carpeta-descomprimida"></a>Si es una carpeta descomprimida:
 scp -r C:\Ruta\al\Catalogo_Asociaciones\ usuario@IP_DEL_SERVIDOR:/home/catalogo/app
 ```
 
@@ -1603,14 +1681,14 @@ cd /home/catalogo
 unzip Catalogo_Asociaciones.zip -d app
 ```
 
-#### 5.5.4.3. Opción C: Subir mediante un pendrive (servidores físicos)
+#### <a id="5543-opción-c-subir-mediante-un-pendrive-servidores-físicos"></a>5.5.4.3. Opción C: Subir mediante un pendrive (servidores físicos)
 
 Si el servidor es una máquina física accesible:
 
 1. Copia el archivo comprimido a un pendrive USB.
 2. Monta el pendrive en el servidor y copia los archivos a `/home/catalogo/app`.
 
-#### 5.5.4.4. Verificar que los archivos están correctamente subidos
+#### <a id="5544-verificar-que-los-archivos-están-correctamente-subidos"></a>5.5.4.4. Verificar que los archivos están correctamente subidos
 
 ```bash
 ls /home/catalogo/app/
@@ -1626,36 +1704,36 @@ sudo chown -R catalogo:catalogo /home/catalogo/app
 
 ---
 
-### 5.5.5. Instalar dependencias de Python
+### <a id="555-instalar-dependencias-de-python"></a>5.5.5. Instalar dependencias de Python
 
 ```bash
-# Cambiar al usuario de la aplicación
+# <a id="cambiar-al-usuario-de-la-aplicación"></a>Cambiar al usuario de la aplicación
 sudo -u catalogo -i
 
-# Ir a la carpeta del proyecto
+# <a id="ir-a-la-carpeta-del-proyecto"></a>Ir a la carpeta del proyecto
 cd /home/catalogo/app
 
-# Crear entorno virtual
+# <a id="crear-entorno-virtual"></a>Crear entorno virtual
 python3 -m venv venv
 
-# Activar entorno virtual
+# <a id="activar-entorno-virtual"></a>Activar entorno virtual
 source venv/bin/activate
 
-# Instalar dependencias
+# <a id="instalar-dependencias"></a>Instalar dependencias
 pip install -r requirements.txt
 
-# Verificar que funciona (debería arrancar sin errores)
+# <a id="verificar-que-funciona-debería-arrancar-sin-errores"></a>Verificar que funciona (debería arrancar sin errores)
 python -m uvicorn server:app --host 127.0.0.1 --port 8080 &
 curl http://127.0.0.1:8080
-# Si devuelve HTML, funciona correctamente
+# <a id="si-devuelve-html-funciona-correctamente"></a>Si devuelve HTML, funciona correctamente
 
-# Detener la prueba
+# <a id="detener-la-prueba"></a>Detener la prueba
 kill %1
 ```
 
 ---
 
-### 5.5.6. Configurar variables de entorno
+### <a id="556-configurar-variables-de-entorno"></a>5.5.6. Configurar variables de entorno
 
 Crea un archivo `.env` en la carpeta del proyecto:
 
@@ -1666,14 +1744,14 @@ sudo nano /home/catalogo/app/.env
 Escribe lo siguiente (modifica los valores):
 
 ```env
-# ======================================
-# CONFIGURACIÓN DE PRODUCCIÓN
-# ======================================
+# <a id=""></a>======================================
+# <a id="configuración-de-producción"></a>CONFIGURACIÓN DE PRODUCCIÓN
+# <a id=""></a>======================================
 
-# Clave secreta para firmar tokens JWT (CÁMBIALA por una cadena larga y aleatoria)
+# <a id="clave-secreta-para-firmar-tokens-jwt-cámbiala-por-una-cadena-larga-y-aleatoria"></a>Clave secreta para firmar tokens JWT (CÁMBIALA por una cadena larga y aleatoria)
 SECRET_KEY=pon_aqui_una_clave_muy_larga_y_aleatoria_2026_xyz
 
-# Credenciales del administrador
+# <a id="credenciales-del-administrador"></a>Credenciales del administrador
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=ContraseñaDeAdministrador1!
 ```
@@ -1691,11 +1769,11 @@ chown catalogo:catalogo /home/catalogo/app/.env
 
 ---
 
-### 5.5.7. Crear el servicio del sistema (systemd)
+### <a id="557-crear-el-servicio-del-sistema-systemd"></a>5.5.7. Crear el servicio del sistema (systemd)
 
 Un **servicio systemd** hace que la aplicación se inicie automáticamente cuando el servidor arranca y se reinicie si se cae.
 
-#### 5.5.7.1. Crear el archivo de servicio
+#### <a id="5571-crear-el-archivo-de-servicio"></a>5.5.7.1. Crear el archivo de servicio
 
 ```bash
 sudo nano /etc/systemd/system/catalogo.service
@@ -1718,7 +1796,7 @@ ExecStart=/home/catalogo/app/venv/bin/uvicorn server:app --host 127.0.0.1 --port
 Restart=always
 RestartSec=5
 
-# Seguridad adicional del proceso
+# <a id="seguridad-adicional-del-proceso"></a>Seguridad adicional del proceso
 NoNewPrivileges=true
 PrivateTmp=true
 
@@ -1728,19 +1806,19 @@ WantedBy=multi-user.target
 
 Guarda y cierra (`Ctrl+O`, `Enter`, `Ctrl+X`).
 
-#### 5.5.7.2. Activar y arrancar el servicio
+#### <a id="5572-activar-y-arrancar-el-servicio"></a>5.5.7.2. Activar y arrancar el servicio
 
 ```bash
-# Recargar la configuración de systemd
+# <a id="recargar-la-configuración-de-systemd"></a>Recargar la configuración de systemd
 sudo systemctl daemon-reload
 
-# Activar para que arranque con el servidor
+# <a id="activar-para-que-arranque-con-el-servidor"></a>Activar para que arranque con el servidor
 sudo systemctl enable catalogo
 
-# Arrancar el servicio ahora
+# <a id="arrancar-el-servicio-ahora"></a>Arrancar el servicio ahora
 sudo systemctl start catalogo
 
-# Verificar que está funcionando
+# <a id="verificar-que-está-funcionando"></a>Verificar que está funcionando
 sudo systemctl status catalogo
 ```
 
@@ -1751,7 +1829,7 @@ Deberías ver algo como:
      Active: active (running) since ...
 ```
 
-#### 5.5.7.3. Comandos útiles del servicio
+#### <a id="5573-comandos-útiles-del-servicio"></a>5.5.7.3. Comandos útiles del servicio
 
 | Acción | Comando |
 |---|---|
@@ -1764,11 +1842,11 @@ Deberías ver algo como:
 
 ---
 
-### 5.5.8. Configurar Nginx como proxy inverso
+### <a id="558-configurar-nginx-como-proxy-inverso"></a>5.5.8. Configurar Nginx como proxy inverso
 
 Nginx recibe las peticiones de internet (puerto 80/443) y las redirige al backend (puerto 8080).
 
-#### 5.5.8.1. Crear la configuración del sitio
+#### <a id="5581-crear-la-configuración-del-sitio"></a>5.5.8.1. Crear la configuración del sitio
 
 ```bash
 sudo nano /etc/nginx/sites-available/catalogo
@@ -1804,25 +1882,25 @@ server {
 }
 ```
 
-#### 5.5.8.2. Activar el sitio
+#### <a id="5582-activar-el-sitio"></a>5.5.8.2. Activar el sitio
 
 ```bash
-# Crear enlace simbólico para activar el sitio
+# <a id="crear-enlace-simbólico-para-activar-el-sitio"></a>Crear enlace simbólico para activar el sitio
 sudo ln -s /etc/nginx/sites-available/catalogo /etc/nginx/sites-enabled/
 
-# Eliminar la página por defecto de Nginx (opcional)
+# <a id="eliminar-la-página-por-defecto-de-nginx-opcional"></a>Eliminar la página por defecto de Nginx (opcional)
 sudo rm -f /etc/nginx/sites-enabled/default
 
-# Verificar que la configuración no tiene errores
+# <a id="verificar-que-la-configuración-no-tiene-errores"></a>Verificar que la configuración no tiene errores
 sudo nginx -t
 
-# Recargar Nginx
+# <a id="recargar-nginx"></a>Recargar Nginx
 sudo systemctl reload nginx
 ```
 
 > Si `nginx -t` muestra `syntax is ok` y `test is successful`, todo está correcto.
 
-#### 5.5.8.3. Si no tienes dominio (solo IP)
+#### <a id="5583-si-no-tienes-dominio-solo-ip"></a>5.5.8.3. Si no tienes dominio (solo IP)
 
 Sustituye `tu-dominio.es` por `_` (acepta cualquier petición):
 
@@ -1832,11 +1910,11 @@ server_name _;
 
 ---
 
-### 5.5.9. Obtener certificado SSL con Let's Encrypt
+### <a id="559-obtener-certificado-ssl-con-lets-encrypt"></a>5.5.9. Obtener certificado SSL con Let's Encrypt
 
 >**Requisito**: Necesitas un dominio real apuntando a la IP del servidor. Si solo usas IP, salta este paso (usarás HTTP sin cifrar o un certificado autofirmado).
 
-#### 5.5.9.1. Generar el certificado (automático)
+#### <a id="5591-generar-el-certificado-automático"></a>5.5.9.1. Generar el certificado (automático)
 
 ```bash
 sudo certbot --nginx -d tu-dominio.es -d www.tu-dominio.es
@@ -1847,7 +1925,7 @@ Certbot te pedirá:
 2. Aceptar los términos de servicio.
 3. Si quieres redirigir todo HTTP a HTTPS (recomendado: **Sí**).
 
-#### 5.5.9.2. Verificar la renovación automática
+#### <a id="5592-verificar-la-renovación-automática"></a>5.5.9.2. Verificar la renovación automática
 
 Let's Encrypt caduca cada 90 días, pero Certbot renueva automáticamente:
 
@@ -1857,7 +1935,7 @@ sudo certbot renew --dry-run
 
 Si no muestra errores, la renovación automática está configurada.
 
-#### 5.5.9.3. Alternativa: Certificado autofirmado (sin dominio)
+#### <a id="5593-alternativa-certificado-autofirmado-sin-dominio"></a>5.5.9.3. Alternativa: Certificado autofirmado (sin dominio)
 
 Si no tienes dominio, puedes usar el script incluido en el proyecto:
 
@@ -1880,24 +1958,46 @@ server {
 }
 ```
 
+#### <a id="5594-alternativa-usar-un-certificado-corporativo-preexistente"></a>5.5.9.4. Alternativa: Usar un certificado corporativo preexistente
+
+Si el hospital o el departamento de informática ya te proporciona un certificado SSL válido (comprado o corporativo), no necesitas ejecutar Certbot. Solo tienes que importarlo:
+
+1. **Subir los archivos:** Sube el archivo del certificado público (suele llamarse `cert.pem`, `fullchain.pem` o `certificado.crt`) y el de la clave privada (`key.pem` o `privada.key`) al servidor.
+2. **Ubicación recomendada:** Por seguridad, mueve el certificado a `/etc/ssl/certs/` y la clave privada a `/etc/ssl/private/`.
+3. **Modificar Nginx:** Edita tu configuración en `/etc/nginx/sites-available/asociaciones` para que apunte directamente a esos archivos:
+
+```nginx
+server {
+    listen 443 ssl;
+    server_name tu-dominio.es;
+
+    ssl_certificate /etc/ssl/certs/fullchain.pem;
+    ssl_certificate_key /etc/ssl/private/key.pem;
+
+    # ... el resto se mantiene igual ...
+}
+```
+
+4. **Aplicar los cambios:** Ejecuta `sudo systemctl restart nginx`.
+
 > Con certificados autofirmados el navegador mostrará un aviso de seguridad.
 
 ---
 
-### 5.5.10. Configurar el firewall
+### <a id="5510-configurar-el-firewall"></a>5.5.10. Configurar el firewall
 
 ```bash
-# Permitir SSH (para no perder acceso)
+# <a id="permitir-ssh-para-no-perder-acceso"></a>Permitir SSH (para no perder acceso)
 sudo ufw allow 22/tcp
 
-# Permitir HTTP y HTTPS
+# <a id="permitir-http-y-https"></a>Permitir HTTP y HTTPS
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 
-# Activar el firewall
+# <a id="activar-el-firewall"></a>Activar el firewall
 sudo ufw enable
 
-# Verificar las reglas
+# <a id="verificar-las-reglas"></a>Verificar las reglas
 sudo ufw status
 ```
 
@@ -1917,29 +2017,29 @@ To                         Action      From
 
 ---
 
-### 5.5.11. Verificar el despliegue
+### <a id="5511-verificar-el-despliegue"></a>5.5.11. Verificar el despliegue
 
-#### 5.5.11.1. Comprobar que todo está corriendo
+#### <a id="55111-comprobar-que-todo-está-corriendo"></a>5.5.11.1. Comprobar que todo está corriendo
 
 ```bash
-# 1. ¿El servicio está activo?
+# <a id="1-el-servicio-está-activo"></a>1. ¿El servicio está activo?
 sudo systemctl status catalogo
-# Debe mostrar: Active: active (running)
+# <a id="debe-mostrar-active-active-running"></a>Debe mostrar: Active: active (running)
 
-# 2. ¿Nginx está activo?
+# <a id="2-nginx-está-activo"></a>2. ¿Nginx está activo?
 sudo systemctl status nginx
-# Debe mostrar: Active: active (running)
+# <a id="debe-mostrar-active-active-running"></a>Debe mostrar: Active: active (running)
 
-# 3. ¿El backend responde localmente?
+# <a id="3-el-backend-responde-localmente"></a>3. ¿El backend responde localmente?
 curl http://127.0.0.1:8080
-# Debe devolver HTML
+# <a id="debe-devolver-html"></a>Debe devolver HTML
 
-# 4. ¿Nginx responde desde fuera?
+# <a id="4-nginx-responde-desde-fuera"></a>4. ¿Nginx responde desde fuera?
 curl http://tu-dominio.es
-# Debe devolver HTML (o redirigir a HTTPS)
+# <a id="debe-devolver-html-o-redirigir-a-https"></a>Debe devolver HTML (o redirigir a HTTPS)
 ```
 
-#### 5.5.11.2. Probar desde un navegador
+#### <a id="55112-probar-desde-un-navegador"></a>5.5.11.2. Probar desde un navegador
 
 Abre el navegador y accede a:
 
@@ -1951,9 +2051,9 @@ Abre el navegador y accede a:
 
 ---
 
-### 5.5.12. Mantenimiento y copias de seguridad
+### <a id="5512-mantenimiento-y-copias-de-seguridad"></a>5.5.12. Mantenimiento y copias de seguridad
 
-#### 5.5.12.1. Copias de seguridad automáticas
+#### <a id="55121-copias-de-seguridad-automáticas"></a>5.5.12.1. Copias de seguridad automáticas
 
 Crea un script de backup:
 
@@ -1963,18 +2063,18 @@ sudo nano /home/catalogo/backup.sh
 
 ```bash
 #!/bin/bash
-# Backup diario de los datos del Catálogo de Asociaciones
+# <a id="backup-diario-de-los-datos-del-catálogo-de-asociaciones"></a>Backup diario de los datos del Catálogo de Asociaciones
 FECHA=$(date +%Y-%m-%d_%H%M)
 BACKUP_DIR="/home/catalogo/backups"
 mkdir -p "$BACKUP_DIR"
 
-# Copiar la carpeta de datos y los logos
+# <a id="copiar-la-carpeta-de-datos-y-los-logos"></a>Copiar la carpeta de datos y los logos
 tar -czf "$BACKUP_DIR/backup_${FECHA}.tar.gz" \
     /home/catalogo/app/data/ \
     /home/catalogo/app/html/img/logos/ \
     /home/catalogo/app/html/img/fondos/
 
-# Eliminar backups de más de 30 días
+# <a id="eliminar-backups-de-más-de-30-días"></a>Eliminar backups de más de 30 días
 find "$BACKUP_DIR" -name "backup_*.tar.gz" -mtime +30 -delete
 
 echo "Backup completado: backup_${FECHA}.tar.gz"
@@ -1985,7 +2085,7 @@ Hazlo ejecutable y programa su ejecución diaria:
 ```bash
 chmod +x /home/catalogo/backup.sh
 
-# Añadir tarea programada (cron) — se ejecutará cada día a las 3:00 AM
+# <a id="añadir-tarea-programada-cron-se-ejecutará-cada-día-a-las-300-am"></a>Añadir tarea programada (cron) — se ejecutará cada día a las 3:00 AM
 sudo crontab -e
 ```
 
@@ -1995,22 +2095,22 @@ Añade esta línea al final:
 0 3 * * * /home/catalogo/backup.sh >> /home/catalogo/backups/backup.log 2>&1
 ```
 
-#### 5.5.12.2. Actualizar la aplicación
+#### <a id="55122-actualizar-la-aplicación"></a>5.5.12.2. Actualizar la aplicación
 
 Cuando se reciba una nueva versión del proyecto:
 
 ```bash
-# 1. Detener el servicio
+# <a id="1-detener-el-servicio"></a>1. Detener el servicio
 sudo systemctl stop catalogo
 
-# 2. Hacer una copia de seguridad de los datos actuales
+# <a id="2-hacer-una-copia-de-seguridad-de-los-datos-actuales"></a>2. Hacer una copia de seguridad de los datos actuales
 sudo cp -r /home/catalogo/app/data /home/catalogo/data_backup_$(date +%Y%m%d)
 sudo cp -r /home/catalogo/app/html/img/logos /home/catalogo/logos_backup_$(date +%Y%m%d)
 
-# 3. Subir la nueva versión al servidor (desde Windows con WinSCP o PowerShell):
-#    Sube la nueva carpeta a /home/catalogo/app_nueva
+# <a id="3-subir-la-nueva-versión-al-servidor-desde-windows-con-winscp-o-powershell"></a>3. Subir la nueva versión al servidor (desde Windows con WinSCP o PowerShell):
+# <a id="sube-la-nueva-carpeta-a-homecatalogoapp_nueva"></a>Sube la nueva carpeta a /home/catalogo/app_nueva
 
-# 4. En el servidor: reemplazar el código manteniendo los datos
+# <a id="4-en-el-servidor-reemplazar-el-código-manteniendo-los-datos"></a>4. En el servidor: reemplazar el código manteniendo los datos
 sudo -u catalogo bash -c '
   cp -r /home/catalogo/app_nueva/* /home/catalogo/app/
   cd /home/catalogo/app
@@ -2018,30 +2118,30 @@ sudo -u catalogo bash -c '
   pip install -r requirements.txt
 '
 
-# 5. Restaurar los datos (si se sobrescribieron)
+# <a id="5-restaurar-los-datos-si-se-sobrescribieron"></a>5. Restaurar los datos (si se sobrescribieron)
 sudo cp -r /home/catalogo/data_backup_*/* /home/catalogo/app/data/
 
-# 6. Reiniciar el servicio
+# <a id="6-reiniciar-el-servicio"></a>6. Reiniciar el servicio
 sudo chown -R catalogo:catalogo /home/catalogo/app
 sudo systemctl start catalogo
 ```
 
 > **IMPORTANTE**: Siempre haz una copia de seguridad de la carpeta `data/` y `html/img/logos/` antes de actualizar.
 
-#### 5.5.12.3. Ver los logs de la aplicación
+#### <a id="55123-ver-los-logs-de-la-aplicación"></a>5.5.12.3. Ver los logs de la aplicación
 
 ```bash
-# Logs en tiempo real (para detectar errores)
+# <a id="logs-en-tiempo-real-para-detectar-errores"></a>Logs en tiempo real (para detectar errores)
 sudo journalctl -u catalogo -f
 
-# Logs de Nginx (accesos y errores)
+# <a id="logs-de-nginx-accesos-y-errores"></a>Logs de Nginx (accesos y errores)
 sudo tail -f /var/log/nginx/access.log
 sudo tail -f /var/log/nginx/error.log
 ```
 
 ---
 
-### 5.5.13. Estructura del proyecto en el servidor
+### <a id="5513-estructura-del-proyecto-en-el-servidor"></a>5.5.13. Estructura del proyecto en el servidor
 
 ```
 /home/catalogo/
@@ -2080,12 +2180,12 @@ sudo tail -f /var/log/nginx/error.log
 
 ---
 
-### 5.5.14. Solución de problemas
+### <a id="5514-solución-de-problemas"></a>5.5.14. Solución de problemas
 
-#### 5.5.14.1. "El servicio no arranca"
+#### <a id="55141-el-servicio-no-arranca"></a>5.5.14.1. "El servicio no arranca"
 
 ```bash
-# Ver el error exacto
+# <a id="ver-el-error-exacto"></a>Ver el error exacto
 sudo journalctl -u catalogo -n 30 --no-pager
 ```
 
@@ -2094,13 +2194,13 @@ Causas habituales:
 - **Puerto ocupado** → otro proceso usa el 8080. Comprueba con `sudo lsof -i :8080`.
 - **Error de Python** → activa el venv y ejecuta `python -m uvicorn server:app` manualmente para ver el error.
 
-#### 5.5.14.2. "Nginx muestra 502 Bad Gateway"
+#### <a id="55142-nginx-muestra-502-bad-gateway"></a>5.5.14.2. "Nginx muestra 502 Bad Gateway"
 
 Significa que Nginx no puede conectar con el backend:
 1. Verifica que el servicio `catalogo` está corriendo: `sudo systemctl status catalogo`
 2. Verifica que el puerto coincide: el servicio usa `--port 8080` y Nginx apunta a `proxy_pass http://[IP_ADDRESS]:8080`.
 
-#### 5.5.14.3. "No puedo subir logos o archivos grandes"
+#### <a id="55143-no-puedo-subir-logos-o-archivos-grandes"></a>5.5.14.3. "No puedo subir logos o archivos grandes"
 
 Aumenta `client_max_body_size` en la configuración de Nginx:
 ```nginx
@@ -2108,7 +2208,7 @@ client_max_body_size 25M;
 ```
 Y recarga: `sudo systemctl reload nginx`
 
-#### 5.5.14.4. "Los datos se han perdido tras una actualización"
+#### <a id="55144-los-datos-se-han-perdido-tras-una-actualización"></a>5.5.14.4. "Los datos se han perdido tras una actualización"
 
 Los datos viven en `data/`. Si al actualizar se ha sobrescrito esa carpeta, restaura desde un backup:
 
@@ -2118,37 +2218,37 @@ tar -xzf backup_2026-05-29_0300.tar.gz -C /
 sudo systemctl restart catalogo
 ```
 
-#### 5.5.14.5. "El certificado SSL ha caducado"
+#### <a id="55145-el-certificado-ssl-ha-caducado"></a>5.5.14.5. "El certificado SSL ha caducado"
 
 ```bash
 sudo certbot renew
 sudo systemctl reload nginx
 ```
 
-#### 5.5.14.6. "La sesión de admin caduca muy rápido"
+#### <a id="55146-la-sesión-de-admin-caduca-muy-rápido"></a>5.5.14.6. "La sesión de admin caduca muy rápido"
 
 Los tokens JWT expiran cada 30 minutos por seguridad. Esto es intencional. Solo hay que volver a iniciar sesión.
 
 ---
 
-### 5.5.15. Resumen rápido (Chuleta)
+### <a id="5515-resumen-rápido-chuleta"></a>5.5.15. Resumen rápido (Chuleta)
 
 Para administradores con experiencia, el despliegue completo resumido:
 
 ```bash
-# 1. Preparar servidor
+# <a id="1-preparar-servidor"></a>1. Preparar servidor
 sudo apt update && sudo apt install -y python3 python3-pip python3-venv nginx unzip ufw certbot python3-certbot-nginx
 
-# 2. Crear usuario y subir proyecto
+# <a id="2-crear-usuario-y-subir-proyecto"></a>2. Crear usuario y subir proyecto
 sudo useradd -m -s /bin/bash catalogo
-# (Desde tu ordenador): scp Catalogo_Asociaciones.zip usuario@IP:/home/catalogo/
+# <a id="desde-tu-ordenador-scp-catalogo_asociacioneszip-usuarioiphomecatalogo"></a>(Desde tu ordenador): scp Catalogo_Asociaciones.zip usuario@IP:/home/catalogo/
 sudo -u catalogo unzip /home/catalogo/Catalogo_Asociaciones.zip -d /home/catalogo/app
 sudo chown -R catalogo:catalogo /home/catalogo/app
 
-# 3. Instalar dependencias Python
+# <a id="3-instalar-dependencias-python"></a>3. Instalar dependencias Python
 sudo -u catalogo bash -c 'cd /home/catalogo/app && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt'
 
-# 4. Crear .env con credenciales seguras
+# <a id="4-crear-env-con-credenciales-seguras"></a>4. Crear .env con credenciales seguras
 sudo -u catalogo bash -c 'cat > /home/catalogo/app/.env << EOF
 SECRET_KEY=clave_super_secreta_aleatoria
 ADMIN_USERNAME=admin
@@ -2156,23 +2256,23 @@ ADMIN_PASSWORD=ContraseñaDeAdministrador1!
 EOF'
 chmod 600 /home/catalogo/app/.env
 
-# 5. Crear servicio systemd (ver sección 7)
-# 6. Crear config Nginx (ver sección 8)
+# <a id="5-crear-servicio-systemd-ver-sección-7"></a>5. Crear servicio systemd (ver sección 7)
+# <a id="6-crear-config-nginx-ver-sección-8"></a>6. Crear config Nginx (ver sección 8)
 
-# 7. Activar todo
+# <a id="7-activar-todo"></a>7. Activar todo
 sudo systemctl daemon-reload
 sudo systemctl enable --now catalogo
 sudo ln -s /etc/nginx/sites-available/catalogo /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 
-# 8. SSL + Firewall
+# <a id="8-ssl-firewall"></a>8. SSL + Firewall
 sudo certbot --nginx -d tu-dominio.es
 sudo ufw allow 22/tcp && sudo ufw allow 80/tcp && sudo ufw allow 443/tcp && sudo ufw enable
 ```
 
 ---
 
-## 5.6. Guía de Migración — De Python a Node.js y Base de Datos
+## <a id="56-guia-de-migracion-de-python-a-nodejs-y-base-de-datos"></a>5.6. Guía de Migración — De Python a Node.js y Base de Datos
 
 > **Catálogo de Asociaciones — AsociAcción**
 > Hospital Universitario Clínico San Cecilio
@@ -2181,7 +2281,7 @@ Este documento plantea la hoja de ruta para una futura migración de la platafor
 
 ---
 
-### Índice
+### <a id="índice"></a>Índice
 
 - 5.6.1. [¿Por qué migrar?](#561-por-qué-migrar)
 - 5.6.2. [Arquitectura actual vs. arquitectura propuesta](#562-arquitectura-actual-vs-arquitectura-propuesta)
@@ -2200,7 +2300,7 @@ Este documento plantea la hoja de ruta para una futura migración de la platafor
 
 ---
 
-### 5.6.1. ¿Por qué migrar?
+### <a id="561-por-qué-migrar"></a>5.6.1. ¿Por qué migrar?
 
 La aplicación actual funciona correctamente, pero tiene limitaciones que una migración resolvería:
 
@@ -2217,9 +2317,9 @@ La aplicación actual funciona correctamente, pero tiene limitaciones que una mi
 
 ---
 
-### 5.6.2. Arquitectura actual vs. arquitectura propuesta
+### <a id="562-arquitectura-actual-vs-arquitectura-propuesta"></a>5.6.2. Arquitectura actual vs. arquitectura propuesta
 
-#### 5.6.2.1. Arquitectura actual
+#### <a id="5621-arquitectura-actual"></a>5.6.2.1. Arquitectura actual
 
 ```
   Navegador del usuario
@@ -2241,7 +2341,7 @@ La aplicación actual funciona correctamente, pero tiene limitaciones que una mi
   └─────────────┘
 ```
 
-#### 5.6.2.2. Arquitectura propuesta
+#### <a id="5622-arquitectura-propuesta"></a>5.6.2.2. Arquitectura propuesta
 
 ```
   Navegador del usuario
@@ -2264,7 +2364,7 @@ La aplicación actual funciona correctamente, pero tiene limitaciones que una mi
   └─────────────┘
 ```
 
-#### 5.6.2.3. ¿Qué cambia y qué no cambia?
+#### <a id="5623-qué-cambia-y-qué-no-cambia"></a>5.6.2.3. ¿Qué cambia y qué no cambia?
 
 | Componente | ¿Cambia? | Detalle |
 |---|---|---|
@@ -2277,7 +2377,7 @@ La aplicación actual funciona correctamente, pero tiene limitaciones que una mi
 
 ---
 
-### 5.6.3. Tecnologías propuestas
+### <a id="563-tecnologías-propuestas"></a>5.6.3. Tecnologías propuestas
 
 | Tecnología | Versión recomendada | Función |
 |---|---|---|
@@ -2293,7 +2393,7 @@ La aplicación actual funciona correctamente, pero tiene limitaciones que una mi
 
 ---
 
-### 5.6.4. Plan de migración por fases
+### <a id="564-plan-de-migración-por-fases"></a>5.6.4. Plan de migración por fases
 
 ```
   Fase 1          Fase 2          Fase 3          Fase 4          Fase 5          Fase 6
@@ -2307,9 +2407,9 @@ La aplicación actual funciona correctamente, pero tiene limitaciones que una mi
 
 ---
 
-### 5.6.5. Fase 1 — Preparar la base de datos
+### <a id="565-fase-1-preparar-la-base-de-datos"></a>5.6.5. Fase 1 — Preparar la base de datos
 
-#### 5.6.5.1. Instalar PostgreSQL en el servidor
+#### <a id="5651-instalar-postgresql-en-el-servidor"></a>5.6.5.1. Instalar PostgreSQL en el servidor
 
 ```bash
 sudo apt install -y postgresql postgresql-contrib
@@ -2317,7 +2417,7 @@ sudo systemctl enable postgresql
 sudo systemctl start postgresql
 ```
 
-#### 5.6.5.2. Crear la base de datos y el usuario
+#### <a id="5652-crear-la-base-de-datos-y-el-usuario"></a>5.6.5.2. Crear la base de datos y el usuario
 
 ```bash
 sudo -u postgres psql
@@ -2336,7 +2436,7 @@ GRANT ALL PRIVILEGES ON DATABASE catalogo_asociaciones TO catalogo_user;
 \q
 ```
 
-#### 5.6.5.3. Crear las tablas
+#### <a id="5653-crear-las-tablas"></a>5.6.5.3. Crear las tablas
 
 Conectarse a la nueva base de datos:
 
@@ -2394,7 +2494,7 @@ CREATE TABLE solicitudes (
 );
 ```
 
-#### 5.6.5.4. Alternativa: usar PostgreSQL en la nube
+#### <a id="5654-alternativa-usar-postgresql-en-la-nube"></a>5.6.5.4. Alternativa: usar PostgreSQL en la nube
 
 En lugar de instalar PostgreSQL en el servidor, se puede usar un servicio gestionado (la base de datos se mantiene y respalda de forma automática):
 
@@ -2412,21 +2512,21 @@ postgresql://catalogo_user:contraseña@servidor:5432/catalogo_asociaciones
 
 ---
 
-### 5.6.6. Fase 2 — Crear el nuevo backend en Node.js
+### <a id="566-fase-2-crear-el-nuevo-backend-en-nodejs"></a>5.6.6. Fase 2 — Crear el nuevo backend en Node.js
 
-#### 5.6.6.1. Instalar Node.js en el servidor
+#### <a id="5661-instalar-nodejs-en-el-servidor"></a>5.6.6.1. Instalar Node.js en el servidor
 
 ```bash
-# Instalar Node.js 20 LTS
+# <a id="instalar-nodejs-20-lts"></a>Instalar Node.js 20 LTS
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
 
-# Verificar
+# <a id="verificar"></a>Verificar
 node --version   # Debe ser v20.x o superior
 npm --version
 ```
 
-#### 5.6.6.2. Inicializar el proyecto
+#### <a id="5662-inicializar-el-proyecto"></a>5.6.6.2. Inicializar el proyecto
 
 ```bash
 cd /home/catalogo/app
@@ -2434,7 +2534,7 @@ npm init -y
 npm install express pg jsonwebtoken bcryptjs multer dotenv cors
 ```
 
-#### 5.6.6.3. Equivalencia entre endpoints actuales y nuevos
+#### <a id="5663-equivalencia-entre-endpoints-actuales-y-nuevos"></a>5.6.6.3. Equivalencia entre endpoints actuales y nuevos
 
 La API debe replicar exactamente los mismos endpoints para que el frontend no necesite cambios significativos:
 
@@ -2459,7 +2559,7 @@ La API debe replicar exactamente los mismos endpoints para que el frontend no ne
 
 > **Regla clave**: Si los endpoints y las respuestas JSON mantienen la misma estructura, el frontend no necesita cambios.
 
-#### 5.6.6.4. Estructura del nuevo backend
+#### <a id="5664-estructura-del-nuevo-backend"></a>5.6.6.4. Estructura del nuevo backend
 
 ```
 app/
@@ -2480,26 +2580,26 @@ app/
 └── data/                      ← Solo como respaldo local (opcional)
 ```
 
-#### 5.6.6.5. Variables de entorno (.env)
+#### <a id="5665-variables-de-entorno-env"></a>5.6.6.5. Variables de entorno (.env)
 
 ```env
-# Base de datos
+# <a id="base-de-datos"></a>Base de datos
 DATABASE_URL=postgresql://catalogo_user:contraseña@localhost:5432/catalogo_asociaciones
 
-# Autenticación
+# <a id="autenticación"></a>Autenticación
 SECRET_KEY=clave_secreta_larga_y_aleatoria
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=ContraseñaDeAdministrador1!
 
-# Servidor
+# <a id="servidor"></a>Servidor
 PORT=8080
 ```
 
 ---
 
-### 5.6.7. Fase 3 — Migrar los datos existentes
+### <a id="567-fase-3-migrar-los-datos-existentes"></a>5.6.7. Fase 3 — Migrar los datos existentes
 
-#### 5.6.7.1. Script de migración de JSON a PostgreSQL
+#### <a id="5671-script-de-migración-de-json-a-postgresql"></a>5.6.7.1. Script de migración de JSON a PostgreSQL
 
 Se debe crear un script que lea los archivos JSON actuales y los inserte en la base de datos:
 
@@ -2582,14 +2682,14 @@ async function migrar() {
 migrar().catch(console.error);
 ```
 
-#### 5.6.7.2. Ejecutar la migración
+#### <a id="5672-ejecutar-la-migración"></a>5.6.7.2. Ejecutar la migración
 
 ```bash
 cd /home/catalogo/app
 node migrar_datos.js
 ```
 
-#### 5.6.7.3. Verificar los datos
+#### <a id="5673-verificar-los-datos"></a>5.6.7.3. Verificar los datos
 
 ```bash
 sudo -u postgres psql -d catalogo_asociaciones -c "SELECT COUNT(*) FROM asociaciones;"
@@ -2599,7 +2699,7 @@ sudo -u postgres psql -d catalogo_asociaciones -c "SELECT COUNT(*) FROM etiqueta
 
 ---
 
-### 5.6.8. Fase 4 — Adaptar el frontend
+### <a id="568-fase-4-adaptar-el-frontend"></a>5.6.8. Fase 4 — Adaptar el frontend
 
 El frontend (HTML, CSS, JavaScript) **no debería necesitar cambios significativos** si se respetan estas reglas:
 
@@ -2608,7 +2708,7 @@ El frontend (HTML, CSS, JavaScript) **no debería necesitar cambios significativ
 3. **El token de autenticación sigue siendo JWT** con el mismo formato.
 4. **Los archivos estáticos se sirven desde la misma ruta** (`/html/...`).
 
-#### 5.6.8.1. Posibles ajustes menores
+#### <a id="5681-posibles-ajustes-menores"></a>5.6.8.1. Posibles ajustes menores
 
 | Caso | Qué revisar |
 |---|---|
@@ -2618,9 +2718,9 @@ El frontend (HTML, CSS, JavaScript) **no debería necesitar cambios significativ
 
 ---
 
-### 5.6.9. Fase 5 — Pruebas y validación
+### <a id="569-fase-5-pruebas-y-validación"></a>5.6.9. Fase 5 — Pruebas y validación
 
-#### 5.6.9.1. Lista de comprobación funcional
+#### <a id="5691-lista-de-comprobación-funcional"></a>5.6.9.1. Lista de comprobación funcional
 
 | Función | Verificación |
 |---|---|
@@ -2637,20 +2737,20 @@ El frontend (HTML, CSS, JavaScript) **no debería necesitar cambios significativ
 | Formulario de solicitud | Se envía y aparece en el panel de admin |
 | Cambiar fondo | Se aplica en la página principal |
 
-#### 5.6.9.2. Pruebas de rendimiento
+#### <a id="5692-pruebas-de-rendimiento"></a>5.6.9.2. Pruebas de rendimiento
 
 Comparar tiempos de respuesta entre la versión actual (JSON) y la nueva (PostgreSQL):
 
 ```bash
-# Medir tiempo de respuesta del listado de asociaciones
+# <a id="medir-tiempo-de-respuesta-del-listado-de-asociaciones"></a>Medir tiempo de respuesta del listado de asociaciones
 time curl -s http://localhost:8080/api/asociaciones > /dev/null
 ```
 
 ---
 
-### 5.6.10. Fase 6 — Despliegue y corte
+### <a id="5610-fase-6-despliegue-y-corte"></a>5.6.10. Fase 6 — Despliegue y corte
 
-#### 5.6.10.1. Estrategia de corte recomendada
+#### <a id="56101-estrategia-de-corte-recomendada"></a>5.6.10.1. Estrategia de corte recomendada
 
 1. **Instalar la nueva versión** en una carpeta separada (`/home/catalogo/app_nueva`).
 2. **Ejecutar el script de migración** de datos.
@@ -2658,7 +2758,7 @@ time curl -s http://localhost:8080/api/asociaciones > /dev/null
 4. **Cuando todo funcione**, detener el servicio antiguo y redirigir Nginx al nuevo.
 5. **Conservar la versión anterior** durante al menos una semana por si hay que volver atrás.
 
-#### 5.6.10.2. Cambiar Nginx al nuevo backend
+#### <a id="56102-cambiar-nginx-al-nuevo-backend"></a>5.6.10.2. Cambiar Nginx al nuevo backend
 
 Solo hay que modificar el puerto en la configuración de Nginx:
 
@@ -2672,9 +2772,9 @@ sudo nginx -t && sudo systemctl reload nginx
 
 ---
 
-### 5.6.11. Cambios en el despliegue del servidor
+### <a id="5611-cambios-en-el-despliegue-del-servidor"></a>5.6.11. Cambios en el despliegue del servidor
 
-#### 5.6.11.1. Diferencias respecto al despliegue actual
+#### <a id="56111-diferencias-respecto-al-despliegue-actual"></a>5.6.11.1. Diferencias respecto al despliegue actual
 
 | Aspecto | Versión actual (Python) | Versión nueva (Node.js) |
 |---|---|---|
@@ -2688,7 +2788,7 @@ sudo nginx -t && sudo systemctl reload nginx
 | **Base de datos** | Archivos JSON en `data/` | PostgreSQL (local o en la nube) |
 | **Backups** | Copiar carpeta `data/` | `pg_dump` (volcado de base de datos) |
 
-#### 5.6.11.2. Nuevo servicio systemd (si no se usa PM2)
+#### <a id="56112-nuevo-servicio-systemd-si-no-se-usa-pm2"></a>5.6.11.2. Nuevo servicio systemd (si no se usa PM2)
 
 ```ini
 [Unit]
@@ -2709,15 +2809,15 @@ RestartSec=5
 WantedBy=multi-user.target
 ```
 
-#### 5.6.11.3. Backups de PostgreSQL
+#### <a id="56113-backups-de-postgresql"></a>5.6.11.3. Backups de PostgreSQL
 
 En lugar de copiar archivos JSON, los backups se hacen con `pg_dump`:
 
 ```bash
-# Backup manual
+# <a id="backup-manual"></a>Backup manual
 pg_dump -U catalogo_user catalogo_asociaciones > backup_$(date +%Y%m%d).sql
 
-# Restaurar
+# <a id="restaurar"></a>Restaurar
 psql -U catalogo_user catalogo_asociaciones < backup_20260529.sql
 ```
 
@@ -2729,15 +2829,15 @@ FECHA=$(date +%Y-%m-%d_%H%M)
 BACKUP_DIR="/home/catalogo/backups"
 mkdir -p "$BACKUP_DIR"
 
-# Backup de la base de datos
+# <a id="backup-de-la-base-de-datos"></a>Backup de la base de datos
 pg_dump -U catalogo_user catalogo_asociaciones | gzip > "$BACKUP_DIR/db_${FECHA}.sql.gz"
 
-# Backup de los logos y fondos (siguen en disco)
+# <a id="backup-de-los-logos-y-fondos-siguen-en-disco"></a>Backup de los logos y fondos (siguen en disco)
 tar -czf "$BACKUP_DIR/archivos_${FECHA}.tar.gz" \
     /home/catalogo/app/html/img/logos/ \
     /home/catalogo/app/html/img/fondos/
 
-# Limpiar backups antiguos (más de 30 días)
+# <a id="limpiar-backups-antiguos-más-de-30-días"></a>Limpiar backups antiguos (más de 30 días)
 find "$BACKUP_DIR" -name "*.gz" -mtime +30 -delete
 
 echo "Backup completado: ${FECHA}"
@@ -2745,7 +2845,7 @@ echo "Backup completado: ${FECHA}"
 
 ---
 
-### 5.6.12. Riesgos y cómo mitigarlos
+### <a id="5612-riesgos-y-cómo-mitigarlos"></a>5.6.12. Riesgos y cómo mitigarlos
 
 | Riesgo | Probabilidad | Impacto | Cómo mitigarlo |
 |---|---|---|---|
@@ -2758,7 +2858,7 @@ echo "Backup completado: ${FECHA}"
 
 ---
 
-### 5.6.13. Estimación de esfuerzo
+### <a id="5613-estimación-de-esfuerzo"></a>5.6.13. Estimación de esfuerzo
 
 | Fase | Duración estimada | Perfil necesario |
 |---|---|---|
@@ -2772,7 +2872,7 @@ echo "Backup completado: ${FECHA}"
 
 ---
 
-### 5.6.14. Decisiones pendientes
+### <a id="5614-decisiones-pendientes"></a>5.6.14. Decisiones pendientes
 
 Antes de iniciar la migración, se deben tomar las siguientes decisiones:
 
@@ -2789,9 +2889,9 @@ Antes de iniciar la migración, se deben tomar las siguientes decisiones:
 
 
 
-# 6. PRUEBAS Y VALIDACIÓN
+# <a id="6-pruebas-y-validacion"></a>6. PRUEBAS Y VALIDACIÓN
 
-## 6.1. Introducción
+## <a id="61-introduccion"></a>6.1. Introducción
 
 Este capítulo detalla la batería de pruebas diseñada y ejecutada tras concluir la fase de implementación. El objetivo de estas pruebas es verificar que el portal web cumple con los requerimientos funcionales, arquitectónicos y de seguridad definidos en la planificación del proyecto.
 
@@ -2799,7 +2899,7 @@ Las pruebas se han dividido en tres categorías. Las pruebas funcionales se enca
 
 ---
 
-## 6.2. Pruebas Funcionales
+## <a id="62-pruebas-funcionales"></a>6.2. Pruebas Funcionales
 
 Las pruebas funcionales se enfocan en confirmar que cada módulo de la aplicación responde adecuadamente a las acciones esperadas.
 
@@ -2814,7 +2914,7 @@ Adicionalmente, se auditó exhaustivamente el **Módulo de Gestión de Categorí
 
 ---
 
-## 6.3. Pruebas de Seguridad y Control de Accesos
+## <a id="63-pruebas-de-seguridad-y-control-de-accesos"></a>6.3. Pruebas de Seguridad y Control de Accesos
 
 Se realizaron pruebas específicas para verificar la protección del sistema ante accesos ilegítimos y vulnerabilidades comunes, dado el carácter sensible de la administración de la plataforma.
 
@@ -2824,7 +2924,7 @@ Para prevenir la inyección de código (*Cross-Site Scripting*), se insertaron c
 
 ---
 
-## 6.4. Pruebas de Compatibilidad y Diseño (Frontend)
+## <a id="64-pruebas-de-compatibilidad-y-diseno-frontend"></a>6.4. Pruebas de Compatibilidad y Diseño (Frontend)
 
 Para garantizar una experiencia de usuario uniforme en múltiples plataformas, se ejecutaron pruebas de renderizado visual.
 
@@ -2839,19 +2939,19 @@ La prueba de compatibilidad cruzada de navegadores consistió en acceder al port
 
 ---
 
-## 6.5. Conclusión de las Pruebas
+## <a id="65-conclusion-de-las-pruebas"></a>6.5. Conclusión de las Pruebas
 
 Los resultados del ciclo de auditoría técnica certifican la estabilidad y seguridad de la aplicación web. Los mecanismos de protección JWT y las defensas contra XSS operan correctamente, mitigando las amenazas perimetrales evaluadas. A nivel funcional, la lógica cliente desarrollada en JavaScript procesa los datos JSON del servidor asíncrono con precisión y rendimiento adecuado. Por lo tanto, el software cumple los estándares requeridos y se declara apto para su paso a entorno de producción o despliegue definitivo.
 
-# 7. CONCLUSIÓN Y RESULTADOS
+# <a id="7-conclusion-y-resultados"></a>7. CONCLUSIÓN Y RESULTADOS
 
-## 7.1. Introducción
+## <a id="71-introduccion"></a>7.1. Introducción
 
 En este último capítulo se realiza una evaluación global del proyecto desarrollado para el Hospital Universitario Clínico San Cecilio. El objetivo es analizar el cumplimiento de los requerimientos iniciales, evaluar los resultados técnicos obtenidos y proponer líneas de mejora funcional y arquitectónica para futuras iteraciones de la plataforma.
 
 ---
 
-## 7.2. Consecución de los Objetivos
+## <a id="72-consecucion-de-los-objetivos"></a>7.2. Consecución de los Objetivos
 
 Tras la finalización de las fases de diseño, implementación y pruebas, los objetivos definidos en el estudio de viabilidad se han alcanzado satisfactoriamente.
 
@@ -2861,7 +2961,7 @@ Para la gestión de la plataforma, se ha desarrollado un panel de administració
 
 ---
 
-## 7.3. Resultados Obtenidos y Beneficios
+## <a id="73-resultados-obtenidos-y-beneficios"></a>7.3. Resultados Obtenidos y Beneficios
 
 La implantación de este proyecto aporta beneficios directos tanto a los ciudadanos como a la administración del hospital.
 
@@ -2871,7 +2971,7 @@ Para el perfil de administrador, la eficiencia operativa se incrementa significa
 
 ---
 
-## 7.4. Líneas de Mejora del Proyecto (Trabajo Futuro)
+## <a id="74-lineas-de-mejora-del-proyecto-trabajo-futuro"></a>7.4. Líneas de Mejora del Proyecto (Trabajo Futuro)
 
 A pesar de que el producto final cumple con los requerimientos técnicos fijados, se plantean diversas ampliaciones y mejoras arquitectónicas para asegurar la escalabilidad del sistema a medio y largo plazo.
 
@@ -2883,28 +2983,28 @@ Para optimizar el rendimiento de la red y el renderizado en cliente, en caso de 
 
 Finalmente, se propone incorporar un módulo de estadísticas en el panel de administración que registre métricas de uso y búsquedas frecuentes, aportando valor analítico a la toma de decisiones institucionales. Del mismo modo, la plataforma podría ampliarse con un sistema de tablón de noticias o agenda de eventos, permitiendo a las asociaciones comunicar talleres o reuniones de manera directa y dinámica dentro de la web del hospital.
 
-# 8. BIBLIOGRAFÍA Y REFERENCIAS
+# <a id="8-bibliografia-y-referencias"></a>8. BIBLIOGRAFÍA Y REFERENCIAS
 
 En este apartado se detallan todas las fuentes de información, documentación oficial de lenguajes y librerías, así como los estándares web y la bibliografía técnica exhaustiva consultada para el diseño, el desarrollo estructurado y la implementación segura del portal web del Hospital Universitario Clínico San Cecilio.
 
-## 8.1. Documentación Oficial de Lenguajes y Entornos
+## <a id="81-documentacion-oficial-de-lenguajes-y-entornos"></a>8.1. Documentación Oficial de Lenguajes y Entornos
 
 El desarrollo estructural del frontend se apoyó intensivamente en la documentación de la Mozilla Developer Network (MDN Web Docs), sirviendo como la guía principal para la implementación de la capa de presentación mediante HTML5 semántico, maquetación avanzada con CSS3 (incluyendo directivas de Flexbox y CSS Grid) y el uso nativo de la API de JavaScript puro para manipular el DOM y gestionar las peticiones asíncronas con Fetch API. 
 
 En lo que respecta al servidor, se recurrió constantemente a la documentación oficial de Python 3 para asegurar un manejo nativo y optimizado de las operaciones de lectura y escritura de archivos físicos mediante el módulo JSON, así como para la gestión segura de directorios del sistema operativo y la captura robusta de excepciones genéricas. Paralelamente, la construcción del backend dependió de la documentación oficial del framework FastAPI, la cual fue consultada en profundidad para diseñar el enrutamiento inteligente, configurar la validación automatizada de esquemas y estructurar el manejo de middlewares interceptores. Todo este andamiaje lógico fue ejecutado apoyándose en la documentación de Uvicorn, el servidor de interfaz de pasarela asíncrona elegido para soportar la ejecución concurrente de la aplicación web en Python.
 
-## 8.2. Librerías y Dependencias del Proyecto
+## <a id="82-librerias-y-dependencias-del-proyecto"></a>8.2. Librerías y Dependencias del Proyecto
 
 La inmunidad y validación de los datos descansó sobre la librería Pydantic. Su extensa documentación permitió dominar la gestión de configuraciones y la validación estricta utilizando anotaciones de tipos de Python, siendo un pilar esencial para depurar los esquemas correspondientes a asociaciones, ubicaciones y contactos antes de permitir su persistencia en el disco.
 
 Para garantizar el control de acceso, se empleó la librería PyJWT, cuya referencia fue crucial para implementar la codificación y decodificación de tokens bajo el estricto estándar de la industria, garantizando así la generación de firmas criptográficas irrompibles durante el proceso de inicio de sesión de los administradores. Asimismo, la interceptación y lectura de archivos en streaming, como los logotipos de las asociaciones, fue posible gracias a la consulta del analizador python-multipart, un decodificador requerido intrínsecamente por FastAPI para procesar datos en formato de formulario codificado.
 
-## 8.3. Estándares y Protocolos Web
+## <a id="83-estandares-y-protocolos-web"></a>8.3. Estándares y Protocolos Web
 
 La arquitectura de seguridad se basó fundamentalmente en la especificación abierta JSON Web Token (RFC 7519) dictada por la IETF, la cual definió el modo compacto e inviolable para transmitir información de identidad entre el cliente y el servidor. La comprensión práctica de este estándar se consolidó a través de plataformas interactivas de depuración proporcionadas por Auth0.
 
 Por otro lado, todas las defensas y mitigaciones de ataques inyectados se diseñaron tomando como referencia innegable las directrices del Open Web Application Security Project (OWASP). Sus documentos sobre ciberseguridad aplicada dictaron las normas para prevenir ataques de Cross-Site Scripting (XSS) obligando al uso de texto plano en el cliente, y guiaron el endurecimiento extremo del backend mediante la inyección meticulosa de políticas de seguridad de contenido (CSP) en las cabeceras HTTP. Este blindaje se completó siguiendo las normativas del estándar de Intercambio de Recursos de Origen Cruzado (CORS) consultadas directamente en MDN y aplicadas a través del middleware de FastAPI.
 
-## 8.4. Recursos Gráficos y Herramientas
+## <a id="84-recursos-graficos-y-herramientas"></a>8.4. Recursos Gráficos y Herramientas
 
 A nivel estético, la interfaz de usuario adquirió su identidad visual corporativa y moderna gracias al servicio de fuentes en la nube de Google Fonts, desde donde se importaron y sirvieron tipografías optimizadas para lectura digital. Finalmente, la materialización del código en todas sus capas, al igual que la redacción exhaustiva de este mismo documento técnico en formato Markdown, se llevó a cabo utilizando Visual Studio Code, un entorno de desarrollo integrado que centralizó y agilizó toda la operativa del proyecto.
