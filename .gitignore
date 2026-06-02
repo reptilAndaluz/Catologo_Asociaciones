@@ -78,3 +78,4 @@ html/img/logos/*
 !html/img/logos/.gitkeep
 html/img/fondos/*
 !html/img/fondos/.gitkeep
+*.zip
